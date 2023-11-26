@@ -46,9 +46,7 @@ public class BoardService {
 
   // 게시글 삭제
   public BoardDto deleteBoard(Long boardId, String password) {
-    // boardId 확인
-    Board board = boardRepository.findByBoardId(boardId)
-        .orElseThrow(() -> new BoardException(BOARD_NOT_FOUND));
+    Board board = getBoard(boardId);
 
     // password 확인
     if (!board.getPassword().equals(password)) {
@@ -70,5 +68,12 @@ public class BoardService {
 
     return BoardDto.formEntity(board);
 
+  }
+
+  private Board getBoard(Long boardId) {
+    // boardId 확인
+    Board board = boardRepository.findByBoardId(boardId)
+        .orElseThrow(() -> new BoardException(BOARD_NOT_FOUND));
+    return board;
   }
 }
