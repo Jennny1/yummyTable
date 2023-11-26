@@ -11,6 +11,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 
 public class CreateBoard {
+
   @Getter
   @Setter
   @NoArgsConstructor

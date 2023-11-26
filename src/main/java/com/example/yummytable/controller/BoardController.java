@@ -25,7 +25,6 @@ public class BoardController {
             request.getBoardId(),
             request.getTitle(),
             request.getContent(),
-            request.getBoardStatus(),
             request.getPassword(),
             request.getStoreName(),
             request.getKeyword(),

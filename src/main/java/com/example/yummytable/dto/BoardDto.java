@@ -47,7 +47,7 @@ public class BoardDto {
         .title(board.getTitle())
         .content(board.getContent())
         .password(board.getPassword())
-        .boardStatus(BoardStatus.EXISTENT)
+        .boardStatus(board.getBoardStatus())
         .registeredAt(board.getRegisteredAt())
         .storeName(board.getStoreName())
         .keyword(board.getKeyword())

@@ -21,7 +21,7 @@ public class BoardService {
   private final BoardRepository boardRepository;
 
   // 게시글 생성
-  public BoardDto createBoard(Long boardId, String title, String content, BoardStatus boardStatus,
+  public BoardDto createBoard(Long boardId, String title, String content,
       String password, String storeName, String keyword, Double locationX, Double locationY,
       String menu, int capacity) {
 
@@ -31,7 +31,7 @@ public class BoardService {
                 .boardId(boardId)
                 .title(title)
                 .content(content)
-                .boardStatus(boardStatus)
+                .boardStatus(BoardStatus.EXISTENT)
                 .password(password)
                 .registeredAt(LocalDateTime.now())
                 .storeName(storeName)
