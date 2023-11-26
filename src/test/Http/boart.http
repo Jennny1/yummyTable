@@ -1,0 +1,9 @@
+### create board
+POST http://localhost:8080/board
+Content-Type: application/json
+
+{
+  "boardId": 1,
+  "title": "맛집소개",
+  "content": "사당 삼겹살 맛집이에요"
+}

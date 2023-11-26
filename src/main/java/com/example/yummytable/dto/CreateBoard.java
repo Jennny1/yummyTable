@@ -48,7 +48,7 @@ public class CreateBoard {
 
 
 
-    public static Response from(Response boardDto) {
+    public static Response from(BoardDto boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
           .title(boardDto.getTitle())

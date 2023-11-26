@@ -2,6 +2,7 @@ package com.example.yummytable.service;
 
 import com.example.yummytable.domain.Board;
 import com.example.yummytable.dto.BoardDto;
+import com.example.yummytable.dto.CreateBoard.Response;
 import com.example.yummytable.repository.BoardRepository;
 import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
@@ -20,12 +21,13 @@ public class BoardService {
     // 게시글 저장
     return BoardDto.formEntity(
         boardRepository.save(
-        Board.builder()
-            .boardId(boardId)
-            .title(title)
-            .content(content)
-            .password(password)
-            .registeredAt(LocalDateTime.now())
-            .build()));
+            Board.builder()
+                .boardId(boardId)
+                .title(title)
+                .content(content)
+                .password(password)
+                .registeredAt(LocalDateTime.now())
+                .build())
+    );
   }
 }
