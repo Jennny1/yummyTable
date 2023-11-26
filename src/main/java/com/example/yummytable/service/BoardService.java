@@ -55,6 +55,11 @@ public class BoardService {
       throw new BoardException(PASSWORD_NOT_MATCH);
     }
 
+    // BoardStatus 확인
+    if (!board.getBoardStatus().equals(1)) {
+      throw new BoardException(BOARD_NOT_FOUND);
+    }
+
     // BoardStatus 변경
     board.setBoardStatus(BoardStatus.DELETE);
     board.setUnregisteredAt(LocalDateTime.now());
