@@ -11,6 +11,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 
 public class DeleteBoard {
+
   @Getter
   @Setter
   @NoArgsConstructor
@@ -41,7 +42,6 @@ public class DeleteBoard {
     private LocalDateTime registeredAt;
     private LocalDateTime updatedAt;
     private LocalDateTime unregisteredAt;
-
 
 
     public static Response from(BoardDto boardDto) {

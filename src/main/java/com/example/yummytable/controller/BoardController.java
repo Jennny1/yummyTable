@@ -1,8 +1,10 @@
 package com.example.yummytable.controller;
 
+import com.example.yummytable.dto.BoardDto;
 import com.example.yummytable.dto.CreateBoard;
 import com.example.yummytable.dto.DeleteBoard;
 import com.example.yummytable.service.BoardService;
+import com.example.yummytable.type.BoardStatus;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,6 +26,7 @@ public class BoardController {
             request.getBoardId(),
             request.getTitle(),
             request.getContent(),
+            request.getBoardStatus(),
             request.getPassword(),
             request.getStoreName(),
             request.getKeyword(),
@@ -35,8 +38,9 @@ public class BoardController {
   }
 
   @DeleteMapping("/board")
-  public void deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
-    boardService.deleteBoard(request.getBoardId(), request.getPassword());
+  public DeleteBoard.Response deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
+    BoardDto boardDto = boardService.deleteBoard(request.getBoardId(), request.getPassword());
 
+    return DeleteBoard.Response.from(boardDto);
   }
 }

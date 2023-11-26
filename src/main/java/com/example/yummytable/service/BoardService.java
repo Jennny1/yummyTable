@@ -21,9 +21,9 @@ public class BoardService {
   private final BoardRepository boardRepository;
 
   // 게시글 생성
-  public BoardDto createBoard(Long boardId, String title, String content, String storeName,
-      String keyword, String password, Double locationX, Double locationY, String menu,
-      int capacity) {
+  public BoardDto createBoard(Long boardId, String title, String content, BoardStatus boardStatus,
+      String password, String storeName, String keyword, Double locationX, Double locationY,
+      String menu, int capacity) {
 
     return BoardDto.formEntity(
         boardRepository.save(
@@ -31,9 +31,9 @@ public class BoardService {
                 .boardId(boardId)
                 .title(title)
                 .content(content)
+                .boardStatus(boardStatus)
                 .password(password)
                 .registeredAt(LocalDateTime.now())
-                .boardStatus(BoardStatus.EXISTENT)
                 .storeName(storeName)
                 .keyword(keyword)
                 .locationX(locationX)

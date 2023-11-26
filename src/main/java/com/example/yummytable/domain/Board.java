@@ -33,13 +33,11 @@ public class Board {
   private String password;
   private BoardStatus boardStatus;
 
-
   @CreatedDate
   private LocalDateTime registeredAt;
   @LastModifiedDate
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
-
 
   // 식당 관련 정보
   private String storeName;
