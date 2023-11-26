@@ -16,7 +16,12 @@ public class BoardController {
 
   @PostMapping("/board")
   public CreateBoard.Response creatBoard(@RequestBody @Valid CreateBoard.Request request) {
-    boardService.createBoard();
 
+    return CreateBoard.Response.from(
+        boardService.createBoard(
+            request.getBoardId(),
+            request.getTitle(),
+            request.getContent(),
+            request.getPassword()));
   }
 }

@@ -1,8 +1,5 @@
 package com.example.yummytable.dto;
 
-import com.example.yummytable.domain.StoreInfo;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,7 +29,6 @@ public class CreateBoard {
     private String password;
 
     // 식당 관련 정보
-    private StoreInfo storeInfo;
 
   }
 
@@ -50,10 +46,9 @@ public class CreateBoard {
 
     private LocalDateTime registeredAt;
 
-    // 식당 관련 정보
-    StoreInfo storeInfo;
 
-    public static Response from(BoardDto boardDto) {
+
+    public static Response from(Response boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
           .title(boardDto.getTitle())
