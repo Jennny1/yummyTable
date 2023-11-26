@@ -56,7 +56,7 @@ public class BoardService {
     }
 
     // BoardStatus 확인
-    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
+    if (board.getBoardStatus().equals(1)) {
       throw new BoardException(BOARD_NOT_FOUND);
     }
 
