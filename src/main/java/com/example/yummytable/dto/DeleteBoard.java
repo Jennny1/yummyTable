@@ -10,7 +10,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class CreateBoard {
+public class DeleteBoard {
   @Getter
   @Setter
   @NoArgsConstructor
@@ -22,24 +22,8 @@ public class CreateBoard {
     @NotNull
     private Long boardId;
     @NotNull
-    private String title;
-    @NotNull
-    private String content;
-    @NotNull
     private String password;
-    private BoardStatus boardStatus;
 
-    // 식당 관련 정보
-    @NotNull
-    private String storeName;
-    private String keyword;
-    @NotNull
-    private Double locationX;
-    @NotNull
-    private Double locationY;
-    private String menu;
-    @NotNull
-    private int capacity;
   }
 
   @Getter
@@ -55,15 +39,9 @@ public class CreateBoard {
     private String content;
     private BoardStatus boardStatus;
     private LocalDateTime registeredAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime unregisteredAt;
 
-
-    // 식당 관련 정보
-    private String storeName;
-    private String keyword;
-    private Double locationX;
-    private Double locationY;
-    private String menu;
-    private int capacity;
 
 
     public static Response from(BoardDto boardDto) {
@@ -71,14 +49,10 @@ public class CreateBoard {
           .boardId(boardDto.getBoardId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
-          .boardStatus(BoardStatus.EXISTENT)
+          .boardStatus(BoardStatus.DELETE)
           .registeredAt(boardDto.getRegisteredAt())
-          .storeName(boardDto.getStoreName())
-          .keyword(boardDto.getKeyword())
-          .locationX(boardDto.getLocationX())
-          .locationY(boardDto.getLocationY())
-          .menu(boardDto.getMenu())
-          .capacity(boardDto.getCapacity())
+          .updatedAt(boardDto.getUpdatedAt())
+          .unregisteredAt(boardDto.getUnregisteredAt())
           .build();
     }
   }

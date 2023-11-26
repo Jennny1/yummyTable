@@ -1,9 +1,11 @@
 package com.example.yummytable.controller;
 
 import com.example.yummytable.dto.CreateBoard;
+import com.example.yummytable.dto.DeleteBoard;
 import com.example.yummytable.service.BoardService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +31,12 @@ public class BoardController {
             request.getLocationY(),
             request.getMenu(),
             request.getCapacity())
-        );
+    );
+  }
+
+  @DeleteMapping("/board")
+  public void deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
+    boardService.deleteBoard(request.getBoardId(), request.getPassword());
+
   }
 }

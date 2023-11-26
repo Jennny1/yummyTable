@@ -1,6 +1,7 @@
 package com.example.yummytable.dto;
 
 import com.example.yummytable.domain.Board;
+import com.example.yummytable.type.BoardStatus;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
@@ -24,6 +25,7 @@ public class BoardDto {
   private String title;
   private String content;
   private String password;
+  private BoardStatus boardStatus;
 
   private LocalDateTime registeredAt;
   private LocalDateTime updatedAt;
@@ -45,6 +47,7 @@ public class BoardDto {
         .title(board.getTitle())
         .content(board.getContent())
         .password(board.getPassword())
+        .boardStatus(BoardStatus.EXISTENT)
         .registeredAt(board.getRegisteredAt())
         .storeName(board.getStoreName())
         .keyword(board.getKeyword())

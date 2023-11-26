@@ -1,8 +1,13 @@
 package com.example.yummytable.service;
 
+import static com.example.yummytable.type.ErrorCode.BOARD_NOT_FOUND;
+import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
+
 import com.example.yummytable.domain.Board;
 import com.example.yummytable.dto.BoardDto;
+import com.example.yummytable.exception.BoardException;
 import com.example.yummytable.repository.BoardRepository;
+import com.example.yummytable.type.BoardStatus;
 import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +24,7 @@ public class BoardService {
   public BoardDto createBoard(Long boardId, String title, String content, String storeName,
       String keyword, String password, Double locationX, Double locationY, String menu,
       int capacity) {
-    // 게시글 저장
+
     return BoardDto.formEntity(
         boardRepository.save(
             Board.builder()
@@ -28,6 +33,7 @@ public class BoardService {
                 .content(content)
                 .password(password)
                 .registeredAt(LocalDateTime.now())
+                .boardStatus(BoardStatus.EXISTENT)
                 .storeName(storeName)
                 .keyword(keyword)
                 .locationX(locationX)
@@ -36,5 +42,28 @@ public class BoardService {
                 .capacity(capacity)
                 .build())
     );
+  }
+
+  // 게시글 삭제
+  public BoardDto deleteBoard(Long boardId, String password) {
+    // boardId 확인
+    Board board = boardRepository.findByBoardId(boardId)
+        .orElseThrow(() -> new BoardException(BOARD_NOT_FOUND));
+
+    // password 확인
+    if (!board.getPassword().equals(password)) {
+      throw new BoardException(PASSWORD_NOT_MATCH);
+    }
+
+    // BoardStatus 변경
+    board.setBoardStatus(BoardStatus.DELETE);
+    board.setUnregisteredAt(LocalDateTime.now());
+    board.setUpdatedAt(LocalDateTime.now());
+
+    // 저장
+    boardRepository.save(board);
+
+    return BoardDto.formEntity(board);
+
   }
 }

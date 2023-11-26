@@ -1,5 +1,6 @@
 package com.example.yummytable.domain;
 
+import com.example.yummytable.type.BoardStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
@@ -30,12 +31,15 @@ public class Board {
   private String title;
   private String content;
   private String password;
+  private BoardStatus boardStatus;
+
 
   @CreatedDate
   private LocalDateTime registeredAt;
   @LastModifiedDate
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
+
 
   // 식당 관련 정보
   private String storeName;
