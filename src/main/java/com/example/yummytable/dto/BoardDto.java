@@ -30,8 +30,6 @@ public class BoardDto {
   private LocalDateTime unregisteredAt;
 
   // 식당 관련 정보
-/*  private Long id;
-
   private String storeName;
   private String keyword;
 
@@ -39,14 +37,21 @@ public class BoardDto {
   private Double locationY;
 
   private String menu;
-  private int capacity;*/
+  private int capacity;
 
   public static BoardDto formEntity(Board board) {
     return BoardDto.builder()
         .boardId(board.getBoardId())
         .title(board.getTitle())
-        .content(board.getTitle())
+        .content(board.getContent())
         .password(board.getPassword())
+        .registeredAt(board.getRegisteredAt())
+        .storeName(board.getStoreName())
+        .keyword(board.getKeyword())
+        .locationX(board.getLocationX())
+        .locationY(board.getLocationY())
+        .menu(board.getMenu())
+        .capacity(board.getCapacity())
         .build();
   }
 }

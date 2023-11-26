@@ -22,6 +22,13 @@ public class BoardController {
             request.getBoardId(),
             request.getTitle(),
             request.getContent(),
-            request.getPassword()));
+            request.getPassword(),
+            request.getStoreName(),
+            request.getKeyword(),
+            request.getLocationX(),
+            request.getLocationY(),
+            request.getMenu(),
+            request.getCapacity())
+        );
   }
 }
