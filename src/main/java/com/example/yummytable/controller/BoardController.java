@@ -4,7 +4,6 @@ import com.example.yummytable.dto.BoardDto;
 import com.example.yummytable.dto.CreateBoard;
 import com.example.yummytable.dto.DeleteBoard;
 import com.example.yummytable.service.BoardService;
-import com.example.yummytable.type.BoardStatus;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
