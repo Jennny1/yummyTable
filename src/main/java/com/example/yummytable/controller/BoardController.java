@@ -7,6 +7,8 @@ import com.example.yummytable.service.BoardService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +19,9 @@ public class BoardController {
 
   private final BoardService boardService;
 
+  /*
+  게시글 입력
+   */
   @PostMapping("/board")
   public CreateBoard.Response creatBoard(@RequestBody @Valid CreateBoard.Request request) {
 
@@ -35,6 +40,18 @@ public class BoardController {
     );
   }
 
+  /*
+  게시글 읽기
+   */
+  @GetMapping("/board/{boardId}")
+  public void ReadBoard(@PathVariable String boardId) {
+    boardService.readBoard();
+  }
+
+
+  /*
+  게시글 삭제
+   */
   @DeleteMapping("/board")
   public DeleteBoard.Response deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
     BoardDto boardDto = boardService.deleteBoard(request.getBoardId(), request.getPassword());

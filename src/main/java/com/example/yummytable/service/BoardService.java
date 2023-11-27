@@ -44,6 +44,11 @@ public class BoardService {
     );
   }
 
+  // 게시글 읽기
+  public void readBoard(Long boardId) {
+
+  }
+
   // 게시글 삭제
   public BoardDto deleteBoard(Long boardId, String password) {
     Board board = getBoard(boardId);

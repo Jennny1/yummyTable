@@ -3,6 +3,8 @@ package com.example.yummytable.domain;
 import com.example.yummytable.type.BoardStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
@@ -31,6 +33,7 @@ public class Board {
   private String title;
   private String content;
   private String password;
+  @Enumerated(EnumType.STRING)
   private BoardStatus boardStatus;
 
   @CreatedDate
