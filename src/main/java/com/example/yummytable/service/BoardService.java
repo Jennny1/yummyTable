@@ -54,9 +54,8 @@ public class BoardService {
       throw new BoardException(BOARD_NOT_FOUND);
     }
 
-    // board 가져오기
-
-    return null;
+    // board 넘기기
+    return BoardDto.formEntity(board);
   }
 
 

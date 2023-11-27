@@ -1,5 +1,6 @@
 package com.example.yummytable.controller;
 
+import com.example.yummytable.dto.BoardDto;
 import com.example.yummytable.dto.CreateBoard;
 import com.example.yummytable.dto.DeleteBoard;
 import com.example.yummytable.dto.ReadBoard;
@@ -44,10 +45,11 @@ public class BoardController {
   게시글 읽기
    */
   @GetMapping("/board/{boardId}")
-  public ReadBoard.Response getBoard(@PathVariable ReadBoard.Request request) {
-    ;
+  public ReadBoard.Response getBoard(@PathVariable Long boardId) {
 
-    return ReadBoard.Response.from(boardService.getBoard(request.getBoardId()));
+    BoardDto board = boardService.getBoard(boardId);
+
+    return ReadBoard.Response.from(board);
   }
 
 
