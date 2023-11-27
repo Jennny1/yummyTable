@@ -148,7 +148,6 @@ public class BoardService {
 
     Board board = boardRepository.findByBoardId(boardId)
         .orElseThrow(() -> new BoardException(BOARD_NOT_FOUND));
-
     return board;
   }
 
