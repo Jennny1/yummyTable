@@ -45,8 +45,16 @@ public class BoardService {
   }
 
   // 게시글 읽기
-  public BoardDto readBoard(Long boardId) {
+  public BoardDto getBoard(Long boardId) {
+    // boardId 확인
+    Board board = validBoardId(boardId);
 
+    // BoardStatus 확인
+    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
+      throw new BoardException(BOARD_NOT_FOUND);
+    }
+
+    // board 가져오기
 
     return null;
   }

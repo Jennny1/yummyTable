@@ -3,7 +3,6 @@ package com.example.yummytable.controller;
 import com.example.yummytable.dto.CreateBoard;
 import com.example.yummytable.dto.DeleteBoard;
 import com.example.yummytable.dto.ReadBoard;
-import com.example.yummytable.dto.ReadBoard.Response;
 import com.example.yummytable.service.BoardService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -45,10 +44,10 @@ public class BoardController {
   게시글 읽기
    */
   @GetMapping("/board/{boardId}")
-  public ReadBoard.Response ReadBoard(@PathVariable ReadBoard.Request request) {
+  public ReadBoard.Response getBoard(@PathVariable ReadBoard.Request request) {
     ;
 
-    return ReadBoard.Response.from(boardService.readBoard(request.getBoardId()));
+    return ReadBoard.Response.from(boardService.getBoard(request.getBoardId()));
   }
 
 

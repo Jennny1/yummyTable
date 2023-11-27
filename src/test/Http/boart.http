@@ -22,3 +22,8 @@ Content-Type: application/json
   "boardId": 1,
   "password": "pass1234"
 }
+
+
+### get board
+GET http://localhost:8080/board/1
+Content-Type: application/json
