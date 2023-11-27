@@ -25,14 +25,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 public class Booking {
 
-  // 게시글 관련 정보
   @Id
   @GeneratedValue
   private Long booingId;
   private Long accept;
 
-  @CreatedDate
-  private LocalDate createdAt;
-  @LastModifiedDate
-  private LocalDate updatedAt;
 }
