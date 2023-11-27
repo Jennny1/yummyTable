@@ -59,6 +59,65 @@ public class BoardService {
   }
 
 
+  // 게시글 수정
+  public BoardDto updateBoard(Long boardId, String title, String content, String password,
+      BoardStatus boardStatus, String storeName, String keyword,
+      Double locationX, Double locationY, String menu, int capacity) {
+
+    // boardId 확인
+    Board board = validBoardId(boardId);
+
+    // BoardStatus 확인
+    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
+      throw new BoardException(BOARD_NOT_FOUND);
+    }
+
+    // 비밀번호 확인
+    if (!board.getPassword().equals(password)) {
+      throw new BoardException(PASSWORD_NOT_MATCH);
+    }
+
+    // 수정 반영
+    if (!board.getTitle().equals(title)) {
+      board.setTitle(title);
+    }
+
+    if (!board.getContent().equals(content)) {
+      board.setContent(content);
+    }
+
+    if (!board.getStoreName().equals(storeName)) {
+      board.setStoreName(storeName);
+    }
+
+    if (!board.getKeyword().equals(keyword)) {
+      board.setKeyword(keyword);
+    }
+
+    if (!board.getLocationX().equals(locationX)) {
+      board.setLocationX(locationX);
+    }
+
+    if (!board.getLocationY().equals(locationY)) {
+      board.setLocationY(locationY);
+    }
+
+    if (!board.getMenu().equals(menu)) {
+      board.setMenu(menu);
+    }
+
+    if (board.getCapacity() != capacity) {
+      board.setCapacity(capacity);
+    }
+
+    board.setUpdatedAt(LocalDateTime.now());
+
+    // 저장
+    boardRepository.save(board);
+    return BoardDto.formEntity(board);
+  }
+
+
   // 게시글 삭제
   public BoardDto deleteBoard(Long boardId, String password) {
     // boardId 확인
@@ -81,15 +140,17 @@ public class BoardService {
 
     // 저장
     boardRepository.save(board);
-
     return BoardDto.formEntity(board);
-
   }
+
 
   private Board validBoardId(Long boardId) {
 
     Board board = boardRepository.findByBoardId(boardId)
         .orElseThrow(() -> new BoardException(BOARD_NOT_FOUND));
+
     return board;
   }
+
+
 }
