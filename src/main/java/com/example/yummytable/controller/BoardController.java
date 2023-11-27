@@ -1,8 +1,9 @@
 package com.example.yummytable.controller;
 
-import com.example.yummytable.dto.BoardDto;
 import com.example.yummytable.dto.CreateBoard;
 import com.example.yummytable.dto.DeleteBoard;
+import com.example.yummytable.dto.ReadBoard;
+import com.example.yummytable.dto.ReadBoard.Response;
 import com.example.yummytable.service.BoardService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -44,8 +45,10 @@ public class BoardController {
   게시글 읽기
    */
   @GetMapping("/board/{boardId}")
-  public void ReadBoard(@PathVariable String boardId) {
-    boardService.readBoard();
+  public ReadBoard.Response ReadBoard(@PathVariable ReadBoard.Request request) {
+    ;
+
+    return ReadBoard.Response.from(boardService.readBoard(request.getBoardId()));
   }
 
 
@@ -54,8 +57,11 @@ public class BoardController {
    */
   @DeleteMapping("/board")
   public DeleteBoard.Response deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
-    BoardDto boardDto = boardService.deleteBoard(request.getBoardId(), request.getPassword());
 
-    return DeleteBoard.Response.from(boardDto);
+    return DeleteBoard.Response.from(
+        boardService.deleteBoard(
+            request.getBoardId(),
+            request.getPassword())
+    );
   }
 }

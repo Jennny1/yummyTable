@@ -45,13 +45,17 @@ public class BoardService {
   }
 
   // 게시글 읽기
-  public void readBoard(Long boardId) {
+  public BoardDto readBoard(Long boardId) {
 
+
+    return null;
   }
+
 
   // 게시글 삭제
   public BoardDto deleteBoard(Long boardId, String password) {
-    Board board = getBoard(boardId);
+    // boardId 확인
+    Board board = validBoardId(boardId);
 
     // password 확인
     if (!board.getPassword().equals(password)) {
@@ -75,8 +79,8 @@ public class BoardService {
 
   }
 
-  private Board getBoard(Long boardId) {
-    // boardId 확인
+  private Board validBoardId(Long boardId) {
+
     Board board = boardRepository.findByBoardId(boardId)
         .orElseThrow(() -> new BoardException(BOARD_NOT_FOUND));
     return board;
