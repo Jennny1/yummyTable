@@ -1,4 +1,14 @@
-### create board
+### create board1
+POST http://localhost:8080/board
+Content-Type: application/json
+
+{
+  "title": "맛집소개",
+  "content": "사당 삼겹살 맛집이에요",
+  "password" : "pass1234"
+}
+
+### create board2
 POST http://localhost:8080/board
 Content-Type: application/json
 

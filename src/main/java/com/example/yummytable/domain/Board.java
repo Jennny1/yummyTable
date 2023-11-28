@@ -50,9 +50,13 @@ public class Board {
   private LocalDateTime unregisteredAt;
 
   // 식당 관련 정보
-  @ManyToOne
-  @JoinColumn(name = "storeInfo")
-  private StoreInfo storeInfo;
+  private String storeName;
+  private String keyword;
+  private Double locationX;
+  private Double locationY;
+  private String menu;
+  private int capacity;
+
 
   // 예약정보
   @OneToMany
