@@ -8,8 +8,12 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,6 +30,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
+@Table(name = "board")
 public class Board {
 
   // 게시글 관련 정보
@@ -45,11 +50,13 @@ public class Board {
   private LocalDateTime unregisteredAt;
 
   // 식당 관련 정보
-  private String storeName;
-  private String keyword;
-  private Double locationX;
-  private Double locationY;
-  private String menu;
-  private int capacity;
+  @ManyToOne
+  @JoinColumn(name = "storeInfo")
+  private StoreInfo storeInfo;
+
+  // 예약정보
+  @OneToMany
+  @JoinColumn(name = "booking")
+  private List<Booking> booking;
 
 }

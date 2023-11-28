@@ -50,12 +50,12 @@ public class BoardDto {
         .password(board.getPassword())
         .boardStatus(board.getBoardStatus())
         .registeredAt(board.getRegisteredAt())
-        .storeName(board.getStoreName())
+/*        .storeName(board.getStoreName())
         .keyword(board.getKeyword())
         .locationX(board.getLocationX())
         .locationY(board.getLocationY())
         .menu(board.getMenu())
-        .capacity(board.getCapacity())
+        .capacity(board.getCapacity())*/
         .build();
   }
 }

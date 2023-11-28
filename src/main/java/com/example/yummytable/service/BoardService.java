@@ -34,12 +34,6 @@ public class BoardService {
                 .boardStatus(BoardStatus.EXISTENT)
                 .password(password)
                 .registeredAt(LocalDateTime.now())
-                .storeName(storeName)
-                .keyword(keyword)
-                .locationX(locationX)
-                .locationY(locationY)
-                .menu(menu)
-                .capacity(capacity)
                 .build())
     );
   }
@@ -85,7 +79,7 @@ public class BoardService {
     if (!board.getContent().equals(content)) {
       board.setContent(content);
     }
-
+/*
     if (!board.getStoreName().equals(storeName)) {
       board.setStoreName(storeName);
     }
@@ -108,7 +102,7 @@ public class BoardService {
 
     if (board.getCapacity() != capacity) {
       board.setCapacity(capacity);
-    }
+    }*/
 
     board.setUpdatedAt(LocalDateTime.now());
 
