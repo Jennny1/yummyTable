@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-  @ExceptionHandler(BoardException.class)
-  public ErrorResponse handleBoardException(BoardException e) {
+  @ExceptionHandler(yummyException.class)
+  public ErrorResponse handleBoardException(yummyException e) {
     log.error("{} is occurred.", e.getErrorCode());
     return new com.example.yummytable.dto.ErrorResponse(e.getErrorCode(), e.getErrorMessage());
   }

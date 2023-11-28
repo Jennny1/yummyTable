@@ -1,25 +1,53 @@
 package com.example.yummytable.service;
 
-import static com.example.yummytable.type.ErrorCode.BOARD_NOT_FOUND;
-import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
-
-import com.example.yummytable.domain.Board;
-import com.example.yummytable.dto.BoardDto;
+import com.example.yummytable.domain.Store;
+import com.example.yummytable.dto.StoreDto;
 import com.example.yummytable.exception.yummyException;
-import com.example.yummytable.repository.BoardRepository;
-import com.example.yummytable.type.BoardStatus;
+import com.example.yummytable.repository.StoreRepository;
+import com.example.yummytable.type.ErrorCode;
+import com.example.yummytable.type.StoreStatus;
 import jakarta.transaction.Transactional;
-import java.time.LocalDateTime;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class BoardService {
+public class StoreService {
 
-  private final BoardRepository boardRepository;
+  private final StoreRepository storeRepository;
 
+  // 상점 등록
+  public StoreDto creatdStore(long storeId, String storeName, String keyword, Double locationX,
+      Double locationY,
+      String menu, int capacity, int numberOfApplicants) {
+
+    // 이미 등록된 상점 검색
+    List<Store> storeNames = storeRepository.findAllByStoreName(storeName);
+
+    if (!storeNames.isEmpty()) {
+      throw new yummyException(ErrorCode.STORE_NAME_IS_ALREADY_EXIST);
+    }
+
+
+    return StoreDto.formEntity(
+        storeRepository.save(
+            Store.builder()
+                .storeId(storeId)
+                .storeName(storeName)
+                .keyword(keyword)
+                .locationX(locationX)
+                .locationY(locationY)
+                .menu(menu)
+                .storeStatus(StoreStatus.EXISTENT)
+                .capacity(capacity)
+                .numberOfApplicants(numberOfApplicants)
+                .build()));
+  }
+
+
+/*
   // 게시글 생성
   public BoardDto createBoard(Long boardId, String title, String content,
       String password, String storeName, String keyword, Double locationX, Double locationY,
@@ -51,7 +79,7 @@ public class BoardService {
 
     // BoardStatus 확인
     if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
-      throw new yummyException(BOARD_NOT_FOUND);
+      throw new BoardException(BOARD_NOT_FOUND);
     }
 
     // board 넘기기
@@ -69,12 +97,12 @@ public class BoardService {
 
     // BoardStatus 확인
     if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
-      throw new yummyException(BOARD_NOT_FOUND);
+      throw new BoardException(BOARD_NOT_FOUND);
     }
 
     // 비밀번호 확인
     if (!board.getPassword().equals(password)) {
-      throw new yummyException(PASSWORD_NOT_MATCH);
+      throw new BoardException(PASSWORD_NOT_MATCH);
     }
 
     // 수정 반영
@@ -125,12 +153,12 @@ public class BoardService {
 
     // password 확인
     if (!board.getPassword().equals(password)) {
-      throw new yummyException(PASSWORD_NOT_MATCH);
+      throw new BoardException(PASSWORD_NOT_MATCH);
     }
 
     // BoardStatus 확인
     if (board.getBoardStatus().equals(1)) {
-      throw new yummyException(BOARD_NOT_FOUND);
+      throw new BoardException(BOARD_NOT_FOUND);
     }
 
     // BoardStatus 변경
@@ -147,9 +175,9 @@ public class BoardService {
   private Board validBoardId(Long boardId) {
 
     Board board = boardRepository.findByBoardId(boardId)
-        .orElseThrow(() -> new yummyException(BOARD_NOT_FOUND));
+        .orElseThrow(() -> new BoardException(BOARD_NOT_FOUND));
     return board;
-  }
+  }*/
 
 
 }

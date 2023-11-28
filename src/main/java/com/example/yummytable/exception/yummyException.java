@@ -12,11 +12,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class BoardException extends RuntimeException {
+public class yummyException extends RuntimeException {
   private ErrorCode errorCode;
   private String errorMessage;
 
-  public BoardException(ErrorCode errorCode) {
+  public yummyException(ErrorCode errorCode) {
     this.errorCode = errorCode;
     this.errorMessage = errorCode.getDescription();
   }

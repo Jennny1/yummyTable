@@ -1,6 +1,6 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.type.BoardStatus;
+import com.example.yummytable.type.StoreStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
@@ -28,18 +28,26 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "board")
+@Table(name = "store")
 public class Store {
 
-  // 게시글 관련 정보
+  // 식당 관련 정보
   @Id
   @GeneratedValue
-  private Long boardId;
-  private String title;
-  private String content;
-  private String password;
+  private long storeId;
+  private String storeName;
+  private String keyword;
+
+  private Double locationX;
+  private Double locationY;
+
+  private String menu;
   @Enumerated(EnumType.STRING)
-  private BoardStatus boardStatus;
+  private StoreStatus storeStatus;
+
+  private int capacity;
+  private int numberOfApplicants;
+
 
   @CreatedDate
   private LocalDateTime registeredAt;
@@ -47,18 +55,9 @@ public class Store {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
-  // 식당 관련 정보
-  private String storeName;
-  private String keyword;
-  private Double locationX;
-  private Double locationY;
-  private String menu;
-  private int capacity;
-
-
   // 예약정보
   @OneToMany
-  @JoinColumn(name = "booking")
+  @JoinColumn(name = "storeID")
   private List<Booking> booking;
 
 }
