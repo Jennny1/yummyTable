@@ -1,15 +1,11 @@
 
-### create store
-POST http://localhost:8080/store
+### create booking
+POST http://localhost:8080/booking/1/1
 Content-Type: application/json
 
 {
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
+  "bookingDate": "2023-11-28",
+  "numberOfApplicants": 1
 }
 
 

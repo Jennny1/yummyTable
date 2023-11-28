@@ -8,6 +8,7 @@ import lombok.Getter;
 public enum ErrorCode {
   PASSWORD_NOT_MATCH("패스워드가 일치하지 않습니다."),
   STORE_NAME_IS_ALREADY_EXIST("상점이름이 이미 존재합니다."),
+  STORE_IS_NOT_EXIST("상점이 존재하지 않습니다."),
   BOARD_NOT_FOUND("게시글이 없습니다.");
   private String description;
 

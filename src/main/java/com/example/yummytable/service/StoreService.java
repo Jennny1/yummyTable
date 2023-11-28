@@ -7,6 +7,7 @@ import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.StoreStatus;
 import jakarta.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class StoreService {
       Double locationY,
       String menu, int capacity, int numberOfApplicants) {
 
-    // 이미 등록된 상점 검색
+    // 상점 이름 검색
     List<Store> storeNames = storeRepository.findAllByStoreName(storeName);
 
     if (!storeNames.isEmpty()) {
@@ -43,6 +44,7 @@ public class StoreService {
                 .storeStatus(StoreStatus.EXISTENT)
                 .capacity(capacity)
                 .numberOfApplicants(numberOfApplicants)
+                .registeredAt(LocalDateTime.now())
                 .build()));
   }
 
