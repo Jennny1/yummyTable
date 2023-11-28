@@ -22,17 +22,17 @@ public class BookingService {
 
 
   // 예약 등록
-  public BookingDto createBooking(Long bokingId, Long storeID, LocalDate bookingDate,
+  public BookingDto createBooking(Long bookingId, Long storeId, LocalDate bookingDate,
       int numberOfApplicants) {
 
     // 가게 등록 확인
-    storeRepository.findAllByStoreId(storeID).orElseThrow(() -> new yummyException(
+    storeRepository.findByStoreId(storeId).orElseThrow(() -> new yummyException(
         ErrorCode.STORE_IS_NOT_EXIST));
 
     return BookingDto.formEntity(bookingRepository.save(
         Booking.builder()
-            .bookingId(bokingId)
-            .storeID(storeID)
+            .bookingId(bookingId)
+            .storeId(storeId)
             .registeredAt(LocalDateTime.now())
             .bookingDate(bookingDate)
             .numberOfApplicants(numberOfApplicants)

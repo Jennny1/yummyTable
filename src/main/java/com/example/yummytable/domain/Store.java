@@ -57,7 +57,7 @@ public class Store {
 
   // 예약정보
   @OneToMany
-  @JoinColumn(name = "storeID")
+  @JoinColumn(name = "storeId")
   private List<Booking> booking;
 
 }

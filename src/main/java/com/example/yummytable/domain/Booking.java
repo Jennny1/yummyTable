@@ -29,7 +29,7 @@ public class Booking {
   @Id
   @GeneratedValue
   private Long bookingId;
-  private Long storeID;
+  private Long storeId;
   private LocalDate bookingDate;
   private int numberOfApplicants;
 

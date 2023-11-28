@@ -1,6 +1,6 @@
 
 ### create booking
-POST http://localhost:8080/booking/1/1
+POST http://localhost:8080/booking?bookingId=1&storeId=1
 Content-Type: application/json
 
 {

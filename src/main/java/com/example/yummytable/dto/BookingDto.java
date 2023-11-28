@@ -22,8 +22,8 @@ public class BookingDto {
 
   @Id
   @GeneratedValue
-  private Long bokingId;
-  private Long storeID;
+  private Long bookingId;
+  private Long storeId;
   private LocalDate bookingDate;
   private int numberOfApplicants;
 
@@ -35,7 +35,7 @@ public class BookingDto {
 
   public static BookingDto formEntity(Booking booking) {
     return BookingDto.builder()
-        .bokingId(booking.getBookingId())
+        .bookingId(booking.getBookingId())
         .build();
   }
 }

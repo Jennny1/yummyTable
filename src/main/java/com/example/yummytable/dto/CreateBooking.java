@@ -36,8 +36,8 @@ public class CreateBooking {
   @Builder
   public static class Response {
 
-    private Long bokingId;
-    private Long storeID;
+    private Long bookingId;
+    private Long storeId;
     private LocalDate bookingDate;
     private int numberOfApplicants;
 
@@ -49,8 +49,8 @@ public class CreateBooking {
 
     public static Response from(BookingDto bookingDto) {
       return Response.builder()
-          .bokingId(bookingDto.getBokingId())
-          .storeID(bookingDto.getStoreID())
+          .bookingId(bookingDto.getBookingId())
+          .storeId(bookingDto.getStoreId())
           .bookingDate(bookingDto.getBookingDate())
           .registeredAt(bookingDto.getRegisteredAt())
           .build();

@@ -9,6 +9,5 @@ public interface StoreRepository extends JpaRepository<Store, Long> {
 
   List<Store> findAllByStoreName(String storeName);
 
-
-  Optional<Store> findAllByStoreId(Long storeID);
+  Optional<Store> findByStoreId(Long storeId);
 }
