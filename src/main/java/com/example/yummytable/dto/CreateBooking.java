@@ -1,5 +1,6 @@
 package com.example.yummytable.dto;
 
+import jakarta.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -21,8 +22,8 @@ public class CreateBooking {
   @Builder
   public static class Request {
 
-    @NotNull
-    private LocalDate bookingDate;
+    @Pattern(regexp = "\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])", message = "yyyy-MM-dd 형태로 입력해주세요")
+    private String bookingDate;
     @NotNull
     private int numberOfApplicants;
 
@@ -37,9 +38,13 @@ public class CreateBooking {
   public static class Response {
 
     private Long bookingId;
+
     private Long storeId;
-    private LocalDate bookingDate;
+
     private int numberOfApplicants;
+
+
+    private String bookingDate;
 
     @CreatedDate
     private LocalDateTime registeredAt;

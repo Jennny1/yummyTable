@@ -24,7 +24,7 @@ public class BookingDto {
   @GeneratedValue
   private Long bookingId;
   private Long storeId;
-  private LocalDate bookingDate;
+  private String bookingDate;
   private int numberOfApplicants;
 
   @CreatedDate

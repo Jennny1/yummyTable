@@ -56,8 +56,7 @@ public class Store {
   private LocalDateTime unregisteredAt;
 
   // 예약정보
-  @OneToMany
-  @JoinColumn(name = "storeId")
-  private List<Booking> booking;
+  @OneToMany(mappedBy = "store")
+  private List<Booking> bookings;
 
 }

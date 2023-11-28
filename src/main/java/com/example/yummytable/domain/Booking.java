@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -23,14 +25,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "booking")
+/*@Table(name = "booking")*/
 public class Booking {
 
   @Id
   @GeneratedValue
   private Long bookingId;
-  private Long storeId;
-  private LocalDate bookingDate;
+  private String bookingDate;
   private int numberOfApplicants;
 
   @CreatedDate
@@ -38,5 +39,10 @@ public class Booking {
   @LastModifiedDate
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
+
+  @ManyToOne
+  @JoinColumn(name = "storeId")
+  private Store store;
+
 
 }

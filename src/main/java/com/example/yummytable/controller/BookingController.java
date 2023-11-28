@@ -3,6 +3,7 @@ package com.example.yummytable.controller;
 import com.example.yummytable.dto.CreateBooking;
 import com.example.yummytable.service.BookingService;
 import jakarta.validation.Valid;
+import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
