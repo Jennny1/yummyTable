@@ -4,8 +4,8 @@ POST http://localhost:8080/booking?storeId=1
 Content-Type: application/json
 
 {
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
 }
 
 

@@ -1,9 +1,9 @@
 package com.example.yummytable.dto;
 
 import com.example.yummytable.domain.Booking;
+import com.example.yummytable.domain.Store;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,12 +23,11 @@ public class BookingDto {
   @Id
   @GeneratedValue
   private Long bookingId;
-  @Id
-  @GeneratedValue
-  private Long storeId;
+  private Store store;
 
-  private String bookingDate;
+  private int capacity;
   private int numberOfApplicants;
+  private String bookingDate;
 
   @CreatedDate
   private LocalDateTime registeredAt;
@@ -38,6 +37,17 @@ public class BookingDto {
 
   public static BookingDto formEntity(Booking booking) {
     return BookingDto.builder()
+        .store(Store.builder()
+            .storeId(booking.getStore().getStoreId())
+            .capacity(booking.getStore().getCapacity())
+            .build())
+        .bookingId(booking.getBookingId())
+        .capacity(booking.getStore().getCapacity())
+        .numberOfApplicants(booking.getNumberOfApplicants())
+        .bookingDate(booking.getBookingDate())
+        .registeredAt(booking.getRegisteredAt())
+        .updatedAt(booking.getUpdatedAt())
+        .unregisteredAt(booking.getUnregisteredAt())
         .build();
   }
 }

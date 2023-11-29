@@ -34,8 +34,6 @@ public class StoreDto {
 
   @NotNull
   private int capacity;
-  @NotNull
-  private int numberOfApplicants;
 
   private LocalDateTime registeredAt;
   private LocalDateTime updatedAt;
@@ -51,7 +49,6 @@ public class StoreDto {
         .locationY(store.getLocationY())
         .menu(store.getMenu())
         .capacity(store.getCapacity())
-        .numberOfApplicants(store.getNumberOfApplicants())
         .registeredAt(store.getRegisteredAt())
         .updatedAt(store.getUpdatedAt())
         .unregisteredAt(store.getUnregisteredAt())

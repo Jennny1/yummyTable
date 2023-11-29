@@ -64,7 +64,6 @@ public class CreateStore {
     private StoreStatus storeStatus;
 
     private int capacity;
-    private int numberOfApplicants;
 
     private LocalDateTime registeredAt;
     private LocalDateTime updatedAt;
@@ -81,7 +80,6 @@ public class CreateStore {
           .locationY(storeDto.getLocationY())
           .menu(storeDto.getMenu())
           .capacity(storeDto.getCapacity())
-          .numberOfApplicants(0)
           .registeredAt(storeDto.getRegisteredAt())
           .updatedAt(storeDto.getUpdatedAt())
           .unregisteredAt(storeDto.getUnregisteredAt())

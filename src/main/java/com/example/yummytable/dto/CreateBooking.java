@@ -38,11 +38,10 @@ public class CreateBooking {
   public static class Response {
 
     private Long bookingId;
-
     private Long storeId;
 
+    private int capacity;
     private int numberOfApplicants;
-
 
     private String bookingDate;
 
@@ -55,9 +54,13 @@ public class CreateBooking {
     public static Response from(BookingDto bookingDto) {
       return Response.builder()
           .bookingId(bookingDto.getBookingId())
-          .storeId(bookingDto.getStoreId())
+          .storeId(bookingDto.getStore().getStoreId())
+          .capacity(bookingDto.getStore().getCapacity())
+          .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(bookingDto.getBookingDate())
           .registeredAt(bookingDto.getRegisteredAt())
+          .updatedAt(bookingDto.getUpdatedAt())
+          .unregisteredAt(bookingDto.getUnregisteredAt())
           .build();
     }
   }
