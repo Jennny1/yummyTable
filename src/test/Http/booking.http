@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
   "bookingDate": "2023-12-03",
-  "numberOfApplicants": 2
+  "numberOfApplicants": 1
 }
 
 

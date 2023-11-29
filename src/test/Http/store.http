@@ -9,7 +9,7 @@ Content-Type: application/json
   "locationX": 123.12,
   "locationY": 238.44,
   "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "4"
+  "capacity": "5"
 }
 
 

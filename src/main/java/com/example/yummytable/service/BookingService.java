@@ -43,10 +43,13 @@ public class BookingService {
     // 예약 인원 확인
     List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDate);
 
-    if (!bookings.isEmpty()) {
+    System.out.println();
+
+    if (bookings.size() != 0) {
       int sumNumberOfApplicants = sumNumberOfApplicants(storeId, bookings);
 
-      if (sumNumberOfApplicants >= store.getCapacity()) {
+      if (sumNumberOfApplicants >= store.getCapacity() ||
+          store.getCapacity() - sumNumberOfApplicants < numberOfApplicants) {
         throw new yummyException(ErrorCode.END_OF_BOOKING);
       }
     }
@@ -66,7 +69,7 @@ public class BookingService {
     int sum = 0;
     for(Booking book : bookings) {
       if (book.getStore().getStoreId() == storeId) {
-        sum += book.getStore().getNumberOfApplicants();
+        sum += book.getNumberOfApplicants();
       }
     }
     return sum;
