@@ -23,10 +23,11 @@ public class BookingDto {
   @Id
   @GeneratedValue
   private Long bookingId;
-  private Store store;
 
-  private int capacity;
+  private Store storeId;
+  private Store capacity;
   private int numberOfApplicants;
+
   private String bookingDate;
 
   @CreatedDate
@@ -37,12 +38,9 @@ public class BookingDto {
 
   public static BookingDto formEntity(Booking booking) {
     return BookingDto.builder()
-        .store(Store.builder()
-            .storeId(booking.getStore().getStoreId())
-            .capacity(booking.getStore().getCapacity())
-            .build())
+        .storeId(Store.builder().storeId(booking.getStore().getStoreId()).build())
         .bookingId(booking.getBookingId())
-        .capacity(booking.getStore().getCapacity())
+        .capacity(Store.builder().capacity(booking.getStore().getCapacity()).build())
         .numberOfApplicants(booking.getNumberOfApplicants())
         .bookingDate(booking.getBookingDate())
         .registeredAt(booking.getRegisteredAt())

@@ -44,7 +44,7 @@ public class BookingService {
     List<Booking> bookings = bookingRepository.findAllByStoreId(store.getStoreId());
 */
 
-    System.out.println();
+    System.out.println("3이 나와랏 >> " + String.valueOf(store.getCapacity() - numberOfApplicants));
 
 
     return BookingDto.formEntity(bookingRepository.save(
