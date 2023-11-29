@@ -1,8 +1,6 @@
 package com.example.yummytable.dto;
 
-import com.example.yummytable.domain.Store;
 import jakarta.validation.constraints.Pattern;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,8 +37,9 @@ public class CreateBooking {
   public static class Response {
 
     private Long bookingId;
-    private Store storeId;
-    private Store capacity;
+    private Long storeId;
+
+    private int capacity;
     private int numberOfApplicants;
 
     private String bookingDate;
@@ -51,11 +50,12 @@ public class CreateBooking {
     private LocalDateTime updatedAt;
     private LocalDateTime unregisteredAt;
 
+
     public static Response from(BookingDto bookingDto) {
       return Response.builder()
           .bookingId(bookingDto.getBookingId())
-/*          .storeId(Store.builder().storeId(bookingDto.).build())
-          .capacity(bookingDto.getStore().getCapacity())*/
+          .storeId(bookingDto.getStoreId())
+          .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(bookingDto.getBookingDate())
           .registeredAt(bookingDto.getRegisteredAt())

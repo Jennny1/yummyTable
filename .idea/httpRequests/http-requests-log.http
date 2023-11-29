@@ -10,6 +10,758 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "numberOfApplicants": 2
 }
 
+<> 2023-11-29T164930.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T164907.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T164848.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T164844.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "4"
+}
+
+<> 2023-11-29T164818.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T164710.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T164657.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T164644.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "4"
+}
+
+<> 2023-11-29T164637.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T162310.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T162222.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T161659.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T161630.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T160930.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T160905.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T160817.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T160801.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T160651.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T160615.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T160609.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T160319.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T160315.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T160241-1.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T160241.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T160152.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T154911.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T154516.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T154319.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T153941.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T153107.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T152445.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T145920.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T145821.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T145747.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T144758.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T144730.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T144625.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T144521.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T144425.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T143947.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
+<> 2023-11-29T142434.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 169
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": "5"
+}
+
+<> 2023-11-29T142425.200.json
+
+###
+
+POST http://localhost:8080/booking?storeId=1
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 2
+}
+
 <> 2023-11-29T142131.200.json
 
 ###
@@ -139,738 +891,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-11-29T141428.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 169
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "5"
-}
-
-<> 2023-11-29T134337.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-03",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T134217.500.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 169
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "5"
-}
-
-<> 2023-11-29T133933.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 169
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "5"
-}
-
-<> 2023-11-29T133156.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 169
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "5"
-}
-
-<> 2023-11-29T131121.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=2
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-03",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T131107.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 169
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "5"
-}
-
-<> 2023-11-29T131103.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=2
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-03",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T130227.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=2
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T130206.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 169
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "5"
-}
-
-<> 2023-11-29T130129.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T125914.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T125841.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T125837.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T125317.500.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T125217.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T124718.500.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T124714.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T124051.500.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T124039.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T123418.500.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T122946.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T121523.500.json
-
-###
-
-DELETE http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 44
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "boardId": 1,
-  "password": "pass1234"
-}
-
-<> 2023-11-29T121515.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T121512.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T114545.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T114537.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T114532.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T113144.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-01",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T113014.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-12-1",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T113007.400.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T112933.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T112912.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T112908.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T112903.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T101800.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T101718.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 157
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "2"
-}
-
-<> 2023-11-29T101714.200.json
-
-###
-
-POST http://localhost:8080/booking?storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T101509.500.json
-
-###
-
-POST http://localhost:8080/booking?bookingId=1&storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 1
-}
-
-<> 2023-11-29T012209.200.json
-
-###
-
-POST http://localhost:8080/booking?bookingId=1&storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T012055.200.json
-
-###
-
-POST http://localhost:8080/booking?bookingId=1&storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T003243.200.json
-
-###
-
-POST http://localhost:8080/booking?bookingId=1&storeId=1
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "bookingDate": "2023-11-30",
-  "numberOfApplicants": 2
-}
-
-<> 2023-11-29T003024.200.json
 
 ###
 

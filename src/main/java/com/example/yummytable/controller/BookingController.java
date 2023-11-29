@@ -21,7 +21,8 @@ public class BookingController {
       @RequestParam Long storeId,
       @RequestBody @Valid CreateBooking.Request request) {
 
-    return CreateBooking.Response.from(bookingService.createBooking(
+    return CreateBooking.Response.from(
+        bookingService.createBooking(
         storeId,
         request.getBookingDate(),
         request.getNumberOfApplicants())

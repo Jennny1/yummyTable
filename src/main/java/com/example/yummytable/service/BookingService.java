@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -39,22 +40,35 @@ public class BookingService {
       throw new yummyException(ErrorCode.DATE_IS_BEFORE);
     }
 
-    // 예약 인원 수 확인
-/*
-    List<Booking> bookings = bookingRepository.findAllByStoreId(store.getStoreId());
-*/
+    // 예약 인원 확인
+    List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDate);
 
-    System.out.println("3이 나와랏 >> " + String.valueOf(store.getCapacity() - numberOfApplicants));
+    if (!bookings.isEmpty()) {
+      int sumNumberOfApplicants = sumNumberOfApplicants(storeId, bookings);
 
+      if (sumNumberOfApplicants >= store.getCapacity()) {
+        throw new yummyException(ErrorCode.END_OF_BOOKING);
+      }
+    }
 
     return BookingDto.formEntity(bookingRepository.save(
-        Booking.builder()
-            .store(Store.builder()
-                    .storeId(store.getStoreId())
-                    .capacity(store.getCapacity()).build())
+        Booking.builder().store(
+            Store.builder()
+                .storeId(store.getStoreId())
+                .capacity(store.getCapacity()).build())
             .registeredAt(LocalDateTime.now())
             .bookingDate(bookingDate)
             .numberOfApplicants(numberOfApplicants)
             .build()));
+  }
+
+  private int sumNumberOfApplicants(Long storeId, List<Booking> bookings) {
+    int sum = 0;
+    for(Booking book : bookings) {
+      if (book.getStore().getStoreId() == storeId) {
+        sum += book.getStore().getNumberOfApplicants();
+      }
+    }
+    return sum;
   }
 }
