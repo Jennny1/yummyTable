@@ -1,7 +1,10 @@
 package com.example.yummytable.domain;
 
+import com.example.yummytable.type.BookingStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -25,15 +28,21 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-/*@Table(name = "booking")*/
+@Table(name = "booking")
 public class Booking {
 
   @Id
   @GeneratedValue
   private long bookingId;
-
   private String bookingDate;
   private int numberOfApplicants;
+
+  @Enumerated(EnumType.STRING)
+  private BookingStatus bookingStatus;
+
+  @ManyToOne
+  @JoinColumn(name = "storeId")
+  private Store store;
 
   @CreatedDate
   private LocalDateTime registeredAt;
@@ -41,9 +50,6 @@ public class Booking {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
-  @ManyToOne
-  @JoinColumn(name = "storeId")
-  private Store store;
 
 
 }

@@ -9,13 +9,13 @@ Content-Type: application/json
 }
 
 
-### delete board
-DELETE http://localhost:8080/board
+### delete booking
+DELETE http://localhost:8080/booking?storeId=1&bookingId=2
 Content-Type: application/json
 
 {
-  "boardId": 1,
-  "password": "pass1234"
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 1
 }
 
 

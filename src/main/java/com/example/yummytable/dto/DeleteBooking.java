@@ -13,7 +13,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 
-public class CreateBooking {
+public class DeleteBooking {
 
   @Getter
   @Setter
@@ -60,7 +60,7 @@ public class CreateBooking {
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(bookingDto.getBookingDate())
-          .bookingStatus(BookingStatus.EXISTENT)
+          .bookingStatus(BookingStatus.DELETE)
           .registeredAt(bookingDto.getRegisteredAt())
           .updatedAt(bookingDto.getUpdatedAt())
           .unregisteredAt(bookingDto.getUnregisteredAt())

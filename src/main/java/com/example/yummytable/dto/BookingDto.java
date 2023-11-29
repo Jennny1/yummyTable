@@ -2,6 +2,7 @@ package com.example.yummytable.dto;
 
 import com.example.yummytable.domain.Booking;
 import com.example.yummytable.domain.Store;
+import com.example.yummytable.type.BookingStatus;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
@@ -24,10 +25,13 @@ public class BookingDto {
   @GeneratedValue
   private Long bookingId;
   private long storeId;
+
   private int capacity;
   private int numberOfApplicants;
 
   private String bookingDate;
+  private BookingStatus bookingStatus;
+
 
   @CreatedDate
   private LocalDateTime registeredAt;
@@ -39,11 +43,10 @@ public class BookingDto {
     return BookingDto.builder()
         .storeId(booking.getStore().getStoreId())
         .capacity(booking.getStore().getCapacity())
-/*        .storeId(Store.builder().storeId(booking.getStore().getStoreId()).build())
-        .capacity(Store.builder().capacity(booking.getStore().getCapacity()).build())*/
         .bookingId(booking.getBookingId())
         .numberOfApplicants(booking.getNumberOfApplicants())
         .bookingDate(booking.getBookingDate())
+        .bookingStatus(booking.getBookingStatus())
         .registeredAt(booking.getRegisteredAt())
         .updatedAt(booking.getUpdatedAt())
         .unregisteredAt(booking.getUnregisteredAt())
