@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -100,6 +101,53 @@ public class BookingService {
     throw new yummyException(ErrorCode.BOOKING_NOT_FOUND);
   }
 
+  /*예약 수정*/
+  public BookingDto updateBooking(
+      Long storeId, Long bookingId,
+      String bookingDate, int numberOfApplicants,
+      String newBookingDate, int newNumberOfApplicants) {
+
+    // 가게 등록 확인
+    Store store = getStore(storeId);
+
+    // 날짜 확인
+    extracted(bookingDate, formatter);
+
+    // 기존 예약 확인
+    Optional<Booking> booking = Optional.ofNullable(
+        bookingRepository.findByBookingIdAndBookingDate(bookingId,
+            bookingDate).orElseThrow(() -> new yummyException(ErrorCode.BOOKING_NOT_FOUND)));
+
+    // 예약 취소 상태 확인
+    if (booking.get().getBookingStatus() == BookingStatus.DELETE) {
+      throw new yummyException(ErrorCode.BOOKING_ALREADY_DELETE);
+    }
+
+    // 예약 인원 수정
+    if (newNumberOfApplicants != 0 && booking.get().getNumberOfApplicants() != newNumberOfApplicants) {
+      // 예약 가능상태 확인 (예약 신청자 합계)
+      List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDate);
+      int sumNumberOfApplicants = sumNumberOfApplicants(storeId, bookings);
+
+      if (sumNumberOfApplicants + newNumberOfApplicants > store.getCapacity()) {
+        throw new yummyException(ErrorCode.END_OF_BOOKING);
+      }
+
+      // 수정 반영
+      booking.get().setNumberOfApplicants(newNumberOfApplicants);
+      booking.get().setUpdatedAt(LocalDateTime.now());
+    }
+
+    // 예약 날짜 수정
+    if (!newBookingDate.equals("") || !booking.get().getBookingDate().equals(newBookingDate)) {
+      // 수정 반영
+      booking.get().setBookingDate(newBookingDate);
+      booking.get().setUpdatedAt(LocalDateTime.now());
+
+    }
+    return BookingDto.formEntity(bookingRepository.save(booking.get()));
+  }
+
 
   // 가게 등록 확인
   private Store getStore(Long storeId) {
@@ -127,4 +175,6 @@ public class BookingService {
     }
     return sum;
   }
+
+
 }

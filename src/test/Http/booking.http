@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
   "bookingDate": "2023-12-03",
-  "numberOfApplicants": 1
+  "numberOfApplicants": 3
 }
 
 
@@ -24,18 +24,13 @@ GET http://localhost:8080/board/1
 Content-Type: application/json
 
 
-### update board
-PATCH http://localhost:8080/board/1
+### update booking
+PATCH http://localhost:8080/booking?storeId=1&bookingId=1
 Content-Type: application/json
 
 {
-  "title": "맛집소개___",
-  "content": "사당 삼겹살 맛집이에요___",
-  "password" : "pass1234",
-  "storeName": "논골___",
-  "keyword": "맛집___",
-  "locationX": 111,
-  "locationY": 119,
-  "menu": "",
-  "capacity": "1"
+  "bookingDate": "2023-12-03",
+  "numberOfApplicants": 1,
+  "newBookingDate": "2023-12-03",
+  "newNumberOfApplicants": 3
 }
