@@ -2,11 +2,16 @@ package com.example.yummytable.controller;
 
 import com.example.yummytable.dto.CreateBooking;
 import com.example.yummytable.dto.DeleteBooking;
+import com.example.yummytable.dto.ReadBooking;
+import com.example.yummytable.dto.ReadBooking.Response;
 import com.example.yummytable.dto.UpdateBooking;
 import com.example.yummytable.service.BookingService;
 import jakarta.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,6 +37,26 @@ public class BookingController {
             request.getNumberOfApplicants())
     );
   }
+
+
+  /*예약 보기*/
+  @GetMapping("/booking")
+  public List<Response> getBooking(
+      @RequestParam Long storeId,
+      @RequestBody @Valid ReadBooking.Request request) {
+
+    return bookingService.readBooking(storeId, request.getBookingDate()).stream()
+        .map(bookingDto -> ReadBooking.Response.builder()
+            .bookingId(bookingDto.getBookingId())
+            .storeId(bookingDto.getStoreId())
+            .capacity(bookingDto.getCapacity())
+            .numberOfApplicants(bookingDto.getNumberOfApplicants())
+            .bookingDate(bookingDto.getBookingDate())
+            .bookingStatus(bookingDto.getBookingStatus())
+            .registeredAt(bookingDto.getRegisteredAt())
+            .updatedAt(bookingDto.getUpdatedAt()).build()).collect(Collectors.toList());
+  }
+
 
   /*예약 삭제*/
   @DeleteMapping("/booking")
@@ -63,5 +88,6 @@ public class BookingController {
             request.getNewBookingDate(),
             request.getNewNumberOfApplicants()));
   }
-}
 
+
+}

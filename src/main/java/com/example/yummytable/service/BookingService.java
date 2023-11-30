@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -124,7 +125,8 @@ public class BookingService {
     }
 
     // 예약 인원 수정
-    if (newNumberOfApplicants != 0 && booking.get().getNumberOfApplicants() != newNumberOfApplicants) {
+    if (newNumberOfApplicants != 0
+        && booking.get().getNumberOfApplicants() != newNumberOfApplicants) {
       // 예약 가능상태 확인 (예약 신청자 합계)
       List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDate);
       int sumNumberOfApplicants = sumNumberOfApplicants(storeId, bookings);
@@ -148,6 +150,20 @@ public class BookingService {
     return BookingDto.formEntity(bookingRepository.save(booking.get()));
   }
 
+  /*예약 보기*/
+  public List<BookingDto> readBooking(Long storeId, String bookingDate) {
+    // 가게 등록 확인
+    Store store = getStore(storeId);
+
+    // 날짜 확인
+    extracted(bookingDate, formatter);
+
+    List<Booking> bookings =
+        bookingRepository.findAllByStoreStoreIdAndBookingDateAndBookingStatus(
+        storeId, bookingDate, BookingStatus.EXISTENT);
+
+    return bookings.stream().map(BookingDto::formEntity).collect(Collectors.toList());
+  }
 
   // 가게 등록 확인
   private Store getStore(Long storeId) {
