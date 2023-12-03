@@ -1,4 +1,4 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.store;
 
 import com.example.yummytable.domain.Store;
 import com.example.yummytable.type.StoreStatus;

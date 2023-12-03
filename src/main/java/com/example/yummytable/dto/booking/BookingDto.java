@@ -1,7 +1,6 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.booking;
 
 import com.example.yummytable.domain.Booking;
-import com.example.yummytable.domain.Store;
 import com.example.yummytable.type.BookingStatus;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

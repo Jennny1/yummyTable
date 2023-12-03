@@ -1,16 +1,17 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.board;
 
+import com.example.yummytable.dto.board.BoardDto;
 import com.example.yummytable.type.BoardStatus;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class ReadBoard {
+public class UpdateBoard {
 
   @Getter
   @Setter
@@ -19,11 +20,13 @@ public class ReadBoard {
   @Builder
   public static class Request {
 
-    // 게시글 관련 정보
-    @NotNull
-    private Long boardId;
-    @NotNull
+    private Long storeId;
+    private String title;
+    private String content;
+
+    @NotNull(message = "게시글 비밀번호를 입력하세요")
     private String password;
+    private BoardStatus boardStatus;
 
   }
 
@@ -42,15 +45,6 @@ public class ReadBoard {
     private LocalDateTime registeredAt;
 
 
-    // 식당 관련 정보
-    private String storeName;
-    private String keyword;
-    private Double locationX;
-    private Double locationY;
-    private String menu;
-    private int capacity;
-
-
     public static Response from(BoardDto boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
@@ -58,12 +52,6 @@ public class ReadBoard {
           .content(boardDto.getContent())
           .boardStatus(BoardStatus.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
-          .storeName(boardDto.getStoreName())
-          .keyword(boardDto.getKeyword())
-          .locationX(boardDto.getLocationX())
-          .locationY(boardDto.getLocationY())
-          .menu(boardDto.getMenu())
-          .capacity(boardDto.getCapacity())
           .build();
     }
   }

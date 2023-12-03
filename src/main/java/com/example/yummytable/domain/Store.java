@@ -55,8 +55,13 @@ public class Store {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
+
   // 예약정보
   @OneToMany(mappedBy = "store")
   private List<Booking> bookings;
+
+  // 게시글 정보
+  @OneToMany(mappedBy = "store")
+  private List<Board> boards;
 
 }

@@ -1,4 +1,4 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.board;
 
 import com.example.yummytable.type.BoardStatus;
 import java.time.LocalDateTime;
@@ -10,7 +10,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class DeleteBoard {
+public class CreateBoard {
 
   @Getter
   @Setter
@@ -19,9 +19,12 @@ public class DeleteBoard {
   @Builder
   public static class Request {
 
-    // 게시글 관련 정보
     @NotNull
-    private Long boardId;
+    private Long storeId;
+    @NotNull
+    private String title;
+    @NotNull
+    private String content;
     @NotNull
     private String password;
 
@@ -34,25 +37,23 @@ public class DeleteBoard {
   @Builder
   public static class Response {
 
-    // 게시글 관련 정보
     private Long boardId;
+    private Long storeId;
+
     private String title;
     private String content;
     private BoardStatus boardStatus;
-    private LocalDateTime registeredAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime unregisteredAt;
 
+    private LocalDateTime registeredAt;
 
     public static Response from(BoardDto boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
+          .storeId(boardDto.getStoreId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
-          .boardStatus(BoardStatus.DELETE)
+          .boardStatus(BoardStatus.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
-          .updatedAt(boardDto.getUpdatedAt())
-          .unregisteredAt(boardDto.getUnregisteredAt())
           .build();
     }
   }

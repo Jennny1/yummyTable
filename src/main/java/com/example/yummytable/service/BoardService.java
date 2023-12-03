@@ -4,12 +4,21 @@ import static com.example.yummytable.type.ErrorCode.BOARD_NOT_FOUND;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Board;
-import com.example.yummytable.dto.BoardDto;
+import com.example.yummytable.domain.Store;
+import com.example.yummytable.dto.board.BoardDto;
+import com.example.yummytable.dto.board.CreateBoard.Request;
+import com.example.yummytable.dto.board.DeleteBoard;
+import com.example.yummytable.dto.board.UpdateBoard;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
+import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.BoardStatus;
+import com.example.yummytable.type.ErrorCode;
+import com.example.yummytable.type.StoreStatus;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import java.time.LocalDateTime;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,119 +28,37 @@ import org.springframework.stereotype.Service;
 public class BoardService {
 
   private final BoardRepository boardRepository;
+  private final StoreRepository storeRepository;
 
-  // 게시글 생성
-  public BoardDto createBoard(Long boardId, String title, String content,
-      String password, String storeName, String keyword, Double locationX, Double locationY,
-      String menu, int capacity) {
+  /*
+  게시글 생성
+  - 상점 등록 선행 필수
+  */
+  public BoardDto createBoard(@Valid Request request) {
+
+    // 상점 존재 확인
+    Store store = storeRepository.findByStoreIdAndStoreStatus(request.getStoreId(),
+            StoreStatus.EXISTENT)
+        .orElseThrow(() -> new yummyException(ErrorCode.STORE_IS_NOT_EXIST));
 
     return BoardDto.formEntity(
         boardRepository.save(
             Board.builder()
-                .boardId(boardId)
-                .title(title)
-                .content(content)
+                .store(Store.builder()
+                    .storeId(store.getStoreId()).build())
+                .title(request.getTitle())
+                .content(request.getContent())
                 .boardStatus(BoardStatus.EXISTENT)
-                .password(password)
+                .password(request.getPassword())
                 .registeredAt(LocalDateTime.now())
-                .storeName(storeName)
-                .keyword(keyword)
-                .locationX(locationX)
-                .locationY(locationY)
-                .menu(menu)
-                .capacity(capacity)
                 .build())
     );
   }
 
-  // 게시글 읽기
-  public BoardDto getBoard(Long boardId) {
-    // boardId 확인
-    Board board = validBoardId(boardId);
 
-    // BoardStatus 확인
-    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
-      throw new yummyException(BOARD_NOT_FOUND);
-    }
-
-    // board 넘기기
-    return BoardDto.formEntity(board);
-  }
-
-
-  // 게시글 수정
-  public BoardDto updateBoard(Long boardId, String title, String content, String password,
-      BoardStatus boardStatus, String storeName, String keyword,
-      Double locationX, Double locationY, String menu, int capacity) {
-
-    // boardId 확인
-    Board board = validBoardId(boardId);
-
-    // BoardStatus 확인
-    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
-      throw new yummyException(BOARD_NOT_FOUND);
-    }
-
-    // 비밀번호 확인
-    if (!board.getPassword().equals(password)) {
-      throw new yummyException(PASSWORD_NOT_MATCH);
-    }
-
-    // 수정 반영
-    if (!board.getTitle().equals(title)) {
-      board.setTitle(title);
-    }
-
-    if (!board.getContent().equals(content)) {
-      board.setContent(content);
-    }
-
-    if (!board.getStoreName().equals(storeName)) {
-      board.setStoreName(storeName);
-    }
-
-    if (!board.getKeyword().equals(keyword)) {
-      board.setKeyword(keyword);
-    }
-
-    if (!board.getLocationX().equals(locationX)) {
-      board.setLocationX(locationX);
-    }
-
-    if (!board.getLocationY().equals(locationY)) {
-      board.setLocationY(locationY);
-    }
-
-    if (!board.getMenu().equals(menu)) {
-      board.setMenu(menu);
-    }
-
-    if (board.getCapacity() != capacity) {
-      board.setCapacity(capacity);
-    }
-
-    board.setUpdatedAt(LocalDateTime.now());
-
-    // 저장
-    boardRepository.save(board);
-    return BoardDto.formEntity(board);
-  }
-
-
-  // 게시글 삭제
-  public BoardDto deleteBoard(Long boardId, String password) {
-    // boardId 확인
-    Board board = validBoardId(boardId);
-
-    // password 확인
-    if (!board.getPassword().equals(password)) {
-      throw new yummyException(PASSWORD_NOT_MATCH);
-    }
-
-    // BoardStatus 확인
-    if (board.getBoardStatus().equals(1)) {
-      throw new yummyException(BOARD_NOT_FOUND);
-    }
+  /*게시글 삭제*/
+  public BoardDto deleteBoard(DeleteBoard.Request request) {
+    Board board = validBoardInfo(request.getBoardId(), request.getPassword());
 
     // BoardStatus 변경
     board.setBoardStatus(BoardStatus.DELETE);
@@ -143,12 +70,73 @@ public class BoardService {
   }
 
 
-  private Board validBoardId(Long boardId) {
+  /*게시글 수정*/
+  public BoardDto updateBoard(Long boardId, @Valid UpdateBoard.Request request) {
+    Optional<Store> store = storeRepository.findByStoreId(request.getStoreId());
 
+    Board board = validBoardInfo(boardId, request.getPassword());
+
+    // 수정 반영
+    if (request.getStoreId() != null && board.getStore().getStoreId() != request.getStoreId()) {
+      board.setStore(Store.builder().storeId(store.get().getStoreId()).build());
+    }
+
+    if (!request.getTitle().equals("") && !board.getTitle().equals(request.getTitle())) {
+      board.setTitle(request.getTitle());
+    }
+
+    if (!request.getContent().equals("") && !board.getContent().equals(request.getContent())) {
+      board.setContent(request.getContent());
+    }
+
+    if (!request.getPassword().equals("") && !board.getPassword().equals(request.getPassword())) {
+      board.setPassword(request.getPassword());
+    }
+
+    board.setUpdatedAt(LocalDateTime.now());
+
+    // 저장
+    boardRepository.save(board);
+    return BoardDto.formEntity(board);
+  }
+
+
+  /*게시글 읽기*/
+  public BoardDto getBoard(Long boardId) {
+    Board board = validBoardId(boardId);
+
+    // board 넘기기
+    return BoardDto.formEntity(board);
+  }
+
+
+  private Board validBoardId(Long boardId) {
+    // boardId 확인
     Board board = boardRepository.findByBoardId(boardId)
         .orElseThrow(() -> new yummyException(BOARD_NOT_FOUND));
+
+    // BoardStatus 확인
+    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
+      throw new yummyException(BOARD_NOT_FOUND);
+    }
     return board;
   }
 
 
+  private Board validBoardInfo (Long boardId, String password) {
+    // boardId 확인
+    Board board = boardRepository.findByBoardId(boardId)
+        .orElseThrow(() -> new yummyException(BOARD_NOT_FOUND));
+
+    // password 확인
+    if (!board.getPassword().equals(password)) {
+      throw new yummyException(PASSWORD_NOT_MATCH);
+    }
+
+    // BoardStatus 확인
+    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
+      throw new yummyException(BOARD_NOT_FOUND);
+    }
+    return board;
+  }
 }
