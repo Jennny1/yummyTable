@@ -2,6 +2,7 @@ package com.example.yummytable.dto;
 
 import com.example.yummytable.type.BookingStatus;
 import jakarta.validation.constraints.Pattern;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,7 +44,7 @@ public class CreateBooking {
     private int capacity;
     private int numberOfApplicants;
 
-    private String bookingDate;
+    private LocalDate bookingDate;
     private BookingStatus bookingStatus;
 
     @CreatedDate

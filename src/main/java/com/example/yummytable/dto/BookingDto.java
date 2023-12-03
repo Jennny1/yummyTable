@@ -5,6 +5,7 @@ import com.example.yummytable.domain.Store;
 import com.example.yummytable.type.BookingStatus;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,7 +30,7 @@ public class BookingDto {
   private int capacity;
   private int numberOfApplicants;
 
-  private String bookingDate;
+  private LocalDate bookingDate;
   private BookingStatus bookingStatus;
 
 

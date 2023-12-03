@@ -36,10 +36,10 @@ public class BookingService {
     Store store = getStore(storeId);
 
     // 날짜 확인
-    extracted(bookingDate, formatter);
+    LocalDate bookingDateFormatted = extracted(bookingDate, formatter);
 
     // 예약 인원 확인
-    List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDate);
+    List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDateFormatted);
 
     // 예약 인원 조절
     if (bookings.size() != 0) {
@@ -57,7 +57,7 @@ public class BookingService {
                     .storeId(store.getStoreId())
                     .capacity(store.getCapacity()).build())
             .registeredAt(LocalDateTime.now())
-            .bookingDate(bookingDate)
+            .bookingDate(LocalDate.parse(bookingDate))
             .bookingStatus(BookingStatus.EXISTENT)
             .numberOfApplicants(numberOfApplicants)
             .build()));
@@ -72,10 +72,10 @@ public class BookingService {
     Store store = getStore(storeId);
 
     // 날짜 확인
-    extracted(bookingDate, formatter);
+    LocalDate bookingDateFormatted = extracted(bookingDate, formatter);
 
     // 예약 인원 확인
-    List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDate);
+    List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDateFormatted);
 
     // 예약 번호 확인
     for (Booking book : bookings) {
@@ -112,12 +112,14 @@ public class BookingService {
     Store store = getStore(storeId);
 
     // 날짜 확인
-    extracted(bookingDate, formatter);
+    LocalDate bookingDateFormatted = extracted(bookingDate, formatter);
+    LocalDate newBookingDateFormatted = extracted(newBookingDate, formatter);
+
 
     // 기존 예약 확인
     Optional<Booking> booking = Optional.ofNullable(
         bookingRepository.findByBookingIdAndBookingDate(bookingId,
-            bookingDate).orElseThrow(() -> new yummyException(ErrorCode.BOOKING_NOT_FOUND)));
+            bookingDateFormatted).orElseThrow(() -> new yummyException(ErrorCode.BOOKING_NOT_FOUND)));
 
     // 예약 취소 상태 확인
     if (booking.get().getBookingStatus() == BookingStatus.DELETE) {
@@ -128,7 +130,7 @@ public class BookingService {
     if (newNumberOfApplicants != 0
         && booking.get().getNumberOfApplicants() != newNumberOfApplicants) {
       // 예약 가능상태 확인 (예약 신청자 합계)
-      List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDate);
+      List<Booking> bookings = bookingRepository.findAllByBookingDate(bookingDateFormatted);
       int sumNumberOfApplicants = sumNumberOfApplicants(storeId, bookings);
 
       if (sumNumberOfApplicants + newNumberOfApplicants > store.getCapacity()) {
@@ -141,9 +143,9 @@ public class BookingService {
     }
 
     // 예약 날짜 수정
-    if (!newBookingDate.equals("") || !booking.get().getBookingDate().equals(newBookingDate)) {
+    if (!newBookingDateFormatted.equals("") || !booking.get().getBookingDate().equals(newBookingDateFormatted)) {
       // 수정 반영
-      booking.get().setBookingDate(newBookingDate);
+      booking.get().setBookingDate(newBookingDateFormatted);
       booking.get().setUpdatedAt(LocalDateTime.now());
 
     }
@@ -156,11 +158,11 @@ public class BookingService {
     Store store = getStore(storeId);
 
     // 날짜 확인
-    extracted(bookingDate, formatter);
+    LocalDate bookingDateFormatted = extracted(bookingDate, formatter);
 
     List<Booking> bookings =
         bookingRepository.findAllByStoreStoreIdAndBookingDateAndBookingStatus(
-        storeId, bookingDate, BookingStatus.EXISTENT);
+        storeId, bookingDateFormatted, BookingStatus.EXISTENT);
 
     return bookings.stream().map(BookingDto::formEntity).collect(Collectors.toList());
   }
@@ -173,10 +175,12 @@ public class BookingService {
   }
 
   // 날짜 확인
-  private static void extracted(String bookingDate, DateTimeFormatter formatter) {
+  private static LocalDate extracted(String bookingDate, DateTimeFormatter formatter) {
     if (!LocalDate.now().isBefore(LocalDate.parse(bookingDate, formatter))) {
       throw new yummyException(ErrorCode.DATE_IS_BEFORE);
     }
+
+    return LocalDate.parse(bookingDate);
   }
 
 

@@ -47,8 +47,8 @@ public class BookingController {
 
     return bookingService.readBooking(storeId, request.getBookingDate()).stream()
         .map(bookingDto -> ReadBooking.Response.builder()
-            .bookingId(bookingDto.getBookingId())
             .storeId(bookingDto.getStoreId())
+            .bookingId(bookingDto.getBookingId())
             .capacity(bookingDto.getCapacity())
             .numberOfApplicants(bookingDto.getNumberOfApplicants())
             .bookingDate(bookingDto.getBookingDate())
@@ -88,6 +88,4 @@ public class BookingController {
             request.getNewBookingDate(),
             request.getNewNumberOfApplicants()));
   }
-
-
 }
