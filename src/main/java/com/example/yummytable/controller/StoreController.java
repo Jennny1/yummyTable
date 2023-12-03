@@ -2,10 +2,13 @@ package com.example.yummytable.controller;
 
 import com.example.yummytable.dto.CreateStore;
 import com.example.yummytable.dto.DeleteStore;
+import com.example.yummytable.dto.StoreDto;
+import com.example.yummytable.dto.UpdateStore;
 import com.example.yummytable.service.StoreService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,11 +43,12 @@ public class StoreController {
   }
 
   /*상점 수정*/
-  @PathVariable("/store/{storeId}")
-  public UpdateStore.Response updateStore(
-      @PathVariable Long storeId,
-      @RequestBody @Valid UpdateStore.Request request) {
+  @PatchMapping("/store")
+  public UpdateStore.Response updateStore(@RequestBody @Valid UpdateStore.Request request) {
 
+    StoreDto storeDto = storeService.updateStore(request);
+
+    return null;
   }
 
 
