@@ -22,6 +22,7 @@ public class BoardDto {
   @Id
   @GeneratedValue
   private Long boardId;
+  private Long storeId;
   private String title;
   private String content;
   private String password;

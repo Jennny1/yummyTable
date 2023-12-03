@@ -1,28 +1,14 @@
-### create board1
+### create board
 POST http://localhost:8080/board
 Content-Type: application/json
 
 {
+  "storeId": 1,
   "title": "맛집소개",
-  "content": "사당 삼겹살 맛집이에요",
+  "content": "사당 돈까스 맛집이에요",
   "password" : "pass1234"
 }
 
-### create board2
-POST http://localhost:8080/board
-Content-Type: application/json
-
-{
-  "title": "맛집소개",
-  "content": "사당 삼겹살 맛집이에요",
-  "password" : "pass1234",
-  "storeName": "논골",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": "20"
-}
 
 ### delete board
 DELETE http://localhost:8080/board
@@ -32,6 +18,7 @@ Content-Type: application/json
   "boardId": 1,
   "password": "pass1234"
 }
+
 
 
 ### get board
@@ -44,13 +31,7 @@ PATCH http://localhost:8080/board/1
 Content-Type: application/json
 
 {
-  "title": "맛집소개___",
-  "content": "사당 삼겹살 맛집이에요___",
-  "password" : "pass1234",
-  "storeName": "논골___",
-  "keyword": "맛집___",
-  "locationX": 111,
-  "locationY": 119,
-  "menu": "",
-  "capacity": "1"
+  "title": "돈까스 맛집 가여!!!!!",
+  "content": "쫀맛탱 돈까스",
+  "password": "pass1234"
 }

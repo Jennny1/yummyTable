@@ -1,6 +1,7 @@
 package com.example.yummytable.repository;
 
 import com.example.yummytable.domain.Store;
+import com.example.yummytable.type.StoreStatus;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,7 +13,8 @@ public interface StoreRepository extends JpaRepository<Store, Long> {
   Optional<Store> findByStoreId(Long storeId);
 
   List<Store> findAllByStoreId(long storeId);
-/*
-  List<Store> findAllByStoreIdAndStoreStatus(long storeId, StoreStatus);*/
+
+  Optional<Store> findByStoreIdAndStoreStatus(Long sotreId, StoreStatus storeStatus);
+
 
 }

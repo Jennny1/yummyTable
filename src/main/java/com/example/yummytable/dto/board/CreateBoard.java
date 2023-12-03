@@ -1,6 +1,5 @@
 package com.example.yummytable.dto.board;
 
-import com.example.yummytable.dto.board.BoardDto;
 import com.example.yummytable.type.BoardStatus;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -21,7 +20,7 @@ public class CreateBoard {
   public static class Request {
 
     @NotNull
-    private Long boardId;
+    private Long storeId;
     @NotNull
     private String title;
     @NotNull
@@ -38,16 +37,19 @@ public class CreateBoard {
   @Builder
   public static class Response {
 
-    // 게시글 관련 정보
     private Long boardId;
+    private Long storeId;
+
     private String title;
     private String content;
     private BoardStatus boardStatus;
+
     private LocalDateTime registeredAt;
 
     public static Response from(BoardDto boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
+          .storeId(boardDto.getStoreId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
           .boardStatus(BoardStatus.EXISTENT)

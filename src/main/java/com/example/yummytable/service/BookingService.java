@@ -52,10 +52,10 @@ public class BookingService {
     }
 
     return BookingDto.formEntity(bookingRepository.save(
-        Booking.builder().store(
-                Store.builder()
-                    .storeId(store.getStoreId())
-                    .capacity(store.getCapacity()).build())
+        Booking.builder()
+            .store(Store.builder()
+                .storeId(store.getStoreId())
+                .capacity(store.getCapacity()).build())
             .registeredAt(LocalDateTime.now())
             .bookingDate(LocalDate.parse(bookingDate))
             .bookingStatus(BookingStatus.EXISTENT)
@@ -115,11 +115,11 @@ public class BookingService {
     LocalDate bookingDateFormatted = extracted(bookingDate, formatter);
     LocalDate newBookingDateFormatted = extracted(newBookingDate, formatter);
 
-
     // 기존 예약 확인
     Optional<Booking> booking = Optional.ofNullable(
         bookingRepository.findByBookingIdAndBookingDate(bookingId,
-            bookingDateFormatted).orElseThrow(() -> new yummyException(ErrorCode.BOOKING_NOT_FOUND)));
+                bookingDateFormatted)
+            .orElseThrow(() -> new yummyException(ErrorCode.BOOKING_NOT_FOUND)));
 
     // 예약 취소 상태 확인
     if (booking.get().getBookingStatus() == BookingStatus.DELETE) {
@@ -143,7 +143,8 @@ public class BookingService {
     }
 
     // 예약 날짜 수정
-    if (!newBookingDateFormatted.equals("") || !booking.get().getBookingDate().equals(newBookingDateFormatted)) {
+    if (!newBookingDateFormatted.equals("") || !booking.get().getBookingDate()
+        .equals(newBookingDateFormatted)) {
       // 수정 반영
       booking.get().setBookingDate(newBookingDateFormatted);
       booking.get().setUpdatedAt(LocalDateTime.now());
@@ -162,7 +163,7 @@ public class BookingService {
 
     List<Booking> bookings =
         bookingRepository.findAllByStoreStoreIdAndBookingDateAndBookingStatus(
-        storeId, bookingDateFormatted, BookingStatus.EXISTENT);
+            storeId, bookingDateFormatted, BookingStatus.EXISTENT);
 
     return bookings.stream().map(BookingDto::formEntity).collect(Collectors.toList());
   }

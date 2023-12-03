@@ -1,6 +1,5 @@
 package com.example.yummytable.controller;
 
-import com.example.yummytable.dto.board.BoardDto;
 import com.example.yummytable.dto.board.CreateBoard;
 import com.example.yummytable.dto.board.DeleteBoard;
 import com.example.yummytable.dto.board.ReadBoard;
@@ -23,71 +22,38 @@ public class BoardController {
 
   private final BoardService boardService;
 
-  /*
-  게시글 입력
-   */
+  /*게시글 입력*/
   @PostMapping("/board")
   public CreateBoard.Response creatBoard(@RequestBody @Valid CreateBoard.Request request) {
 
-    return CreateBoard.Response.from(
-        boardService.createBoard(
-            request.getBoardId(),
-            request.getTitle(),
-            request.getContent(),
-            request.getPassword(),
-            request.getStoreName(),
-            request.getKeyword(),
-            request.getLocationX(),
-            request.getLocationY(),
-            request.getMenu(),
-            request.getCapacity())
+    return CreateBoard.Response.from(boardService.createBoard(request));
+  }
+
+
+  /*게시글 삭제*/
+  @DeleteMapping("/board")
+  public DeleteBoard.Response deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
+
+    return DeleteBoard.Response.from(
+        boardService.deleteBoard(request)
     );
   }
 
-  /*
-  게시글 읽기
-   */
-  @GetMapping("/board/{boardId}")
-  public ReadBoard.Response getBoard(@PathVariable Long boardId) {
 
-    BoardDto board = boardService.getBoard(boardId);
-
-    return ReadBoard.Response.from(board);
-  }
-
-  /*
-  게시글 수정
-   */
+  /*게시글 수정*/
   @PatchMapping("/board/{boardId}")
   public Response updateBoard(
       @PathVariable Long boardId,
       @RequestBody @Valid UpdateBoard.Request request) {
 
-    return UpdateBoard.Response.from(boardService.updateBoard(
-        boardId,
-        request.getTitle(),
-        request.getContent(),
-        request.getPassword(),
-        request.getBoardStatus(),
-        request.getStoreName(),
-        request.getKeyword(),
-        request.getLocationX(),
-        request.getLocationY(),
-        request.getMenu(),
-        request.getCapacity()));
+    return UpdateBoard.Response.from(boardService.updateBoard(boardId, request));
   }
 
 
-  /*
-  게시글 삭제
-   */
-  @DeleteMapping("/board")
-  public DeleteBoard.Response deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
+  /*게시글 읽기*/
+  @GetMapping("/board/{boardId}")
+  public ReadBoard.Response getBoard(@PathVariable Long boardId) {
 
-    return DeleteBoard.Response.from(
-        boardService.deleteBoard(
-            request.getBoardId(),
-            request.getPassword())
-    );
+    return ReadBoard.Response.from(boardService.getBoard(boardId));
   }
 }

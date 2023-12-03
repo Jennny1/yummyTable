@@ -20,7 +20,7 @@ public class UpdateBoard {
   @Builder
   public static class Request {
 
-    // 게시글 관련 정보
+    private Long storeId;
     private String title;
     private String content;
 
