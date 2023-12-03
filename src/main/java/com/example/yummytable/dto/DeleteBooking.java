@@ -59,7 +59,7 @@ public class DeleteBooking {
           .storeId(bookingDto.getStoreId())
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
-          .bookingDate(bookingDto.getBookingDate())
+          .bookingDate(String.valueOf(bookingDto.getBookingDate()))
           .bookingStatus(BookingStatus.DELETE)
           .registeredAt(bookingDto.getRegisteredAt())
           .updatedAt(bookingDto.getUpdatedAt())

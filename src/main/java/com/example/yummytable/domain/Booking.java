@@ -34,7 +34,7 @@ public class Booking {
   @Id
   @GeneratedValue
   private long bookingId;
-  private String bookingDate;
+  private LocalDate bookingDate;
   private int numberOfApplicants;
 
   @Enumerated(EnumType.STRING)

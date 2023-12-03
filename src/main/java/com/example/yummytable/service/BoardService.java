@@ -136,7 +136,6 @@ public class BoardService {
     // BoardStatus 변경
     board.setBoardStatus(BoardStatus.DELETE);
     board.setUnregisteredAt(LocalDateTime.now());
-    board.setUpdatedAt(LocalDateTime.now());
 
     // 저장
     boardRepository.save(board);

@@ -13,33 +13,27 @@ Content-Type: application/json
 }
 
 
-### delete board
-DELETE http://localhost:8080/board
+### delete store
+DELETE http://localhost:8080/store/1
 Content-Type: application/json
 
-{
-  "boardId": 1,
-  "password": "pass1234"
-}
 
 
-### get board
-GET http://localhost:8080/board/1
+### get store
+GET http://localhost:8080/store/1
 Content-Type: application/json
 
 
 ### update board
-PATCH http://localhost:8080/board/1
+PATCH http://localhost:8080/store
 Content-Type: application/json
 
 {
-  "title": "맛집소개___",
-  "content": "사당 삼겹살 맛집이에요___",
-  "password" : "pass1234",
-  "storeName": "논골___",
-  "keyword": "맛집___",
-  "locationX": 111,
-  "locationY": 119,
-  "menu": "",
-  "capacity": "1"
+  "storeId" : 1,
+  "storeName": "맛있다 돈까스 사당점",
+  "keyword": "맛집",
+  "locationX": 111.11,
+  "locationY": 222.22,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 10
 }
