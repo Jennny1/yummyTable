@@ -13,18 +13,14 @@ Content-Type: application/json
 }
 
 
-### delete board
-DELETE http://localhost:8080/board
+### delete store
+DELETE http://localhost:8080/store/1
 Content-Type: application/json
 
-{
-  "boardId": 1,
-  "password": "pass1234"
-}
 
 
-### get board
-GET http://localhost:8080/board/1
+### get store
+GET http://localhost:8080/store/1
 Content-Type: application/json
 
 
