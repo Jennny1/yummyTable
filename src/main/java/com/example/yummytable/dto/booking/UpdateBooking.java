@@ -1,6 +1,7 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.booking;
 
 import com.example.yummytable.type.BookingStatus;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,7 +15,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 
-public class CreateBooking {
+public class UpdateBooking {
 
   @Getter
   @Setter
@@ -23,10 +24,18 @@ public class CreateBooking {
   @Builder
   public static class Request {
 
+    @NotNull
     @Pattern(regexp = "\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])", message = "yyyy-MM-dd 형태로 입력해주세요")
     private String bookingDate;
-    @NotNull
+
+    @NotNull @Min(1)
     private int numberOfApplicants;
+
+    @Pattern(regexp = "\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])", message = "yyyy-MM-dd 형태로 입력해주세요")
+    private String newBookingDate;
+
+    @Min(0)
+    private int newNumberOfApplicants;
 
   }
 
@@ -37,7 +46,6 @@ public class CreateBooking {
   @AllArgsConstructor
   @Builder
   public static class Response {
-
     private Long bookingId;
     private Long storeId;
 

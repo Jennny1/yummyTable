@@ -49,18 +49,5 @@ public class Board {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
-  // 식당 관련 정보
-  private String storeName;
-  private String keyword;
-  private Double locationX;
-  private Double locationY;
-  private String menu;
-  private int capacity;
-
-
-  // 예약정보
-  @OneToMany
-  @JoinColumn(name = "booking")
-  private List<Booking> booking;
 
 }

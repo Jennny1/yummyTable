@@ -1,5 +1,6 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.board;
 
+import com.example.yummytable.dto.board.BoardDto;
 import com.example.yummytable.type.BoardStatus;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -27,13 +28,6 @@ public class UpdateBoard {
     private String password;
     private BoardStatus boardStatus;
 
-    // 식당 관련 정보
-    private String storeName;
-    private String keyword;
-    private Double locationX;
-    private Double locationY;
-    private String menu;
-    private int capacity;
   }
 
   @Getter
@@ -50,14 +44,6 @@ public class UpdateBoard {
     private BoardStatus boardStatus;
     private LocalDateTime registeredAt;
 
-    // 식당 관련 정보
-    private String storeName;
-    private String keyword;
-    private Double locationX;
-    private Double locationY;
-    private String menu;
-    private int capacity;
-
 
     public static Response from(BoardDto boardDto) {
       return Response.builder()
@@ -66,12 +52,6 @@ public class UpdateBoard {
           .content(boardDto.getContent())
           .boardStatus(BoardStatus.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
-          .storeName(boardDto.getStoreName())
-          .keyword(boardDto.getKeyword())
-          .locationX(boardDto.getLocationX())
-          .locationY(boardDto.getLocationY())
-          .menu(boardDto.getMenu())
-          .capacity(boardDto.getCapacity())
           .build();
     }
   }

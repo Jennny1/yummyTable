@@ -4,7 +4,7 @@ import static com.example.yummytable.type.ErrorCode.BOARD_NOT_FOUND;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Board;
-import com.example.yummytable.dto.BoardDto;
+import com.example.yummytable.dto.board.BoardDto;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.type.BoardStatus;

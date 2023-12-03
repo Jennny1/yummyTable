@@ -1,4 +1,4 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.store;
 
 import com.example.yummytable.type.StoreStatus;
 import java.time.LocalDateTime;
@@ -10,7 +10,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class DeleteStore {
+public class CreateStore {
 
   @Getter
   @Setter
@@ -21,6 +21,27 @@ public class DeleteStore {
 
     @NotNull
     private long storeId;
+    @NotNull
+    private String storeName;
+    @NotNull
+    private String keyword;
+
+    @NotNull
+    private Double locationX;
+    @NotNull
+    private Double locationY;
+
+    private String menu;
+    private StoreStatus storeStatus;
+
+    @NotNull
+    private int capacity;
+    @NotNull
+    private int numberOfApplicants;
+
+    private LocalDateTime registeredAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime unregisteredAt;
 
   }
 

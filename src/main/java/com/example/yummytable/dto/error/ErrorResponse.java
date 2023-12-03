@@ -1,4 +1,4 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.error;
 
 import com.example.yummytable.type.ErrorCode;
 import lombok.AllArgsConstructor;

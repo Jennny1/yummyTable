@@ -1,9 +1,9 @@
 package com.example.yummytable.controller;
 
-import com.example.yummytable.dto.CreateStore;
-import com.example.yummytable.dto.DeleteStore;
-import com.example.yummytable.dto.StoreDto;
-import com.example.yummytable.dto.UpdateStore;
+import com.example.yummytable.dto.store.CreateStore;
+import com.example.yummytable.dto.store.DeleteStore;
+import com.example.yummytable.dto.store.StoreDto;
+import com.example.yummytable.dto.store.UpdateStore;
 import com.example.yummytable.service.StoreService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

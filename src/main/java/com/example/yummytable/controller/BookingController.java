@@ -1,10 +1,10 @@
 package com.example.yummytable.controller;
 
-import com.example.yummytable.dto.CreateBooking;
-import com.example.yummytable.dto.DeleteBooking;
-import com.example.yummytable.dto.ReadBooking;
-import com.example.yummytable.dto.ReadBooking.Response;
-import com.example.yummytable.dto.UpdateBooking;
+import com.example.yummytable.dto.booking.CreateBooking;
+import com.example.yummytable.dto.booking.DeleteBooking;
+import com.example.yummytable.dto.booking.ReadBooking;
+import com.example.yummytable.dto.booking.ReadBooking.Response;
+import com.example.yummytable.dto.booking.UpdateBooking;
 import com.example.yummytable.service.BookingService;
 import jakarta.validation.Valid;
 import java.util.List;

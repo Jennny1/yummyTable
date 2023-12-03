@@ -1,8 +1,7 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.booking;
 
 import com.example.yummytable.type.BookingStatus;
 import jakarta.validation.constraints.Pattern;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +13,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 
-public class ReadBooking {
+public class DeleteBooking {
 
   @Getter
   @Setter
@@ -25,6 +24,8 @@ public class ReadBooking {
 
     @Pattern(regexp = "\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])", message = "yyyy-MM-dd 형태로 입력해주세요")
     private String bookingDate;
+    @NotNull
+    private int numberOfApplicants;
 
   }
 
@@ -42,7 +43,7 @@ public class ReadBooking {
     private int capacity;
     private int numberOfApplicants;
 
-    private LocalDate bookingDate;
+    private String bookingDate;
     private BookingStatus bookingStatus;
 
     @CreatedDate
@@ -58,8 +59,8 @@ public class ReadBooking {
           .storeId(bookingDto.getStoreId())
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
-          .bookingDate(bookingDto.getBookingDate())
-          .bookingStatus(BookingStatus.EXISTENT)
+          .bookingDate(String.valueOf(bookingDto.getBookingDate()))
+          .bookingStatus(BookingStatus.DELETE)
           .registeredAt(bookingDto.getRegisteredAt())
           .updatedAt(bookingDto.getUpdatedAt())
           .unregisteredAt(bookingDto.getUnregisteredAt())

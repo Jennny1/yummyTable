@@ -2,8 +2,8 @@ package com.example.yummytable.service;
 
 import com.example.yummytable.domain.Booking;
 import com.example.yummytable.domain.Store;
-import com.example.yummytable.dto.StoreDto;
-import com.example.yummytable.dto.UpdateStore.Request;
+import com.example.yummytable.dto.store.StoreDto;
+import com.example.yummytable.dto.store.UpdateStore.Request;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BookingRepository;
 import com.example.yummytable.repository.StoreRepository;

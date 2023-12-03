@@ -1,5 +1,6 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.board;
 
+import com.example.yummytable.dto.board.BoardDto;
 import com.example.yummytable.type.BoardStatus;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -10,7 +11,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class ReadBoard {
+public class DeleteBoard {
 
   @Getter
   @Setter
@@ -40,15 +41,8 @@ public class ReadBoard {
     private String content;
     private BoardStatus boardStatus;
     private LocalDateTime registeredAt;
-
-
-    // 식당 관련 정보
-    private String storeName;
-    private String keyword;
-    private Double locationX;
-    private Double locationY;
-    private String menu;
-    private int capacity;
+    private LocalDateTime updatedAt;
+    private LocalDateTime unregisteredAt;
 
 
     public static Response from(BoardDto boardDto) {
@@ -56,14 +50,10 @@ public class ReadBoard {
           .boardId(boardDto.getBoardId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
-          .boardStatus(BoardStatus.EXISTENT)
+          .boardStatus(BoardStatus.DELETE)
           .registeredAt(boardDto.getRegisteredAt())
-          .storeName(boardDto.getStoreName())
-          .keyword(boardDto.getKeyword())
-          .locationX(boardDto.getLocationX())
-          .locationY(boardDto.getLocationY())
-          .menu(boardDto.getMenu())
-          .capacity(boardDto.getCapacity())
+          .updatedAt(boardDto.getUpdatedAt())
+          .unregisteredAt(boardDto.getUnregisteredAt())
           .build();
     }
   }

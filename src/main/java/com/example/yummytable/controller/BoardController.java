@@ -1,11 +1,11 @@
 package com.example.yummytable.controller;
 
-import com.example.yummytable.dto.BoardDto;
-import com.example.yummytable.dto.CreateBoard;
-import com.example.yummytable.dto.DeleteBoard;
-import com.example.yummytable.dto.ReadBoard;
-import com.example.yummytable.dto.UpdateBoard;
-import com.example.yummytable.dto.UpdateBoard.Response;
+import com.example.yummytable.dto.board.BoardDto;
+import com.example.yummytable.dto.board.CreateBoard;
+import com.example.yummytable.dto.board.DeleteBoard;
+import com.example.yummytable.dto.board.ReadBoard;
+import com.example.yummytable.dto.board.UpdateBoard;
+import com.example.yummytable.dto.board.UpdateBoard.Response;
 import com.example.yummytable.service.BoardService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

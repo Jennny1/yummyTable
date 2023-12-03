@@ -1,4 +1,4 @@
-package com.example.yummytable.dto;
+package com.example.yummytable.dto.board;
 
 import com.example.yummytable.domain.Board;
 import com.example.yummytable.type.BoardStatus;
@@ -25,22 +25,12 @@ public class BoardDto {
   private String title;
   private String content;
   private String password;
-
   private BoardStatus boardStatus;
 
   private LocalDateTime registeredAt;
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
-  // 식당 관련 정보
-  private String storeName;
-  private String keyword;
-
-  private Double locationX;
-  private Double locationY;
-
-  private String menu;
-  private int capacity;
 
   public static BoardDto formEntity(Board board) {
     return BoardDto.builder()
@@ -50,12 +40,6 @@ public class BoardDto {
         .password(board.getPassword())
         .boardStatus(board.getBoardStatus())
         .registeredAt(board.getRegisteredAt())
-        .storeName(board.getStoreName())
-        .keyword(board.getKeyword())
-        .locationX(board.getLocationX())
-        .locationY(board.getLocationY())
-        .menu(board.getMenu())
-        .capacity(board.getCapacity())
         .build();
   }
 }
