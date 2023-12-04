@@ -3,7 +3,7 @@ POST http://localhost:8080/comment/1/102
 Content-Type: application/json
 
 {
-  "content": "ㄱㄱ",
+  "content": "나두나두",
   "password": "qq12345"
 }
 
@@ -23,11 +23,10 @@ Content-Type: application/json
 
 
 ### update comment
-PATCH http://localhost:8080/comment/1
+PATCH http://localhost:8080/comment/1/2
 Content-Type: application/json
 
 {
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password": "pass1234"
+  "content": "저두 갈래요 ㅎㅎ",
+  "password": "qq12345"
 }

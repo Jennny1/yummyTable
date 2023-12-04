@@ -4,7 +4,8 @@ import com.example.yummytable.domain.Board;
 import com.example.yummytable.domain.Comment;
 import com.example.yummytable.dto.comment.CommentDto;
 import com.example.yummytable.dto.comment.CreateComment;
-import com.example.yummytable.dto.comment.DeleteComment;
+import com.example.yummytable.dto.comment.UpdateComment;
+import com.example.yummytable.dto.comment.UpdateComment.Request;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.repository.CommentRepository;
@@ -50,21 +51,8 @@ public class CommentService {
 
 
   /*댓글 삭제*/
-  public CommentDto deleteComment(Long commentId, Long boardId,
-      @Valid DeleteComment.Request request) {
-    // 게시글 존재 확인
-    Optional<Board> board = Optional.ofNullable(boardRepository.findByBoardId(boardId)
-        .orElseThrow(() -> new yummyException(ErrorCode.BOARD_NOT_FOUND)));
-
-    // 댓글 존재 확인
-    Optional<Comment> comment = Optional.ofNullable(
-        commentRepository.findByCommentIdAndCommentStatus(commentId, CommentStatus.EXISTENT)
-            .orElseThrow(() -> new yummyException(ErrorCode.COMMENT_ALREADY_DELETE)));
-
-    // 비밀번호 일치여부 확인
-    if (!comment.get().getPassword().equals(request.getPassword())) {
-      throw new yummyException(ErrorCode.PASSWORD_NOT_MATCH);
-    }
+  public CommentDto deleteComment(Long commentId, Long boardId, @Valid Request request) {
+    Optional<Comment> comment = validCommentInfo(commentId, boardId, request);
 
     comment.get().setCommentStatus(CommentStatus.DELETE);
     comment.get().setUnregisteredAt(LocalDateTime.now());
@@ -73,6 +61,23 @@ public class CommentService {
     return CommentDto.formEntity(comment.get());
 
 
+  }
+
+
+
+  /*댓글 수정*/
+  public CommentDto updateComment(Long boardId, Long commentId, @Valid UpdateComment.Request request) {
+    Optional<Comment> comment = validCommentInfo(commentId, boardId, request);
+
+    if (request.getContent().equals("")) {
+      throw new yummyException(ErrorCode.CONTENT_IS_NULL);
+    }
+
+    comment.get().setContent(request.getContent());
+    comment.get().setUpdatedAt(LocalDateTime.now());
+    commentRepository.save(comment.get());
+
+    return CommentDto.formEntity(comment.get());
   }
 
   /*댓글 보기 - 최신순*/
@@ -86,5 +91,24 @@ public class CommentService {
     List<Comment> comments = commentRepository.findByBoardBoardIdOrderByBoardRegisteredAtAsc(boardId);
 
     return comments.stream().map(CommentDto::formEntity).collect(Collectors.toList());
+  }
+
+
+
+  private Optional<Comment> validCommentInfo(Long commentId, Long boardId, UpdateComment.@Valid Request request) {
+    // 게시글 존재 확인
+    Optional<Board> board = Optional.ofNullable(boardRepository.findByBoardId(boardId)
+        .orElseThrow(() -> new yummyException(ErrorCode.BOARD_NOT_FOUND)));
+
+    // 댓글 존재 확인
+    Optional<Comment> comment = Optional.ofNullable(
+        commentRepository.findByCommentIdAndCommentStatus(commentId, CommentStatus.EXISTENT)
+            .orElseThrow(() -> new yummyException(ErrorCode.COMMENT_ALREADY_DELETE)));
+
+    // 비밀번호 일치여부 확인
+    if (!comment.get().getPassword().equals(request.getPassword())) {
+      throw new yummyException(ErrorCode.PASSWORD_NOT_MATCH);
+    }
+    return comment;
   }
 }
