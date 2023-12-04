@@ -1,6 +1,6 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.type.BoardStatus;
+import com.example.yummytable.type.CommentStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
@@ -9,10 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,18 +27,16 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "board")
-public class Board {
+@Table(name = "comment")
+public class Comment {
 
-  // 게시글 관련 정보
   @Id
   @GeneratedValue
-  private Long boardId;
-  private String title;
+  private Long commentId;
   private String content;
   private String password;
   @Enumerated(EnumType.STRING)
-  private BoardStatus boardStatus;
+  private CommentStatus commentStatus;
 
   @CreatedDate
   private LocalDateTime registeredAt;
@@ -49,10 +45,7 @@ public class Board {
   private LocalDateTime unregisteredAt;
 
   @ManyToOne
-  @JoinColumn(name = "storeId")
-  private Store store;
-
-  @OneToMany(mappedBy = "board")
-  private List<Comment> comments;
-
+  @JoinColumn(name = "boardId")
+  private Board board;
+  private Long memberID;
 }

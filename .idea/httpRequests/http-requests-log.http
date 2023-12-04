@@ -1,3 +1,431 @@
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "같이 가실분?",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T130841.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T130839.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-04T130837.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "같이 가실분?",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T130817.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T130755.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-04T130750.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "같이 가실분?",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T130436.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "저도 가봤는데 맛있어요",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T130109.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T130107.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-04T130105.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "저도 가봤는데 맛있어요",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T124743.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T124742.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-04T124740.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "저도 가봤는데 맛있어요",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T124528.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T124453.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-04T124451.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "저도 가봤는데 맛있어요",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T123945.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T123941.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-04T123939.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "저도 가봤는데 맛있어요",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T123738.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T123734.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-04T123730.200.json
+
+###
+
+POST http://localhost:8080/board
+Content-Type: application/json
+Content-Length: 121
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeId": 1,
+  "title": "맛집소개",
+  "content": "사당 돈까스 맛집이에요",
+  "password" : "pass1234"
+}
+
+<> 2023-12-04T123724.200.json
+
+###
+
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "content": "저도 가봤는데 맛있어요",
+  "password": "qq12345"
+}
+
+<> 2023-12-04T123714.200.json
+
+###
+
 PATCH http://localhost:8080/board/1
 Content-Type: application/json
 Content-Length: 107
@@ -469,428 +897,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-12-04T003542.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-04T003349.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-04T003343.200.json
-
-###
-
-PATCH http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 107
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password": "pass1234"
-}
-
-<> 2023-12-04T003316.200.json
-
-###
-
-PATCH http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 107
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password": "pass1234"
-}
-
-<> 2023-12-04T003145.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-04T003128.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-04T003122.200.json
-
-###
-
-PATCH http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 107
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password": "pass1234"
-}
-
-<> 2023-12-04T002839.200.json
-
-###
-
-PATCH http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 81
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스"
-}
-
-<> 2023-12-04T002657.400.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-04T002625.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-04T002617.200.json
-
-###
-
-PATCH http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 108
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password" : "pass1234"
-}
-
-<> 2023-12-04T001951.200.json
-
-###
-
-GET http://localhost:8080/board/1
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-04T001813.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-04T001809.200.json
-
-###
-
-GET http://localhost:8080/board/1
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-04T001803.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-04T001748.200.json
-
-###
-
-DELETE http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 44
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "boardId": 1,
-  "password": "pass1234"
-}
-
-<> 2023-12-03T235405.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-03T235351.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-03T235345.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-03T235100.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-03T235047.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-03T234520.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-03T234502.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-03T234258.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-03T234111.200.json
 
 ###
 

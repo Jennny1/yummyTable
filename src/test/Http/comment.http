@@ -1,0 +1,35 @@
+### create comment
+POST http://localhost:8080/comment/1/100
+Content-Type: application/json
+
+{
+  "content": "같이 가실분?",
+  "password": "qq12345"
+}
+
+
+### delete board
+DELETE http://localhost:8080/board
+Content-Type: application/json
+
+{
+  "boardId": 1,
+  "password": "pass1234"
+}
+
+
+
+### get board
+GET http://localhost:8080/board/1
+Content-Type: application/json
+
+
+### update board
+PATCH http://localhost:8080/board/1
+Content-Type: application/json
+
+{
+  "title": "돈까스 맛집 가여!!!!!",
+  "content": "쫀맛탱 돈까스",
+  "password": "pass1234"
+}

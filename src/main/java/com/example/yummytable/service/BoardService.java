@@ -123,7 +123,7 @@ public class BoardService {
   }
 
 
-  private Board validBoardInfo (Long boardId, String password) {
+  private Board validBoardInfo(Long boardId, String password) {
     // boardId 확인
     Board board = boardRepository.findByBoardId(boardId)
         .orElseThrow(() -> new yummyException(BOARD_NOT_FOUND));
