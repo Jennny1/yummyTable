@@ -8,13 +8,13 @@ Content-Type: application/json
 }
 
 
-### delete board
+### delete member
 DELETE http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "boardId": 1,
-  "password": "pass1234"
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
 }
 
 

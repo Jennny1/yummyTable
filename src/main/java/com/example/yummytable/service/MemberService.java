@@ -2,6 +2,7 @@ package com.example.yummytable.service;
 
 import com.example.yummytable.domain.Member;
 import com.example.yummytable.dto.member.CreateMember.Request;
+import com.example.yummytable.dto.member.DeleteMember;
 import com.example.yummytable.dto.member.MemberDto;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
@@ -41,7 +42,33 @@ public class MemberService {
                 .registeredAt(LocalDateTime.now()).build()));
   }
 
+  public MemberDto deleteMember(DeleteMember.Request request) {
+    // 이메일 확인
+    Optional<Member> member = memberRepository.findByEmail(request.getEmail());
+    if (member.isEmpty()) {
+      throw new yummyException(ErrorCode.FAIL_TO_FIND_EMAIL);
+    }
+
+    // 비밀번호 확인
+    if (!member.get().getPassword().equals(request.getPassword())) {
+      throw new yummyException(ErrorCode.PASSWORD_NOT_MATCH);
+    }
+
+    // 삭제 여부 확인
+    if (member.get().getMemberStatus().equals(Status.DELETE)) {
+      throw new yummyException(ErrorCode.MEMBER_ALREADY_DELETE);
+    }
+
+    member.get().setMemberStatus(Status.DELETE);
+    member.get().setUnregisteredAt(LocalDateTime.now());
+    memberRepository.save(member.get());
+
+    return MemberDto.fromEntity(member.get());
+
+  }
+
   /*회원 탈퇴*/
+
 
   /*회원 수정*/
 
