@@ -1,6 +1,6 @@
 package com.example.yummytable.dto.store;
 
-import com.example.yummytable.type.StoreStatus;
+import com.example.yummytable.type.Status;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,7 +40,7 @@ public class DeleteStore {
     private Double locationY;
 
     private String menu;
-    private StoreStatus storeStatus;
+    private Status storeStatus;
 
     private int capacity;
 

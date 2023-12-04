@@ -6,8 +6,8 @@ import com.example.yummytable.dto.booking.BookingDto;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BookingRepository;
 import com.example.yummytable.repository.StoreRepository;
-import com.example.yummytable.type.BookingStatus;
 import com.example.yummytable.type.ErrorCode;
+import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -58,7 +58,7 @@ public class BookingService {
                 .capacity(store.getCapacity()).build())
             .registeredAt(LocalDateTime.now())
             .bookingDate(LocalDate.parse(bookingDate))
-            .bookingStatus(BookingStatus.EXISTENT)
+            .bookingStatus(Status.EXISTENT)
             .numberOfApplicants(numberOfApplicants)
             .build()));
   }
@@ -81,7 +81,7 @@ public class BookingService {
     for (Booking book : bookings) {
       if (book.getBookingId() == bookingId) {
         // 예약 취소 상태 확인
-        if (book.getBookingStatus() == BookingStatus.DELETE) {
+        if (book.getBookingStatus() == Status.DELETE) {
           throw new yummyException(ErrorCode.BOOKING_ALREADY_DELETE);
         }
         // 예약 인원 확인
@@ -89,7 +89,7 @@ public class BookingService {
           throw new yummyException(ErrorCode.APPLICANTS_IS_DIFFERENT);
         }
         // 예약 취소 처리
-        book.setBookingStatus(BookingStatus.DELETE);
+        book.setBookingStatus(Status.DELETE);
         book.setUpdatedAt(LocalDateTime.now());
         book.setUnregisteredAt(LocalDateTime.now());
 
@@ -122,7 +122,7 @@ public class BookingService {
             .orElseThrow(() -> new yummyException(ErrorCode.BOOKING_NOT_FOUND)));
 
     // 예약 취소 상태 확인
-    if (booking.get().getBookingStatus() == BookingStatus.DELETE) {
+    if (booking.get().getBookingStatus() == Status.DELETE) {
       throw new yummyException(ErrorCode.BOOKING_ALREADY_DELETE);
     }
 
@@ -163,7 +163,7 @@ public class BookingService {
 
     List<Booking> bookings =
         bookingRepository.findAllByStoreStoreIdAndBookingDateAndBookingStatus(
-            storeId, bookingDateFormatted, BookingStatus.EXISTENT);
+            storeId, bookingDateFormatted, Status.EXISTENT);
 
     return bookings.stream().map(BookingDto::formEntity).collect(Collectors.toList());
   }
@@ -190,7 +190,7 @@ public class BookingService {
     int sum = 0;
     for (Booking book : bookings) {
       if (book.getStore().getStoreId() == storeId
-          && book.getBookingStatus() == BookingStatus.EXISTENT) {
+          && book.getBookingStatus() == Status.EXISTENT) {
         sum += book.getNumberOfApplicants();
       }
     }

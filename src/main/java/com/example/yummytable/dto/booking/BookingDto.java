@@ -1,7 +1,7 @@
 package com.example.yummytable.dto.booking;
 
 import com.example.yummytable.domain.Booking;
-import com.example.yummytable.type.BookingStatus;
+import com.example.yummytable.type.Status;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
@@ -30,7 +30,7 @@ public class BookingDto {
   private int numberOfApplicants;
 
   private LocalDate bookingDate;
-  private BookingStatus bookingStatus;
+  private Status bookingStatus;
 
 
   @CreatedDate

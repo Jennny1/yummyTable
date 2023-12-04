@@ -1,7 +1,6 @@
 package com.example.yummytable.dto.board;
 
-import com.example.yummytable.dto.board.BoardDto;
-import com.example.yummytable.type.BoardStatus;
+import com.example.yummytable.type.Status;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -26,7 +25,7 @@ public class UpdateBoard {
 
     @NotNull(message = "게시글 비밀번호를 입력하세요")
     private String password;
-    private BoardStatus boardStatus;
+    private Status boardStatus;
 
   }
 
@@ -41,7 +40,7 @@ public class UpdateBoard {
     private Long boardId;
     private String title;
     private String content;
-    private BoardStatus boardStatus;
+    private Status boardStatus;
     private LocalDateTime registeredAt;
 
 
@@ -50,7 +49,7 @@ public class UpdateBoard {
           .boardId(boardDto.getBoardId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
-          .boardStatus(BoardStatus.EXISTENT)
+          .boardStatus(Status.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
           .build();
     }

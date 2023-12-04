@@ -1,6 +1,6 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.type.BookingStatus;
+import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
@@ -38,7 +38,7 @@ public class Booking {
   private int numberOfApplicants;
 
   @Enumerated(EnumType.STRING)
-  private BookingStatus bookingStatus;
+  private Status bookingStatus;
 
   @ManyToOne
   @JoinColumn(name = "storeId")

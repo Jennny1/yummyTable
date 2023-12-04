@@ -1,7 +1,7 @@
 package com.example.yummytable.dto.comment;
 
 import com.example.yummytable.domain.Comment;
-import com.example.yummytable.type.CommentStatus;
+import com.example.yummytable.type.Status;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
@@ -26,7 +26,7 @@ public class CommentDto {
 
   private String content;
   private String password;
-  private CommentStatus commentStatus;
+  private Status commentStatus;
 
   private LocalDateTime registeredAt;
   private LocalDateTime updatedAt;

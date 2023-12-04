@@ -1,13 +1,12 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.type.StoreStatus;
+import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
@@ -43,7 +42,7 @@ public class Store {
 
   private String menu;
   @Enumerated(EnumType.STRING)
-  private StoreStatus storeStatus;
+  private Status storeStatus;
 
   private int capacity;
   private int numberOfApplicants;

@@ -12,9 +12,8 @@ import com.example.yummytable.dto.board.UpdateBoard;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.repository.StoreRepository;
-import com.example.yummytable.type.BoardStatus;
 import com.example.yummytable.type.ErrorCode;
-import com.example.yummytable.type.StoreStatus;
+import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import java.time.LocalDateTime;
@@ -38,7 +37,7 @@ public class BoardService {
 
     // 상점 존재 확인
     Store store = storeRepository.findByStoreIdAndStoreStatus(request.getStoreId(),
-            StoreStatus.EXISTENT)
+            Status.EXISTENT)
         .orElseThrow(() -> new yummyException(ErrorCode.STORE_IS_NOT_EXIST));
 
     return BoardDto.formEntity(
@@ -48,7 +47,7 @@ public class BoardService {
                     .storeId(store.getStoreId()).build())
                 .title(request.getTitle())
                 .content(request.getContent())
-                .boardStatus(BoardStatus.EXISTENT)
+                .boardStatus(Status.EXISTENT)
                 .password(request.getPassword())
                 .registeredAt(LocalDateTime.now())
                 .build())
@@ -61,7 +60,7 @@ public class BoardService {
     Board board = validBoardInfo(request.getBoardId(), request.getPassword());
 
     // BoardStatus 변경
-    board.setBoardStatus(BoardStatus.DELETE);
+    board.setBoardStatus(Status.DELETE);
     board.setUnregisteredAt(LocalDateTime.now());
 
     // 저장
@@ -116,7 +115,7 @@ public class BoardService {
         .orElseThrow(() -> new yummyException(BOARD_NOT_FOUND));
 
     // BoardStatus 확인
-    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
+    if (board.getBoardStatus().equals(Status.DELETE)) {
       throw new yummyException(BOARD_NOT_FOUND);
     }
     return board;
@@ -134,7 +133,7 @@ public class BoardService {
     }
 
     // BoardStatus 확인
-    if (board.getBoardStatus().equals(BoardStatus.DELETE)) {
+    if (board.getBoardStatus().equals(Status.DELETE)) {
       throw new yummyException(BOARD_NOT_FOUND);
     }
     return board;

@@ -1,6 +1,5 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.type.BoardStatus;
 import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;

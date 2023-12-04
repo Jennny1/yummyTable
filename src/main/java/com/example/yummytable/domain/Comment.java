@@ -1,6 +1,6 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.type.CommentStatus;
+import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
@@ -36,7 +36,7 @@ public class Comment {
   private String content;
   private String password;
   @Enumerated(EnumType.STRING)
-  private CommentStatus commentStatus;
+  private Status commentStatus;
 
   @CreatedDate
   private LocalDateTime registeredAt;

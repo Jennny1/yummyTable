@@ -1,6 +1,6 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.type.BoardStatus;
+import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
@@ -39,7 +39,7 @@ public class Board {
   private String content;
   private String password;
   @Enumerated(EnumType.STRING)
-  private BoardStatus boardStatus;
+  private Status boardStatus;
 
   @CreatedDate
   private LocalDateTime registeredAt;

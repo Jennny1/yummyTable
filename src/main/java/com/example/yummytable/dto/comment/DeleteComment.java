@@ -1,6 +1,6 @@
 package com.example.yummytable.dto.comment;
 
-import com.example.yummytable.type.CommentStatus;
+import com.example.yummytable.type.Status;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import java.time.LocalDateTime;
@@ -38,7 +38,7 @@ public class DeleteComment {
 
     private String content;
     @Enumerated(EnumType.STRING)
-    private CommentStatus commentStatus;
+    private Status commentStatus;
 
     private LocalDateTime registeredAt;
 
@@ -48,7 +48,7 @@ public class DeleteComment {
           .boardId(commentDto.getBoardId())
           .memberID(commentDto.getMemberId())
           .content(commentDto.getContent())
-          .commentStatus(CommentStatus.EXISTENT)
+          .commentStatus(Status.EXISTENT)
           .registeredAt(commentDto.getRegisteredAt())
           .build();
     }

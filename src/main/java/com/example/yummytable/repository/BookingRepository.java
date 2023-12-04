@@ -1,7 +1,7 @@
 package com.example.yummytable.repository;
 
 import com.example.yummytable.domain.Booking;
-import com.example.yummytable.type.BookingStatus;
+import com.example.yummytable.type.Status;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +14,8 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
   Optional<Booking> findByBookingIdAndBookingDate(Long bookingId, LocalDate bookingDate);
 
   List<Booking> findAllByStoreStoreIdAndBookingDateAndBookingStatus(
-      Long storeId, LocalDate bookingDate, BookingStatus bookingStatus);
+      Long storeId, LocalDate bookingDate, Status bookingStatus);
 
   List<Booking> findAllByStoreStoreIdAndBookingStatusAndBookingDateAfter(
-      long storeId, BookingStatus bookingStatus, LocalDate bookingDate);
+      long storeId, Status bookingStatus, LocalDate bookingDate);
 }

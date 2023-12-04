@@ -1,6 +1,6 @@
 package com.example.yummytable.dto.board;
 
-import com.example.yummytable.type.BoardStatus;
+import com.example.yummytable.type.Status;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,7 +42,7 @@ public class CreateBoard {
 
     private String title;
     private String content;
-    private BoardStatus boardStatus;
+    private Status boardStatus;
 
     private LocalDateTime registeredAt;
 
@@ -52,7 +52,7 @@ public class CreateBoard {
           .storeId(boardDto.getStoreId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
-          .boardStatus(BoardStatus.EXISTENT)
+          .boardStatus(Status.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
           .build();
     }

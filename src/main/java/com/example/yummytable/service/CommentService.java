@@ -9,8 +9,8 @@ import com.example.yummytable.dto.comment.UpdateComment.Request;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.repository.CommentRepository;
-import com.example.yummytable.type.CommentStatus;
 import com.example.yummytable.type.ErrorCode;
+import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import java.time.LocalDateTime;
@@ -42,7 +42,7 @@ public class CommentService {
             .board(Board.builder().boardId(boardId).build())
             .memberID(memberId)
             .content(request.getContent())
-            .commentStatus(CommentStatus.EXISTENT)
+            .commentStatus(Status.EXISTENT)
             .password(request.getPassword())
             .registeredAt(LocalDateTime.now())
             .build()
@@ -54,7 +54,7 @@ public class CommentService {
   public CommentDto deleteComment(Long commentId, Long boardId, @Valid Request request) {
     Optional<Comment> comment = validCommentInfo(commentId, boardId, request);
 
-    comment.get().setCommentStatus(CommentStatus.DELETE);
+    comment.get().setCommentStatus(Status.DELETE);
     comment.get().setUnregisteredAt(LocalDateTime.now());
     commentRepository.save(comment.get());
 
@@ -102,7 +102,7 @@ public class CommentService {
 
     // 댓글 존재 확인
     Optional<Comment> comment = Optional.ofNullable(
-        commentRepository.findByCommentIdAndCommentStatus(commentId, CommentStatus.EXISTENT)
+        commentRepository.findByCommentIdAndCommentStatus(commentId, Status.EXISTENT)
             .orElseThrow(() -> new yummyException(ErrorCode.COMMENT_ALREADY_DELETE)));
 
     // 비밀번호 일치여부 확인

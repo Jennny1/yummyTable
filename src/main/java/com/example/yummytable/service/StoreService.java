@@ -7,9 +7,8 @@ import com.example.yummytable.dto.store.UpdateStore.Request;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BookingRepository;
 import com.example.yummytable.repository.StoreRepository;
-import com.example.yummytable.type.BookingStatus;
 import com.example.yummytable.type.ErrorCode;
-import com.example.yummytable.type.StoreStatus;
+import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import java.time.LocalDate;
@@ -48,7 +47,7 @@ public class StoreService {
                 .locationX(locationX)
                 .locationY(locationY)
                 .menu(menu)
-                .storeStatus(StoreStatus.EXISTENT)
+                .storeStatus(Status.EXISTENT)
                 .capacity(capacity)
                 .numberOfApplicants(numberOfApplicants)
                 .registeredAt(LocalDateTime.now())
@@ -66,20 +65,20 @@ public class StoreService {
     Optional<Store> store = storeRepository.findByStoreId(storeId);
 
     // 상점 id 등록 여부, 삭제 여부 검색
-    if (store.isEmpty() || store.get().getStoreStatus().equals(StoreStatus.DELETE)) {
+    if (store.isEmpty() || store.get().getStoreStatus().equals(Status.DELETE)) {
       throw new yummyException(ErrorCode.STORE_IS_NOT_EXIST);
     }
 
     // 예약 등록 여부 검색
     List<Booking> bookings = bookingRepository.findAllByStoreStoreIdAndBookingStatusAndBookingDateAfter(
-        storeId, BookingStatus.EXISTENT, LocalDate.now());
+        storeId, Status.EXISTENT, LocalDate.now());
 
     if (!bookings.isEmpty()) {
       throw new yummyException(ErrorCode.FAIL_TO_DELETE_STORE);
     }
 
     // 상점 삭제
-    store.get().setStoreStatus(StoreStatus.DELETE);
+    store.get().setStoreStatus(Status.DELETE);
     store.get().setUnregisteredAt(LocalDateTime.now());
 
     return StoreDto.formEntity(storeRepository.save(store.get()));
@@ -96,13 +95,13 @@ public class StoreService {
     Optional<Store> store = storeRepository.findByStoreId(request.getStoreId());
 
     // 상점 id 등록 여부, 삭제 여부 검색
-    if (store.isEmpty() || store.get().getStoreStatus().equals(StoreStatus.DELETE)) {
+    if (store.isEmpty() || store.get().getStoreStatus().equals(Status.DELETE)) {
       throw new yummyException(ErrorCode.STORE_IS_NOT_EXIST);
     }
 
     // 예약 등록 여부 검색
     List<Booking> bookings = bookingRepository.findAllByStoreStoreIdAndBookingStatusAndBookingDateAfter(
-        request.getStoreId(), BookingStatus.EXISTENT, LocalDate.now());
+        request.getStoreId(), Status.EXISTENT, LocalDate.now());
 
     if (!bookings.isEmpty()) {
       throw new yummyException(ErrorCode.FAIL_TO_DELETE_STORE);

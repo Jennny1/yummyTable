@@ -1,6 +1,6 @@
 package com.example.yummytable.dto.booking;
 
-import com.example.yummytable.type.BookingStatus;
+import com.example.yummytable.type.Status;
 import jakarta.validation.constraints.Pattern;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -44,7 +44,7 @@ public class DeleteBooking {
     private int numberOfApplicants;
 
     private String bookingDate;
-    private BookingStatus bookingStatus;
+    private Status bookingStatus;
 
     @CreatedDate
     private LocalDateTime registeredAt;
@@ -60,7 +60,7 @@ public class DeleteBooking {
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(String.valueOf(bookingDto.getBookingDate()))
-          .bookingStatus(BookingStatus.DELETE)
+          .bookingStatus(Status.DELETE)
           .registeredAt(bookingDto.getRegisteredAt())
           .updatedAt(bookingDto.getUpdatedAt())
           .unregisteredAt(bookingDto.getUnregisteredAt())
