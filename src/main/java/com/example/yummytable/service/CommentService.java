@@ -4,6 +4,7 @@ import com.example.yummytable.domain.Board;
 import com.example.yummytable.domain.Comment;
 import com.example.yummytable.dto.comment.CommentDto;
 import com.example.yummytable.dto.comment.CreateComment;
+import com.example.yummytable.dto.comment.DeleteComment;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.repository.CommentRepository;
@@ -43,5 +44,31 @@ public class CommentService {
             .registeredAt(LocalDateTime.now())
             .build()
     ));
+  }
+
+
+  /*댓글 삭제*/
+  public CommentDto deleteComment(Long commentId, Long boardId, @Valid DeleteComment.Request request) {
+    // 게시글 존재 확인
+    Optional<Board> board = Optional.ofNullable(boardRepository.findByBoardId(boardId)
+        .orElseThrow(() -> new yummyException(ErrorCode.BOARD_NOT_FOUND)));
+
+    // 댓글 존재 확인
+    Optional<Comment> comment = Optional.ofNullable(
+        commentRepository.findByCommentIdAndCommentStatus(commentId, CommentStatus.EXISTENT)
+            .orElseThrow(() -> new yummyException(ErrorCode.COMMENT_ALREADY_DELETE)));
+
+    // 비밀번호 일치여부 확인
+    if (!comment.get().getPassword().equals(request.getPassword())) {
+      throw new yummyException(ErrorCode.PASSWORD_NOT_MATCH);
+    }
+
+    comment.get().setCommentStatus(CommentStatus.DELETE);
+    comment.get().setUnregisteredAt(LocalDateTime.now());
+    commentRepository.save(comment.get());
+
+    return CommentDto.formEntity(comment.get());
+
+
   }
 }
