@@ -1,9 +1,9 @@
 ### create comment
-POST http://localhost:8080/comment/1/100
+POST http://localhost:8080/comment/1/102
 Content-Type: application/json
 
 {
-  "content": "같이 가실분?",
+  "content": "ㄱㄱ",
   "password": "qq12345"
 }
 
@@ -17,14 +17,13 @@ Content-Type: application/json
 }
 
 
-
-### get board
-GET http://localhost:8080/board/1
+### get comment
+GET http://localhost:8080/comment/1
 Content-Type: application/json
 
 
-### update board
-PATCH http://localhost:8080/board/1
+### update comment
+PATCH http://localhost:8080/comment/1
 Content-Type: application/json
 
 {

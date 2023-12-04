@@ -13,7 +13,9 @@ import com.example.yummytable.type.ErrorCode;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +50,8 @@ public class CommentService {
 
 
   /*댓글 삭제*/
-  public CommentDto deleteComment(Long commentId, Long boardId, @Valid DeleteComment.Request request) {
+  public CommentDto deleteComment(Long commentId, Long boardId,
+      @Valid DeleteComment.Request request) {
     // 게시글 존재 확인
     Optional<Board> board = Optional.ofNullable(boardRepository.findByBoardId(boardId)
         .orElseThrow(() -> new yummyException(ErrorCode.BOARD_NOT_FOUND)));
@@ -70,5 +73,18 @@ public class CommentService {
     return CommentDto.formEntity(comment.get());
 
 
+  }
+
+  /*댓글 보기 - 최신순*/
+  public List<CommentDto> getCommentBylatest(Long boardId) {
+
+    // 게시글 존재 확인
+    Board board = boardRepository.findByBoardId(boardId)
+        .orElseThrow(() -> new yummyException(ErrorCode.BOARD_NOT_FOUND));
+
+    // 댓글 리스트 가져오기
+    List<Comment> comments = commentRepository.findByBoardBoardIdOrderByBoardRegisteredAtAsc(boardId);
+
+    return comments.stream().map(CommentDto::formEntity).collect(Collectors.toList());
   }
 }
