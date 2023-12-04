@@ -1,0 +1,35 @@
+### create member
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
+}
+
+
+### delete board
+DELETE http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "boardId": 1,
+  "password": "pass1234"
+}
+
+
+
+### get board
+GET http://localhost:8080/member
+Content-Type: application/json
+
+
+### update board
+PATCH http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "title": "돈까스 맛집 가여!!!!!",
+  "content": "쫀맛탱 돈까스",
+  "password": "pass1234"
+}

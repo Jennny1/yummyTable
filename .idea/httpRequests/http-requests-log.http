@@ -1,3 +1,99 @@
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
+}
+
+<> 2023-12-04T170541.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
+}
+
+<> 2023-12-04T170441.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
+}
+
+<> 2023-12-04T170113.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
+}
+
+<> 2023-12-04T165819.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
+}
+
+<> 2023-12-04T165801.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "aaa@gmail.com"
+}
+
+<> 2023-12-04T165638.500.json
+
+###
+
 PATCH http://localhost:8080/comment/1/2
 Content-Type: application/json
 Content-Length: 67
@@ -749,114 +845,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-12-04T124451.200.json
-
-###
-
-POST http://localhost:8080/comment/1/100
-Content-Type: application/json
-Content-Length: 76
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "content": "저도 가봤는데 맛있어요",
-  "password": "qq12345"
-}
-
-<> 2023-12-04T123945.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-04T123941.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-04T123939.200.json
-
-###
-
-POST http://localhost:8080/comment/1/100
-Content-Type: application/json
-Content-Length: 76
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "content": "저도 가봤는데 맛있어요",
-  "password": "qq12345"
-}
-
-<> 2023-12-04T123738.200.json
-
-###
-
-POST http://localhost:8080/board
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-04T123734.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-04T123730.200.json
 
 ###
 

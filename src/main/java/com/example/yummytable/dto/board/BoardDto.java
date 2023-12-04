@@ -18,7 +18,6 @@ import lombok.Setter;
 @Builder
 public class BoardDto {
 
-  // 게시글 관련 정보
   @Id
   @GeneratedValue
   private Long boardId;
