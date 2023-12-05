@@ -11,20 +11,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class CreateMember {
-
-  @Getter
-  @Setter
-  @NoArgsConstructor
-  @AllArgsConstructor
-  @Builder
-  public static class Request {
-
-    @Pattern(regexp = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$", message = "이메일 형태로 입력해주세요")
-    private String email;
-    @NotNull
-    private String password;
-  }
+public class GetMember {
 
 
   @Getter

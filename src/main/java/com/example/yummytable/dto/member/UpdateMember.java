@@ -11,7 +11,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class CreateMember {
+public class UpdateMember {
 
   @Getter
   @Setter
@@ -24,6 +24,9 @@ public class CreateMember {
     private String email;
     @NotNull
     private String password;
+    @NotNull
+    private String newPassword;
+
   }
 
 
