@@ -1,6 +1,9 @@
 package com.example.yummytable.service;
 
-import static com.example.yummytable.type.ErrorCode.*;
+import static com.example.yummytable.type.ErrorCode.EMAIL_ALREADY_EXIST;
+import static com.example.yummytable.type.ErrorCode.FAIL_TO_FIND_EMAIL;
+import static com.example.yummytable.type.ErrorCode.MEMBER_ALREADY_DELETE;
+import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Member;
 import com.example.yummytable.dto.member.CreateMember.Request;
@@ -8,9 +11,7 @@ import com.example.yummytable.dto.member.DeleteMember;
 import com.example.yummytable.dto.member.MemberDto;
 import com.example.yummytable.dto.member.UpdateMember;
 import com.example.yummytable.exception.yummyException;
-import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.repository.MemberRepository;
-import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
@@ -18,13 +19,13 @@ import jakarta.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
 public class MemberService {
+
   private final MemberRepository memberRepository;
 
   /*회원 등록*/
@@ -78,7 +79,7 @@ public class MemberService {
   public MemberDto updateMember(UpdateMember.@Valid Request request) {
     // 이메일 확인
     Optional<Member> member = memberRepository.findByEmail(request.getEmail());
-    if (!member.isEmpty()) {
+    if (member.isEmpty()) {
       throw new yummyException(ErrorCode.EMAIL_NOT_MATCH);
     }
 

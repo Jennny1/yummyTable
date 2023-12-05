@@ -36,7 +36,7 @@ public class MemberController {
   }
 
   /*회원 수정*/
-  @PatchMapping("/member/{memberId}")
+  @PatchMapping("/member")
   public UpdateMember.Response updateMember(@Valid @RequestBody UpdateMember.Request request) {
 
     return UpdateMember.Response.from(memberService.updateMember(request));

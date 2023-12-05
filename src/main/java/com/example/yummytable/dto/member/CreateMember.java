@@ -20,7 +20,7 @@ public class CreateMember {
   @Builder
   public static class Request {
 
-    @Pattern(regexp = "^[a-zA-Z0-9_+&*-]+(?:\\\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,7}\\$\\\\", message = "이메일 형태로 입력해주세요")
+    @Pattern(regexp = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$", message = "이메일 형태로 입력해주세요")
     private String email;
     @NotNull
     private String password;

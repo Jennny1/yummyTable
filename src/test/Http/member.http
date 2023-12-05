@@ -29,7 +29,7 @@ PATCH http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "password" : "pass1234",
   "email": "aaa@gmail.com",
-  "newPassword" : "abc999"
+  "password": "pass1234",
+  "newPassword": "abc999"
 }
