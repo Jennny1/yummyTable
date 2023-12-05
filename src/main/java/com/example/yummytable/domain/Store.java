@@ -7,7 +7,9 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -62,5 +64,10 @@ public class Store {
   // 게시글 정보
   @OneToMany(mappedBy = "store")
   private List<Board> boards;
+
+  // 좋아요
+  @OneToOne
+  @JoinColumn(name = "favoritId")
+  private Favorit favorit;
 
 }
