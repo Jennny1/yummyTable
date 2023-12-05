@@ -19,17 +19,17 @@ Content-Type: application/json
 
 
 
-### get board
-GET http://localhost:8080/member
+### get member
+GET http://localhost:8080/member/1
 Content-Type: application/json
 
 
-### update board
+### update member
 PATCH http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password": "pass1234"
+  "password" : "pass1234",
+  "email": "aaa@gmail.com",
+  "newPassword" : "abc999"
 }
