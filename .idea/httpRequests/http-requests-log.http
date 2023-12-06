@@ -1,11 +1,10 @@
-POST http://localhost:8080/favorit/1/1
+DELETE http://localhost:8080/favorit/1/1
 Content-Type: application/json
-Content-Length: 0
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T155443.200.json
+<> 2023-12-06T164429.200.json
 
 ###
 
@@ -16,7 +15,28 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T155435.200.json
+<> 2023-12-06T164419.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164413.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164404.200.json
 
 ###
 
@@ -32,7 +52,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "email": "bbb@gmail.com"
 }
 
-<> 2023-12-06T155428.200.json
+<> 2023-12-06T164402.200.json
 
 ###
 
@@ -52,7 +72,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-06T155426.200.json
+<> 2023-12-06T164400.200.json
 
 ###
 
@@ -63,7 +83,49 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T155410.200.json
+<> 2023-12-06T164339.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164338.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164337.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164335.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164333.200.json
 
 ###
 
@@ -79,7 +141,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "email": "bbb@gmail.com"
 }
 
-<> 2023-12-06T155122.200.json
+<> 2023-12-06T164331.200.json
 
 ###
 
@@ -99,7 +161,82 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-06T155119.200.json
+<> 2023-12-06T164328.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164127.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164126.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164124.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164122.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164120.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164118.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T164114.200.json
 
 ###
 
@@ -115,7 +252,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "email": "bbb@gmail.com"
 }
 
-<> 2023-12-06T151541.200.json
+<> 2023-12-06T164110.200.json
 
 ###
 
@@ -135,7 +272,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-06T151539.200.json
+<> 2023-12-06T164108.200.json
 
 ###
 
@@ -146,7 +283,49 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T144740.200.json
+<> 2023-12-06T163327.500.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163325.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163324.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163322.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163321.200.json
 
 ###
 
@@ -162,7 +341,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "email": "bbb@gmail.com"
 }
 
-<> 2023-12-06T144737.200.json
+<> 2023-12-06T163317.200.json
 
 ###
 
@@ -182,7 +361,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-06T144731.200.json
+<> 2023-12-06T163314.200.json
 
 ###
 
@@ -193,7 +372,71 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T144546.200.json
+<> 2023-12-06T163052.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163050.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163045.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163044.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163043.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163041.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163039.200.json
 
 ###
 
@@ -209,7 +452,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "email": "bbb@gmail.com"
 }
 
-<> 2023-12-06T144538.200.json
+<> 2023-12-06T163037.200.json
 
 ###
 
@@ -229,27 +472,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-06T144534.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-06T144525.200.json
+<> 2023-12-06T163035.200.json
 
 ###
 
@@ -260,7 +483,60 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T111603.200.json
+<> 2023-12-06T163031.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T163002.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T162959.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T162954.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T162952.200.json
+
+###
+
+POST http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T162951.200.json
 
 ###
 
@@ -276,7 +552,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "email": "bbb@gmail.com"
 }
 
-<> 2023-12-06T111513.200.json
+<> 2023-12-06T162946.200.json
 
 ###
 
@@ -296,7 +572,27 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-06T111511.200.json
+<> 2023-12-06T162944.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T161309.200.json
+
+###
+
+DELETE http://localhost:8080/favorit/1/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-06T161306.200.json
 
 ###
 
@@ -307,81 +603,7 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T111456.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/2
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T111426.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbb@gmail.com"
-}
-
-<> 2023-12-06T111423.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-06T111420.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/2
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T111200.500.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbb@gmail.com"
-}
-
-<> 2023-12-06T111153.200.json
+<> 2023-12-06T161305.200.json
 
 ###
 
@@ -392,352 +614,7 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-12-06T111137.500.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T111114.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-06T111104.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-06T111102.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T110410.500.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-06T110405.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-06T110404.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105731.500.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105725.500.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105618.500.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-06T105608.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105557.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-06T105553.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105529.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105502.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105333.404.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105252.404.json
-
-###
-
-POST http://localhost:8080/favorit/1/1
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T105237.404.json
-
-###
-
-PATCH http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 83
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "aaa@gmail.com",
-  "password": "pass1234",
-  "newPassword": "abc999"
-}
-
-<> 2023-12-05T144030.200.json
-
-###
-
-PATCH http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 83
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "aaa@gmail.com",
-  "password": "pass1234",
-  "newPassword": "abc999"
-}
-
-<> 2023-12-05T144015.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-05T144010.200.json
-
-###
-
-PATCH http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 83
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "aaa@gmail.com",
-  "password": "pass1234",
-  "newPassword": "abc999"
-}
-
-<> 2023-12-05T143940.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-05T143925.200.json
-
-###
-
-PATCH http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 83
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "aaa@gmail.com",
-  "password": "pass1234",
-  "newPassword": "abc999"
-}
-
-<> 2023-12-05T143723.400.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-05T143712.200.json
+<> 2023-12-06T161303.200.json
 
 ###
 

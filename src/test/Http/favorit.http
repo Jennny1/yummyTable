@@ -5,7 +5,7 @@ Content-Type: application/json
 
 
 ### delete favorit
-DELETE http://localhost:8080/favorit/1
+DELETE http://localhost:8080/favorit/1/1
 Content-Type: application/json
 
 

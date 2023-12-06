@@ -15,6 +15,7 @@ public enum ErrorCode {
   COMMENT_ALREADY_DELETE("이미 삭제된 댓글입니다."),
   EMAIL_NOT_MATCH("이메일을 찾을 수 없습니다."),
   BOOKING_NOT_FOUND("예약이 없습니다."),
+  FAVORIT_NOT_EXIST("찜한 이력이 없습니다."),
   BOOKING_ALREADY_DELETE("이미 취소된 예약입니다."),
   FAIL_TO_DELETE_STORE("등록된 예약이 있어 상점 등록을 취소할 수 없습니다."),
   APPLICANTS_IS_DIFFERENT("예약 취소 인원이 동일하지 않습니다."),
