@@ -14,7 +14,7 @@ public class FavoritController {
   private final FavoritService favoritService;
 
   /*좋아요 등록*/
-  @PostMapping("favolit/{storeId}/{memberId}")
+  @PostMapping("favorit/{storeId}/{memberId}")
   public CreateFavorit.Response createFavorit(@PathVariable Long storeId, @PathVariable Long memberId) {
 
     return CreateFavorit.Response.from(favoritService.createFavorit(storeId, memberId));

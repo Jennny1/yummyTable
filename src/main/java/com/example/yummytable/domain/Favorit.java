@@ -3,6 +3,8 @@ package com.example.yummytable.domain;
 import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -32,6 +34,7 @@ public class Favorit {
   @Id
   @GeneratedValue
   private Long favoritId;
+  @Enumerated(EnumType.STRING)
   private Status favoritStatus;
 
   @CreatedDate

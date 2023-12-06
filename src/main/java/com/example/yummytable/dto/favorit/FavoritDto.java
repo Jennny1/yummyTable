@@ -1,6 +1,7 @@
 package com.example.yummytable.dto.favorit;
 
 import com.example.yummytable.domain.Favorit;
+import com.example.yummytable.domain.Member;
 import com.example.yummytable.domain.Store;
 import com.example.yummytable.type.Status;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +27,6 @@ public class FavoritDto {
   private long memberId;
 
   private Status favoritStatus;
-  private Store store;
 
   private LocalDateTime registeredAt;
   private LocalDateTime updatedAt;
@@ -35,6 +35,8 @@ public class FavoritDto {
   public static FavoritDto formEntity(Favorit favorit) {
     return FavoritDto.builder()
         .favoritId(favorit.getFavoritId())
+        .storeId(favorit.getStore().getStoreId())
+        .memberId(favorit.getMember().getMemberId())
         .favoritStatus(favorit.getFavoritStatus())
         .registeredAt(favorit.getRegisteredAt())
         .updatedAt(favorit.getUpdatedAt())

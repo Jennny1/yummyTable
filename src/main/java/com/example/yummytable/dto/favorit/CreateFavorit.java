@@ -7,22 +7,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
 
 
 public class CreateFavorit {
-
-  @Getter
-  @Setter
-  @NoArgsConstructor
-  @AllArgsConstructor
-  @Builder
-  public static class Request {
-
-    @NotNull
-    private long storeId;
-
-  }
 
 
   @Getter
@@ -34,6 +21,7 @@ public class CreateFavorit {
 
     private long favoritId;
     private long storeId;
+    private long memberId;
 
     private Status favoritStatus;
 
@@ -44,7 +32,8 @@ public class CreateFavorit {
     public static Response from(FavoritDto favoritDto) {
       return Response.builder()
           .favoritId(favoritDto.getFavoritId())
-          .storeId(favoritDto.getStore().getStoreId())
+          .storeId(favoritDto.getStoreId())
+          .memberId(favoritDto.getMemberId())
           .favoritStatus(favoritDto.getFavoritStatus())
           .registeredAt(favoritDto.getRegisteredAt())
           .unregisteredAt(favoritDto.getUnregisteredAt())

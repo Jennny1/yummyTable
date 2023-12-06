@@ -13,6 +13,7 @@ import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class FavoritService {
   private final MemberRepository memberRepository;
 
   /*찜하기 등록*/
-  public FavoritDto createFavorit (Long storeId, Long memberId) {
+  public FavoritDto createFavorit(Long storeId, Long memberId) {
     // 상점 존재 확인
     Store store = storeRepository.findByStoreIdAndStoreStatus(storeId, Status.EXISTENT)
         .orElseThrow(() -> new yummyException(STORE_IS_NOT_EXIST));
@@ -47,6 +48,8 @@ public class FavoritService {
     return FavoritDto.formEntity(
         favoritRepository.save(Favorit.builder()
             .store(Store.builder().storeId(storeId).build())
+            .member(Member.builder().memberId(memberId).build())
+            .registeredAt(LocalDateTime.now())
             .favoritStatus(Status.EXISTENT)
             .build()));
   }
