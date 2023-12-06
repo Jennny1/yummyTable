@@ -3,14 +3,13 @@ package com.example.yummytable.domain;
 import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,17 +26,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "member")
-public class Member {
+@Table(name = "favorit")
+public class Favorit {
 
   @Id
   @GeneratedValue
-  private Long memberId;
-  private String password;
-  private String email;
-
-  @Enumerated(EnumType.STRING)
-  private Status memberStatus;
+  private Long favoritId;
+  private Status favoritStatus;
 
   @CreatedDate
   private LocalDateTime registeredAt;
@@ -45,9 +40,13 @@ public class Member {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
-  @OneToMany(mappedBy = "member")
-  private List<Favorit> favorits;
+  @OneToOne
+  @JoinColumn(name = "storeId")
+  private Store store;
 
+  @ManyToOne
+  @JoinColumn(name = "memberId")
+  private Member member;
 
 /*  @ManyToOne
   @JoinColumn(name = "storeId")

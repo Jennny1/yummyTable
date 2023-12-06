@@ -32,16 +32,11 @@ public class CreateStore {
     private Double locationY;
 
     private String menu;
-    private Status storeStatus;
 
     @NotNull
     private int capacity;
     @NotNull
     private int numberOfApplicants;
-
-    private LocalDateTime registeredAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime unregisteredAt;
 
   }
 
