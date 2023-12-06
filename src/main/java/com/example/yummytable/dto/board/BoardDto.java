@@ -22,6 +22,8 @@ public class BoardDto {
   @GeneratedValue
   private Long boardId;
   private Long storeId;
+  private Long memberId;
+
   private String title;
   private String content;
   private String password;
@@ -35,11 +37,16 @@ public class BoardDto {
   public static BoardDto formEntity(Board board) {
     return BoardDto.builder()
         .boardId(board.getBoardId())
+        .storeId(board.getStore().getStoreId())
+        .memberId(board.getMember().getMemberId())
+
         .title(board.getTitle())
         .content(board.getContent())
         .password(board.getPassword())
         .boardStatus(board.getBoardStatus())
+
         .registeredAt(board.getRegisteredAt())
+        .unregisteredAt(board.getUnregisteredAt())
         .build();
   }
 }

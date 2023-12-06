@@ -4,6 +4,7 @@ import static com.example.yummytable.type.ErrorCode.BOARD_NOT_FOUND;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Board;
+import com.example.yummytable.domain.Member;
 import com.example.yummytable.domain.Store;
 import com.example.yummytable.dto.board.BoardDto;
 import com.example.yummytable.dto.board.CreateBoard.Request;
@@ -33,7 +34,7 @@ public class BoardService {
   게시글 생성
   - 상점 등록 선행 필수
   */
-  public BoardDto createBoard(@Valid Request request) {
+  public BoardDto createBoard(Long memberId, @Valid Request request) {
 
     // 상점 존재 확인
     Store store = storeRepository.findByStoreIdAndStoreStatus(request.getStoreId(),
@@ -43,8 +44,8 @@ public class BoardService {
     return BoardDto.formEntity(
         boardRepository.save(
             Board.builder()
-                .store(Store.builder()
-                    .storeId(store.getStoreId()).build())
+                .store(Store.builder().storeId(store.getStoreId()).build())
+                .member(Member.builder().memberId(memberId).build())
                 .title(request.getTitle())
                 .content(request.getContent())
                 .boardStatus(Status.EXISTENT)

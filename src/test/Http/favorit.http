@@ -1,11 +1,11 @@
 
 ### create favorit
-POST http://localhost:8080/favorit/1/1
+POST http://localhost:8080/favorit/1/2
 Content-Type: application/json
 
 
 ### delete favorit
-DELETE http://localhost:8080/favorit/1
+DELETE http://localhost:8080/favorit/1/1
 Content-Type: application/json
 
 
@@ -14,17 +14,3 @@ Content-Type: application/json
 GET http://localhost:8080/favorit/1
 Content-Type: application/json
 
-
-### update favorit
-PATCH http://localhost:8080/favorit
-Content-Type: application/json
-
-{
-  "storeId" : 1,
-  "storeName": "맛있다 돈까스 사당점",
-  "keyword": "맛집",
-  "locationX": 111.11,
-  "locationY": 222.22,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 10
-}

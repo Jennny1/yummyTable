@@ -1,5 +1,5 @@
 ### create board
-POST http://localhost:8080/board
+POST http://localhost:8080/board/1
 Content-Type: application/json
 
 {

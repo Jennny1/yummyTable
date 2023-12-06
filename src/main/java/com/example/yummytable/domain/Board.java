@@ -47,10 +47,17 @@ public class Board {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
+  // 게시글 - 회원
+  @ManyToOne
+  @JoinColumn(name = "memberId")
+  private Member member;
+
+  // 게시글 - 상점
   @ManyToOne
   @JoinColumn(name = "storeId")
   private Store store;
 
+  // 게시글 - 댓글
   @OneToMany(mappedBy = "board")
   private List<Comment> comments;
 

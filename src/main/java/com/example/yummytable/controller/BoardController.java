@@ -23,10 +23,12 @@ public class BoardController {
   private final BoardService boardService;
 
   /*게시글 입력*/
-  @PostMapping("/board")
-  public CreateBoard.Response creatBoard(@RequestBody @Valid CreateBoard.Request request) {
+  @PostMapping("/board/{memberId}")
+  public CreateBoard.Response creatBoard(
+      @PathVariable Long memberId,
+      @RequestBody @Valid CreateBoard.Request request) {
 
-    return CreateBoard.Response.from(boardService.createBoard(request));
+    return CreateBoard.Response.from(boardService.createBoard(memberId, request));
   }
 
 

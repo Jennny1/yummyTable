@@ -45,15 +45,14 @@ public class Member {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
+  // 회원 - 게시글
+  @OneToMany(mappedBy = "member")
+  private List<Board> boards;
+
+  // 회원 - 찜
   @OneToMany(mappedBy = "member")
   private List<Favorit> favorits;
 
 
-/*  @ManyToOne
-  @JoinColumn(name = "storeId")
-  private Store store;
-
-  @OneToMany(mappedBy = "board")
-  private List<Comment> comments;*/
 
 }

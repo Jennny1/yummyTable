@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-public class CreateFavorit {
+public class GetFavorit {
 
 
   @Getter
@@ -20,7 +20,6 @@ public class CreateFavorit {
   public static class Response {
 
     private long favoritId;
-    private long storeId;
     private long memberId;
 
     private Status favoritStatus;
@@ -32,7 +31,6 @@ public class CreateFavorit {
     public static Response from(FavoritDto favoritDto) {
       return Response.builder()
           .favoritId(favoritDto.getFavoritId())
-          .storeId(favoritDto.getStoreId())
           .memberId(favoritDto.getMemberId())
           .favoritStatus(favoritDto.getFavoritStatus())
           .registeredAt(favoritDto.getRegisteredAt())

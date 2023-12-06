@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-public class CreateFavorit {
+public class DeleteFavorit {
 
 
   @Getter

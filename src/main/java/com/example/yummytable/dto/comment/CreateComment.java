@@ -36,7 +36,7 @@ public class CreateComment {
   public static class Response {
     private Long commentId;
     private Long boardId;
-    private Long memberID;
+    private Long memberId;
 
     private String content;
     @Enumerated(EnumType.STRING)
@@ -48,7 +48,7 @@ public class CreateComment {
       return Response.builder()
           .commentId(commentDto.getCommentId())
           .boardId(commentDto.getBoardId())
-          .memberID(commentDto.getMemberId())
+          .memberId(commentDto.getMemberId())
           .content(commentDto.getContent())
           .commentStatus(Status.EXISTENT)
           .registeredAt(commentDto.getRegisteredAt())
