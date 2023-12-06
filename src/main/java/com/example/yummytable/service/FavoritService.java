@@ -13,11 +13,11 @@ import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,13 +31,7 @@ public class FavoritService {
 
   /*찜하기 등록*/
   public FavoritDto createFavorit(Long storeId, Long memberId) {
-    // 상점 존재 확인
-    Store store = storeRepository.findByStoreIdAndStoreStatus(storeId, Status.EXISTENT)
-        .orElseThrow(() -> new yummyException(STORE_IS_NOT_EXIST));
-
-    // 아이디 존재 확인
-    Member member = memberRepository.findByMemberIdAndMemberStatus(memberId, Status.EXISTENT)
-        .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+    validFavoritInfo(storeId, memberId);
 
     // 찜하기 여부 확인
     Optional<Favorit> favorit =
@@ -62,20 +56,14 @@ public class FavoritService {
           .build();
     }
 
-
     return FavoritDto.formEntity(favoritRepository.save(build));
   }
 
 
   /*좋아요 취소*/
   public FavoritDto deleteFavorit(Long storeId, Long memberId) {
-    // 상점 존재 확인
-    Store store = storeRepository.findByStoreIdAndStoreStatus(storeId, Status.EXISTENT)
-        .orElseThrow(() -> new yummyException(STORE_IS_NOT_EXIST));
 
-    // 아이디 존재 확인
-    Member member = memberRepository.findByMemberIdAndMemberStatus(memberId, Status.EXISTENT)
-        .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+    validFavoritInfo(storeId, memberId);
 
     // 찜하기 여부 확인
     Optional<Favorit> favorit =
@@ -91,6 +79,33 @@ public class FavoritService {
     return FavoritDto.formEntity(favoritRepository.save(favorit.get()));
 
   }
-  /*좋아요 리스트 보기*/
 
+  /*
+  좋아요 리스트 보기
+  - storeId 기준
+  */
+  public List<FavoritDto> getFavofit(Long storeId) {
+    // 상점 존재 확인
+    Store store = storeRepository.findByStoreIdAndStoreStatus(storeId, Status.EXISTENT)
+        .orElseThrow(() -> new yummyException(STORE_IS_NOT_EXIST));
+
+    List<Favorit> favorits = favoritRepository.findAllByStoreStoreId(storeId);
+
+    if (favorits.isEmpty()) {
+      throw new yummyException(ErrorCode.FAVORITS_NOT_EXIST);
+    }
+
+    return favorits.stream().map(FavoritDto::formEntity).collect(Collectors.toList());
+  }
+
+
+  private void validFavoritInfo(Long storeId, Long memberId) {
+    // 상점 존재 확인
+    Store store = storeRepository.findByStoreIdAndStoreStatus(storeId, Status.EXISTENT)
+        .orElseThrow(() -> new yummyException(STORE_IS_NOT_EXIST));
+
+    // 아이디 존재 확인
+    Member member = memberRepository.findByMemberIdAndMemberStatus(memberId, Status.EXISTENT)
+        .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+  }
 }

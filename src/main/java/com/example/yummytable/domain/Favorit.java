@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
@@ -43,7 +44,7 @@ public class Favorit {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "storeId")
   private Store store;
 
@@ -51,11 +52,5 @@ public class Favorit {
   @JoinColumn(name = "memberId")
   private Member member;
 
-/*  @ManyToOne
-  @JoinColumn(name = "storeId")
-  private Store store;
-
-  @OneToMany(mappedBy = "board")
-  private List<Comment> comments;*/
 
 }
