@@ -61,7 +61,7 @@ public class Store {
   @OneToMany(mappedBy = "store")
   private List<Booking> bookings;
 
-  // 게시글 정보
+  // 상점 - 게시글
   @OneToMany(mappedBy = "store")
   private List<Board> boards;
 
