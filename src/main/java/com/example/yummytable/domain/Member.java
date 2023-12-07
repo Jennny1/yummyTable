@@ -49,10 +49,13 @@ public class Member {
   @OneToMany(mappedBy = "member")
   private List<Board> boards;
 
+  // 회원 - 상점
+  @OneToMany(mappedBy = "member")
+  private List<Store> stores;
+
   // 회원 - 찜
   @OneToMany(mappedBy = "member")
   private List<Favorit> favorits;
-
 
 
 }

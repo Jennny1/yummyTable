@@ -1,11 +1,14 @@
 package com.example.yummytable.service;
 
 import com.example.yummytable.domain.Booking;
+import com.example.yummytable.domain.Member;
 import com.example.yummytable.domain.Store;
+import com.example.yummytable.dto.store.CreateStore;
 import com.example.yummytable.dto.store.StoreDto;
 import com.example.yummytable.dto.store.UpdateStore.Request;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BookingRepository;
+import com.example.yummytable.repository.MemberRepository;
 import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
@@ -25,15 +28,18 @@ public class StoreService {
 
   private final StoreRepository storeRepository;
   private final BookingRepository bookingRepository;
+  private final MemberRepository memberRepository;
 
   /*상점 등록*/
-  public StoreDto createStore(
-      long storeId, String storeName, String keyword, Double locationX, Double locationY,
-      String menu, int capacity, int numberOfApplicants) {
+  public StoreDto createStore(CreateStore.Request request) {
+    // 아이디 확인
+    Optional<Member> member = memberRepository.findByMemberId(request.getMemberId());
+    if (member.isEmpty()) {
+      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
+    }
 
     // 상점 이름 검색
-    List<Store> storeNames = storeRepository.findAllByStoreName(storeName);
-
+    List<Store> storeNames = storeRepository.findAllByStoreName(request.getStoreName());
     if (!storeNames.isEmpty()) {
       throw new yummyException(ErrorCode.STORE_NAME_IS_ALREADY_EXIST);
     }
@@ -41,15 +47,15 @@ public class StoreService {
     return StoreDto.formEntity(
         storeRepository.save(
             Store.builder()
-                .storeId(storeId)
-                .storeName(storeName)
-                .keyword(keyword)
-                .locationX(locationX)
-                .locationY(locationY)
-                .menu(menu)
+                .member(Member.builder().memberId(request.getMemberId()).build())
+                .storeName(request.getStoreName())
+                .keyword(request.getKeyword())
+                .locationX(request.getLocationX())
+                .locationY(request.getLocationY())
+                .menu(request.getMenu())
                 .storeStatus(Status.EXISTENT)
-                .capacity(capacity)
-                .numberOfApplicants(numberOfApplicants)
+                .capacity(request.getCapacity())
+                .numberOfApplicants(request.getNumberOfApplicants())
                 .registeredAt(LocalDateTime.now())
                 .build()));
   }
@@ -61,7 +67,21 @@ public class StoreService {
   - output : StoreStatus.DELETE로 변경
   - 예약된 이력이 있을때 삭제 불가
   */
-  public StoreDto deleteStore(long storeId) {
+  public StoreDto deleteStore(Long storeId, Long memberId) {
+    // 아이디 확인
+    Optional<Member> member = memberRepository.findByMemberId(memberId);
+    if (member.isEmpty()) {
+      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
+    }
+
+    // 작성자 아이디 가져오기
+    Optional<Store> byStoreId = storeRepository.findByStoreId(storeId);
+
+    // 작성자와 일치여부 확인
+    if (byStoreId.get().getMember().getMemberId() != memberId) {
+      throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
+    }
+
     Optional<Store> store = storeRepository.findByStoreId(storeId);
 
     // 상점 id 등록 여부, 삭제 여부 검색
@@ -97,6 +117,14 @@ public class StoreService {
     // 상점 id 등록 여부, 삭제 여부 검색
     if (store.isEmpty() || store.get().getStoreStatus().equals(Status.DELETE)) {
       throw new yummyException(ErrorCode.STORE_IS_NOT_EXIST);
+    }
+
+    // 작성자 아이디 가져오기
+    Optional<Store> byStoreId = storeRepository.findByStoreId(request.getStoreId());
+
+    // 작성자와 일치여부 확인
+    if (byStoreId.get().getMember().getMemberId() != request.getMemberId()) {
+      throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
     }
 
     // 예약 등록 여부 검색

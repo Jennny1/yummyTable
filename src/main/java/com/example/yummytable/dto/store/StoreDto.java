@@ -19,6 +19,7 @@ public class StoreDto {
 
   @NotNull
   private long storeId;
+  private long memberId;
   @NotNull
   private String storeName;
   @NotNull
@@ -42,6 +43,8 @@ public class StoreDto {
   public static StoreDto formEntity(Store store) {
     return StoreDto.builder()
         .storeId(store.getStoreId())
+        .memberId(store.getMember().getMemberId())
+
         .storeName(store.getStoreName())
         .keyword(store.getKeyword())
         .storeStatus(store.getStoreStatus())
@@ -49,6 +52,7 @@ public class StoreDto {
         .locationY(store.getLocationY())
         .menu(store.getMenu())
         .capacity(store.getCapacity())
+
         .registeredAt(store.getRegisteredAt())
         .updatedAt(store.getUpdatedAt())
         .unregisteredAt(store.getUnregisteredAt())

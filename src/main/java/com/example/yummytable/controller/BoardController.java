@@ -2,7 +2,7 @@ package com.example.yummytable.controller;
 
 import com.example.yummytable.dto.board.CreateBoard;
 import com.example.yummytable.dto.board.DeleteBoard;
-import com.example.yummytable.dto.board.ReadBoard;
+import com.example.yummytable.dto.board.GetBoard;
 import com.example.yummytable.dto.board.UpdateBoard;
 import com.example.yummytable.dto.board.UpdateBoard.Response;
 import com.example.yummytable.service.BoardService;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -34,28 +35,32 @@ public class BoardController {
 
   /*게시글 삭제*/
   @DeleteMapping("/board")
-  public DeleteBoard.Response deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
+  public DeleteBoard.Response deleteBoard(
+      @RequestParam Long boardId,
+      @RequestParam Long memberId,
+      @RequestBody @Valid DeleteBoard.Request request) {
 
     return DeleteBoard.Response.from(
-        boardService.deleteBoard(request)
+        boardService.deleteBoard(boardId, memberId, request)
     );
   }
 
 
   /*게시글 수정*/
-  @PatchMapping("/board/{boardId}")
+  @PatchMapping("/board")
   public Response updateBoard(
-      @PathVariable Long boardId,
+      @RequestParam Long boardId,
+      @RequestParam Long memberId,
       @RequestBody @Valid UpdateBoard.Request request) {
 
-    return UpdateBoard.Response.from(boardService.updateBoard(boardId, request));
+    return UpdateBoard.Response.from(boardService.updateBoard(boardId, memberId, request));
   }
 
 
   /*게시글 읽기*/
-  @GetMapping("/board/{boardId}")
-  public ReadBoard.Response getBoard(@PathVariable Long boardId) {
+  @GetMapping("/board")
+  public GetBoard.Response getBoard(@RequestParam Long boardId) {
 
-    return ReadBoard.Response.from(boardService.getBoard(boardId));
+    return GetBoard.Response.from(boardService.getBoard(boardId));
   }
 }

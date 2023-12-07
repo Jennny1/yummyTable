@@ -39,7 +39,7 @@ public class CreateBoard {
 
     private Long boardId;
     private Long storeId;
-    private Long MemberId;
+    private Long memberId;
 
     private String title;
     private String content;
@@ -51,7 +51,7 @@ public class CreateBoard {
       return Response.builder()
           .boardId(boardDto.getBoardId())
           .storeId(boardDto.getStoreId())
-          .MemberId(builder().MemberId)
+          .memberId(boardDto.getMemberId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
           .boardStatus(Status.EXISTENT)
