@@ -36,5 +36,6 @@ Content-Type: application/json
   "locationX": 111.11,
   "locationY": 222.22,
   "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 10
+  "capacity": 10,
+  "memberId" : 1
 }

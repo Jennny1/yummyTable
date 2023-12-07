@@ -22,6 +22,8 @@ public class UpdateStore {
     @NotNull
     private long storeId;
     @NotNull
+    private long memberId;
+    @NotNull
     private String storeName;
     @NotNull
     private String keyword;
@@ -54,6 +56,8 @@ public class UpdateStore {
   public static class Response {
 
     private long storeId;
+    private long memberId;
+
     private String storeName;
     private String keyword;
 
@@ -73,6 +77,7 @@ public class UpdateStore {
     public static Response from(StoreDto storeDto) {
       return Response.builder()
           .storeId(storeDto.getStoreId())
+          .memberId(storeDto.getMemberId())
           .storeName(storeDto.getStoreName())
           .keyword(storeDto.getKeyword())
           .storeStatus(storeDto.getStoreStatus())

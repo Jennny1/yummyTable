@@ -40,9 +40,7 @@ public class StoreController {
   @PatchMapping("/store")
   public UpdateStore.Response updateStore(@RequestBody @Valid UpdateStore.Request request) {
 
-    StoreDto storeDto = storeService.updateStore(request);
-
-    return null;
+    return UpdateStore.Response.from(storeService.updateStore(request));
   }
 
 

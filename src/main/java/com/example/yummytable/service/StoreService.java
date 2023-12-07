@@ -119,6 +119,14 @@ public class StoreService {
       throw new yummyException(ErrorCode.STORE_IS_NOT_EXIST);
     }
 
+    // 작성자 아이디 가져오기
+    Optional<Store> byStoreId = storeRepository.findByStoreId(request.getStoreId());
+
+    // 작성자와 일치여부 확인
+    if (byStoreId.get().getMember().getMemberId() != request.getMemberId()) {
+      throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
+    }
+
     // 예약 등록 여부 검색
     List<Booking> bookings = bookingRepository.findAllByStoreStoreIdAndBookingStatusAndBookingDateAfter(
         request.getStoreId(), Status.EXISTENT, LocalDate.now());
