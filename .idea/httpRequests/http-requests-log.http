@@ -1,3 +1,181 @@
+DELETE http://localhost:8080/store?storeId=1&memberId=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-07T144316.200.json
+
+###
+
+DELETE http://localhost:8080/store?storeId=1&memberId=2
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-07T144305.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "ddddd@gmail.com"
+}
+
+<> 2023-12-07T144301.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 186
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20,
+  "memberId" : 1
+}
+
+<> 2023-12-07T144251.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "dfdfdfd@gmail.com"
+}
+
+<> 2023-12-07T144248.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 186
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20,
+  "memberId" : 1
+}
+
+<> 2023-12-07T144229.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "dfdfdfd@gmail.com"
+}
+
+<> 2023-12-07T143959.200.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 186
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20,
+  "memberId" : 1
+}
+
+<> 2023-12-07T143948.500.json
+
+###
+
+POST http://localhost:8080/store
+Content-Type: application/json
+Content-Length: 186
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20,
+  "memberId" : 1
+}
+
+<> 2023-12-07T143632.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "dfdfdfd@gmail.com"
+}
+
+<> 2023-12-07T143627.200.json
+
+###
+
 POST http://localhost:8080/store?memberId=1
 Content-Type: application/json
 Content-Length: 168
@@ -15,13 +193,13 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-07T132107.200.json
+<> 2023-12-07T143502.500.json
 
 ###
 
 POST http://localhost:8080/member
 Content-Type: application/json
-Content-Length: 57
+Content-Length: 61
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
@@ -29,10 +207,10 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
   "password" : "pass1234",
-  "email": "qwe@gmail.com"
+  "email": "dfdfdfd@gmail.com"
 }
 
-<> 2023-12-07T132055.200.json
+<> 2023-12-07T143459.200.json
 
 ###
 
@@ -53,11 +231,11 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-07T132047.200.json
+<> 2023-12-07T143455.200.json
 
 ###
 
-POST http://localhost:8080/store
+POST http://localhost:8080/store?memberId=1
 Content-Type: application/json
 Content-Length: 168
 Connection: Keep-Alive
@@ -74,62 +252,210 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-07T132025.400.json
+<> 2023-12-07T143451.200.json
 
 ###
 
-PATCH http://localhost:8080/board?boardId=1&memberId=1
+POST http://localhost:8080/store?memberId=1
 Content-Type: application/json
-Content-Length: 107
+Content-Length: 168
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password": "pass1234"
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
 }
 
-<> 2023-12-07T113723.200.json
+<> 2023-12-07T143237.500.json
 
 ###
 
-PATCH http://localhost:8080/board?boardId=1&memberId=2
+POST http://localhost:8080/member
 Content-Type: application/json
-Content-Length: 107
+Content-Length: 61
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "password": "pass1234"
+  "password" : "pass1234",
+  "email": "dfdfdfd@gmail.com"
 }
 
-<> 2023-12-07T113710.200.json
+<> 2023-12-07T143229.200.json
 
 ###
 
-POST http://localhost:8080/board/1
+POST http://localhost:8080/member
 Content-Type: application/json
-Content-Length: 121
+Content-Length: 61
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
+  "password" : "pass1234",
+  "email": "fdfdffd@gmail.com"
 }
 
-<> 2023-12-07T113658.200.json
+<> 2023-12-07T143226.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T143121.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "fdfdffd@gmail.com"
+}
+
+<> 2023-12-07T143115.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "dodood@gmail.com"
+}
+
+<> 2023-12-07T143112.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T142812.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "dodood@gmail.com"
+}
+
+<> 2023-12-07T142807.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 55
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "z@gmail.com"
+}
+
+<> 2023-12-07T142803.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T142207.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 55
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "z@gmail.com"
+}
+
+<> 2023-12-07T142204.200.json
 
 ###
 
@@ -143,10 +469,331 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
   "password" : "pass1234",
-  "email": "qwe@gmail.com"
+  "email": "vgv@gmail.com"
 }
 
-<> 2023-12-07T113650.200.json
+<> 2023-12-07T142201.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T142127.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "vgv@gmail.com"
+}
+
+<> 2023-12-07T142052.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "zzz@gmail.com"
+}
+
+<> 2023-12-07T142050.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T141745.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "zzz@gmail.com"
+}
+
+<> 2023-12-07T141742.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "dds@gmail.com"
+}
+
+<> 2023-12-07T141739.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 55
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "d@gmail.com"
+}
+
+<> 2023-12-07T141735.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T141708.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 55
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "d@gmail.com"
+}
+
+<> 2023-12-07T141659.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T141621.500.json
+
+###
+
+POST http://localhost:8080/store?memberId=
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T141615.400.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T141605.500.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T141558.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "ddd@gmail.com"
+}
+
+<> 2023-12-07T141553.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "fee@gmail.com"
+}
+
+<> 2023-12-07T141550.200.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
+Content-Type: application/json
+Content-Length: 168
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "storeName": "맛있다돈까스",
+  "keyword": "맛집",
+  "locationX": 123.12,
+  "locationY": 238.44,
+  "menu": "C:\\dev\\yummyTable\\erd.png",
+  "capacity": 20
+}
+
+<> 2023-12-07T134836.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "fee@gmail.com"
+}
+
+<> 2023-12-07T134832.200.json
 
 ###
 
@@ -160,14 +807,25 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
   "password" : "pass1234",
-  "email": "afsd@gmail.com"
+  "email": "zzzz@gmail.com"
 }
 
-<> 2023-12-07T113647.200.json
+<> 2023-12-07T134830.200.json
 
 ###
 
-POST http://localhost:8080/store
+DELETE http://localhost:8080/store?storeId=1&memberId=2
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-07T134809.500.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
 Content-Type: application/json
 Content-Length: 168
 Connection: Keep-Alive
@@ -184,60 +842,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-07T113639.200.json
-
-###
-
-DELETE http://localhost:8080/board?boardId=1&memberId=1
-Content-Type: application/json
-Content-Length: 44
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "boardId": 1,
-  "password": "pass1234"
-}
-
-<> 2023-12-07T112422.200.json
-
-###
-
-DELETE http://localhost:8080/board?boardId=1&memberId=2
-Content-Type: application/json
-Content-Length: 44
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "boardId": 1,
-  "password": "pass1234"
-}
-
-<> 2023-12-07T112418.200.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-07T112319.200.json
+<> 2023-12-07T134728.200.json
 
 ###
 
@@ -251,16 +856,16 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
   "password" : "pass1234",
-  "email": "afsd@gmail.com"
+  "email": "zzzz@gmail.com"
 }
 
-<> 2023-12-07T112307.200.json
+<> 2023-12-07T134724.200.json
 
 ###
 
 POST http://localhost:8080/member
 Content-Type: application/json
-Content-Length: 57
+Content-Length: 59
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
@@ -268,14 +873,25 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 
 {
   "password" : "pass1234",
-  "email": "aaa@gmail.com"
+  "email": "vdddd@gmail.com"
 }
 
-<> 2023-12-07T112301.200.json
+<> 2023-12-07T134722.200.json
 
 ###
 
-POST http://localhost:8080/store
+DELETE http://localhost:8080/store?storeId=1&memberId=2
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-07T134659.500.json
+
+###
+
+POST http://localhost:8080/store?memberId=1
 Content-Type: application/json
 Content-Length: 168
 Connection: Keep-Alive
@@ -292,570 +908,7 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "capacity": 20
 }
 
-<> 2023-12-07T112254.200.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-07T104623.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-07T104621.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-07T104619.200.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-07T104455.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-07T104452.200.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-07T104446.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-07T104443.200.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-07T104434.200.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-07T104158.403.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-07T104131.403.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-07T102012.403.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-07T100414.403.json
-
-###
-
-DELETE http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-07T100410.403.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=FA7C4D86E93D1CB544963C8EEB8626C7
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-07T095716.403.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=39D8EE76C457AEB61B3CF47E0E6E798B
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-07T094357.403.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=39D8EE76C457AEB61B3CF47E0E6E798B
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=39D8EE76C457AEB61B3CF47E0E6E798B
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=39D8EE76C457AEB61B3CF47E0E6E798B
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-06T175325.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-06T175314.200.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-06T175217.500.json
-
-###
-
-POST http://localhost:8080/board/1
-Content-Type: application/json
-Content-Length: 121
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "password" : "pass1234"
-}
-
-<> 2023-12-06T175021.500.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-06T174950.200.json
-
-###
-
-GET http://localhost:8080/favorit/1
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T171754.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/2
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T171732.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/4
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T171728.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/3
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T171723.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaa@gmail.com"
-}
-
-<> 2023-12-06T171716.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "qef@gmail.com"
-}
-
-<> 2023-12-06T171713.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 57
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "ccc@gmail.com"
-}
-
-<> 2023-12-06T171708.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 168
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-06T171706.200.json
-
-###
-
-POST http://localhost:8080/favorit/1/3
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-06T170908.500.json
+<> 2023-12-07T134656.200.json
 
 ###
 

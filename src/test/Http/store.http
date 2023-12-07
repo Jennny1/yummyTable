@@ -1,6 +1,6 @@
 
 ### create store
-POST http://localhost:8080/store?memberId=1
+POST http://localhost:8080/store
 Content-Type: application/json
 
 {
@@ -9,12 +9,13 @@ Content-Type: application/json
   "locationX": 123.12,
   "locationY": 238.44,
   "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
+  "capacity": 20,
+  "memberId" : 1
 }
 
 
 ### delete store
-DELETE http://localhost:8080/store/1
+DELETE http://localhost:8080/store?storeId=1&memberId=1
 Content-Type: application/json
 
 

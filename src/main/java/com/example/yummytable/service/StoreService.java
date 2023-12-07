@@ -31,9 +31,9 @@ public class StoreService {
   private final MemberRepository memberRepository;
 
   /*상점 등록*/
-  public StoreDto createStore(Long memberId, CreateStore.Request request) {
+  public StoreDto createStore(CreateStore.Request request) {
     // 아이디 확인
-    Optional<Member> member = memberRepository.findByMemberId(memberId);
+    Optional<Member> member = memberRepository.findByMemberId(request.getMemberId());
     if (member.isEmpty()) {
       throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
     }
@@ -47,7 +47,7 @@ public class StoreService {
     return StoreDto.formEntity(
         storeRepository.save(
             Store.builder()
-                .storeId(request.getStoreId())
+                .member(Member.builder().memberId(request.getMemberId()).build())
                 .storeName(request.getStoreName())
                 .keyword(request.getKeyword())
                 .locationX(request.getLocationX())
@@ -67,7 +67,21 @@ public class StoreService {
   - output : StoreStatus.DELETE로 변경
   - 예약된 이력이 있을때 삭제 불가
   */
-  public StoreDto deleteStore(long storeId) {
+  public StoreDto deleteStore(Long storeId, Long memberId) {
+    // 아이디 확인
+    Optional<Member> member = memberRepository.findByMemberId(memberId);
+    if (member.isEmpty()) {
+      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
+    }
+
+    // 작성자 아이디 가져오기
+    Optional<Store> byStoreId = storeRepository.findByStoreId(storeId);
+
+    // 작성자와 일치여부 확인
+    if (byStoreId.get().getMember().getMemberId() != memberId) {
+      throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
+    }
+
     Optional<Store> store = storeRepository.findByStoreId(storeId);
 
     // 상점 id 등록 여부, 삭제 여부 검색

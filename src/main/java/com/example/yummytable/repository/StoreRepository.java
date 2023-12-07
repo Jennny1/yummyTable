@@ -17,4 +17,5 @@ public interface StoreRepository extends JpaRepository<Store, Long> {
   Optional<Store> findByStoreIdAndStoreStatus(Long sotreId, Status storeStatus);
 
 
+  Optional<Store> findByMemberMemberId(Long memberId);
 }

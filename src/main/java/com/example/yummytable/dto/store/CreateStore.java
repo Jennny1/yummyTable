@@ -18,9 +18,8 @@ public class CreateStore {
   @AllArgsConstructor
   @Builder
   public static class Request {
-
     @NotNull
-    private long storeId;
+    private Long memberId;
     @NotNull
     private String storeName;
     @NotNull
@@ -49,6 +48,8 @@ public class CreateStore {
   public static class Response {
 
     private long storeId;
+    private long memberId;
+
     private String storeName;
     private String keyword;
 
@@ -68,6 +69,8 @@ public class CreateStore {
     public static Response from(StoreDto storeDto) {
       return Response.builder()
           .storeId(storeDto.getStoreId())
+          .memberId(storeDto.getMemberId())
+
           .storeName(storeDto.getStoreName())
           .keyword(storeDto.getKeyword())
           .storeStatus(storeDto.getStoreStatus())
@@ -75,6 +78,7 @@ public class CreateStore {
           .locationY(storeDto.getLocationY())
           .menu(storeDto.getMenu())
           .capacity(storeDto.getCapacity())
+
           .registeredAt(storeDto.getRegisteredAt())
           .updatedAt(storeDto.getUpdatedAt())
           .unregisteredAt(storeDto.getUnregisteredAt())
