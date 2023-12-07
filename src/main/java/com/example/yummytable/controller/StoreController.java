@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,17 +23,11 @@ public class StoreController {
 
   /*상점 등록*/
   @PostMapping("/store")
-  public CreateStore.Response createStore(@RequestBody @Valid CreateStore.Request request) {
+  public CreateStore.Response createStore(
+      @RequestParam Long memberId,
+      @RequestBody @Valid CreateStore.Request request) {
 
-    return CreateStore.Response.from(storeService.createStore(
-        request.getStoreId(),
-        request.getStoreName(),
-        request.getKeyword(),
-        request.getLocationX(),
-        request.getLocationY(),
-        request.getMenu(),
-        request.getCapacity(),
-        request.getNumberOfApplicants()));
+    return CreateStore.Response.from(storeService.createStore(memberId, request));
   }
 
   /*상점 삭제*/

@@ -7,25 +7,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class ReadBoard {
-
-  @Getter
-  @Setter
-  @NoArgsConstructor
-  @AllArgsConstructor
-  @Builder
-  public static class Request {
-
-    // 게시글 관련 정보
-    @NotNull
-    private Long boardId;
-    @NotNull
-    private String password;
-
-  }
+public class GetBoard {
 
   @Getter
   @Setter
@@ -36,6 +20,8 @@ public class ReadBoard {
 
     // 게시글 관련 정보
     private Long boardId;
+    private Long memberId;
+
     private String title;
     private String content;
     private Status boardStatus;
@@ -44,6 +30,7 @@ public class ReadBoard {
     public static Response from(BoardDto boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
+          .memberId(boardDto.getMemberId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
           .boardStatus(Status.EXISTENT)

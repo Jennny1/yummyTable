@@ -2,7 +2,7 @@ package com.example.yummytable.controller;
 
 import com.example.yummytable.dto.board.CreateBoard;
 import com.example.yummytable.dto.board.DeleteBoard;
-import com.example.yummytable.dto.board.ReadBoard;
+import com.example.yummytable.dto.board.GetBoard;
 import com.example.yummytable.dto.board.UpdateBoard;
 import com.example.yummytable.dto.board.UpdateBoard.Response;
 import com.example.yummytable.service.BoardService;
@@ -58,9 +58,9 @@ public class BoardController {
 
 
   /*게시글 읽기*/
-  @GetMapping("/board/{boardId}")
-  public ReadBoard.Response getBoard(@PathVariable Long boardId) {
+  @GetMapping("/board")
+  public GetBoard.Response getBoard(@RequestParam Long boardId) {
 
-    return ReadBoard.Response.from(boardService.getBoard(boardId));
+    return GetBoard.Response.from(boardService.getBoard(boardId));
   }
 }

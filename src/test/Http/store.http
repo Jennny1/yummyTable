@@ -1,6 +1,6 @@
 
 ### create store
-POST http://localhost:8080/store
+POST http://localhost:8080/store?memberId=1
 Content-Type: application/json
 
 {

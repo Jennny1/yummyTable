@@ -65,6 +65,11 @@ public class Store {
   @OneToMany(mappedBy = "store")
   private List<Board> boards;
 
+  // 상점 - 회원
+  @ManyToOne
+  @JoinColumn(name = "memberId")
+  private Member member;
+
   // 찜하기
   @OneToMany(mappedBy = "store")
   private List<Favorit> favorit;
