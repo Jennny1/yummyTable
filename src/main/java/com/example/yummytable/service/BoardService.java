@@ -83,10 +83,15 @@ public class BoardService {
 
 
   /*게시글 수정*/
-  public BoardDto updateBoard(Long boardId, @Valid UpdateBoard.Request request) {
+  public BoardDto updateBoard(Long boardId, Long memberId, @Valid UpdateBoard.Request request) {
     Optional<Store> store = storeRepository.findByStoreId(request.getStoreId());
 
     Board board = validBoardInfo(boardId, request.getPassword());
+
+    // 작성자 확인
+    if (memberId != board.getMember().getMemberId()) {
+      throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
+    }
 
     // 수정 반영
     if (request.getStoreId() != null && board.getStore().getStoreId() != request.getStoreId()) {

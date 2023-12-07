@@ -38,6 +38,8 @@ public class UpdateBoard {
 
     // 게시글 관련 정보
     private Long boardId;
+    private Long memberId;
+
     private String title;
     private String content;
     private Status boardStatus;
@@ -47,6 +49,7 @@ public class UpdateBoard {
     public static Response from(BoardDto boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
+          .memberId(boardDto.getMemberId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
           .boardStatus(Status.EXISTENT)

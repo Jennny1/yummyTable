@@ -47,12 +47,13 @@ public class BoardController {
 
 
   /*게시글 수정*/
-  @PatchMapping("/board/{boardId}")
+  @PatchMapping("/board")
   public Response updateBoard(
-      @PathVariable Long boardId,
+      @RequestParam Long boardId,
+      @RequestParam Long memberId,
       @RequestBody @Valid UpdateBoard.Request request) {
 
-    return UpdateBoard.Response.from(boardService.updateBoard(boardId, request));
+    return UpdateBoard.Response.from(boardService.updateBoard(boardId, memberId, request));
   }
 
 
