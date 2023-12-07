@@ -12,6 +12,7 @@ import com.example.yummytable.dto.board.DeleteBoard;
 import com.example.yummytable.dto.board.UpdateBoard;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BoardRepository;
+import com.example.yummytable.repository.MemberRepository;
 import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
@@ -29,12 +30,18 @@ public class BoardService {
 
   private final BoardRepository boardRepository;
   private final StoreRepository storeRepository;
+  private final MemberRepository memberRepository;
 
   /*
   게시글 생성
   - 상점 등록 선행 필수
   */
   public BoardDto createBoard(Long memberId, @Valid Request request) {
+    // 멤버 확인
+    Optional<Member> member = memberRepository.findByMemberId(memberId);
+    if (member.isEmpty()) {
+      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
+    }
 
     // 상점 존재 확인
     Store store = storeRepository.findByStoreIdAndStoreStatus(request.getStoreId(),
@@ -57,8 +64,13 @@ public class BoardService {
 
 
   /*게시글 삭제*/
-  public BoardDto deleteBoard(DeleteBoard.Request request) {
-    Board board = validBoardInfo(request.getBoardId(), request.getPassword());
+  public BoardDto deleteBoard(Long boardId, Long memberId, DeleteBoard.Request request) {
+    Board board = validBoardInfo(boardId, request.getPassword());
+
+    // 작성자 확인
+    if (memberId != board.getMember().getMemberId()) {
+      throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
+    }
 
     // BoardStatus 변경
     board.setBoardStatus(Status.DELETE);

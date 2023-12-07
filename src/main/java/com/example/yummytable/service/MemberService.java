@@ -27,6 +27,7 @@ import org.springframework.stereotype.Service;
 public class MemberService {
 
   private final MemberRepository memberRepository;
+  /*  private PasswordEncoder passwordEncoder;*/
 
   /*회원 등록*/
   public MemberDto createMember(Request request) {
@@ -35,6 +36,10 @@ public class MemberService {
     if (!member.isEmpty()) {
       throw new yummyException(EMAIL_ALREADY_EXIST);
     }
+
+/*
+    String pass = passwordEncoder.encode(request.getPassword());
+*/
 
     return MemberDto.fromEntity(
         memberRepository.save(

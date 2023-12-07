@@ -8,10 +8,11 @@ import lombok.Getter;
 public enum ErrorCode {
   PASSWORD_NOT_MATCH("패스워드가 일치하지 않습니다."),
   MEMBER_ALREADY_DELETE("이미 탈퇴한 아이디입니다."),
+  MEMBER_NOT_MATCH("작성자만 게시글을 삭제할 수 있습니다."),
   CONTENT_IS_NULL("수정할 내용을 입력해주세요"),
   EMAIL_ALREADY_EXIST("이미 존재하는 이메일입니다."),
   FAVORITS_NOT_EXIST("찜하기를 누른 회원이 없습니다."),
-  MEMBER_IS_NOT_EXIST("아이디가 존재하지 안습니다."),
+  MEMBER_IS_NOT_EXIST("아이디가 존재하지 않습니다."),
   PLEASE_INPUT_ANOTHER_PASSWORD("이전과 다른 비밀번호를 입력해주세요"),
   COMMENT_ALREADY_DELETE("이미 삭제된 댓글입니다."),
   EMAIL_NOT_MATCH("이메일을 찾을 수 없습니다."),

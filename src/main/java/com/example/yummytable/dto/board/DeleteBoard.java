@@ -21,8 +21,6 @@ public class DeleteBoard {
 
     // 게시글 관련 정보
     @NotNull
-    private Long boardId;
-    @NotNull
     private String password;
 
   }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -34,10 +35,13 @@ public class BoardController {
 
   /*게시글 삭제*/
   @DeleteMapping("/board")
-  public DeleteBoard.Response deleteBoard(@RequestBody @Valid DeleteBoard.Request request) {
+  public DeleteBoard.Response deleteBoard(
+      @RequestParam Long boardId,
+      @RequestParam Long memberId,
+      @RequestBody @Valid DeleteBoard.Request request) {
 
     return DeleteBoard.Response.from(
-        boardService.deleteBoard(request)
+        boardService.deleteBoard(boardId, memberId, request)
     );
   }
 
