@@ -58,7 +58,7 @@ public class DeleteBooking {
       return Response.builder()
           .bookingId(bookingDto.getBookingId())
           .storeId(bookingDto.getStoreId())
-          .storeId(bookingDto.getMemberId())
+          .memberId(bookingDto.getMemberId())
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(String.valueOf(bookingDto.getBookingDate()))

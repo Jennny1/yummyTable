@@ -1,6 +1,6 @@
 
 ### create booking
-POST http://localhost:8080/booking?storeId=1&memberId=1
+POST http://localhost:8080/booking?storeId=1&memberId=2
 Content-Type: application/json
 
 {
@@ -20,12 +20,12 @@ Content-Type: application/json
 
 
 ### delete booking
-DELETE http://localhost:8080/booking?storeId=1&bookingId=2
+DELETE http://localhost:8080/booking?storeId=1&bookingId=1
 Content-Type: application/json
 
 {
-  "bookingDate": "2023-12-03",
-  "numberOfApplicants": 1
+  "bookingDate": "2023-12-10",
+  "numberOfApplicants": 5
 }
 
 

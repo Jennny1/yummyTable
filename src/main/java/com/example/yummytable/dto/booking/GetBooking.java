@@ -13,7 +13,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 
-public class ReadBooking {
+public class GetBooking {
 
   @Getter
   @Setter
@@ -37,6 +37,7 @@ public class ReadBooking {
 
     private Long bookingId;
     private Long storeId;
+    private Long memberId;
 
     private int capacity;
     private int numberOfApplicants;
@@ -55,6 +56,7 @@ public class ReadBooking {
       return Response.builder()
           .bookingId(bookingDto.getBookingId())
           .storeId(bookingDto.getStoreId())
+          .memberId(bookingDto.getMemberId())
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(bookingDto.getBookingDate())
