@@ -2,6 +2,7 @@ package com.example.yummytable.service;
 
 import com.example.yummytable.domain.Board;
 import com.example.yummytable.domain.Comment;
+import com.example.yummytable.domain.Member;
 import com.example.yummytable.dto.comment.CommentDto;
 import com.example.yummytable.dto.comment.CreateComment;
 import com.example.yummytable.dto.comment.UpdateComment;
@@ -40,7 +41,7 @@ public class CommentService {
     return CommentDto.formEntity(commentRepository.save(
         Comment.builder()
             .board(Board.builder().boardId(boardId).build())
-            .memberID(memberId)
+            .member(Member.builder().memberId(memberId).build())
             .content(request.getContent())
             .commentStatus(Status.EXISTENT)
             .password(request.getPassword())

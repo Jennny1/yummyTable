@@ -14,9 +14,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,9 +26,9 @@ public class CommentController {
   private final CommentService commentService;
 
   /*댓글 입력*/
-  @PostMapping("/comment/{boardId}/{memberId}")
+  @PostMapping("/comment")
   public CreateComment.Response createComment(
-      @PathVariable Long boardId, @PathVariable Long memberId,
+      @RequestParam Long boardId, @RequestParam Long memberId,
       @RequestBody @Valid CreateComment.Request request) {
 
     return CreateComment.Response.from(commentService.createComment(boardId, memberId, request));
@@ -36,9 +36,9 @@ public class CommentController {
 
 
   /*댓글 삭제*/
-  @DeleteMapping("/comment/{boardId}/{commentId}")
+  @DeleteMapping("/comment")
   public DeleteComment.Response deleteComment(
-      @PathVariable Long boardId, @PathVariable Long commentId,
+      @RequestParam Long boardId, @RequestParam Long commentId,
       @RequestBody @Valid Request request) {
 
     return DeleteComment.Response.from(commentService.deleteComment(boardId, commentId, request));
@@ -46,9 +46,9 @@ public class CommentController {
 
 
   /*댓글 수정*/
-  @PatchMapping("/comment/{boardId}/{commentId}")
+  @PatchMapping("/comment")
   public UpdateComment.Response updateComment(
-      @PathVariable Long boardId, @PathVariable Long commentId,
+      @RequestParam Long boardId, @RequestParam Long commentId,
       @RequestBody @Valid UpdateComment.Request request) {
 
     return UpdateComment.Response.from(commentService.updateComment(boardId, commentId, request));
@@ -56,8 +56,8 @@ public class CommentController {
 
 
   /*댓글 보기*/
-  @GetMapping("/comment/{boardId}")
-  public List<Response> getCommentBylatest(@PathVariable Long boardId) {
+  @GetMapping("/comment")
+  public List<Response> getCommentBylatest(@RequestParam Long boardId) {
 
     return commentService.getCommentBylatest(boardId).stream()
         .map(CommentDto -> GetComment.Response.builder()

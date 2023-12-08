@@ -25,6 +25,7 @@ public class CreateComment {
     private String content;
     @NotNull
     private String password;
+    private Long memberId;
 
   }
 
