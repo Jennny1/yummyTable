@@ -1,10 +1,12 @@
 package com.example.yummytable.service;
 
 import com.example.yummytable.domain.Booking;
+import com.example.yummytable.domain.Member;
 import com.example.yummytable.domain.Store;
 import com.example.yummytable.dto.booking.BookingDto;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.BookingRepository;
+import com.example.yummytable.repository.MemberRepository;
 import com.example.yummytable.repository.StoreRepository;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
@@ -25,15 +27,23 @@ public class BookingService {
 
   private final BookingRepository bookingRepository;
   private final StoreRepository storeRepository;
+  private final MemberRepository memberRepository;
+
   private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 
   /*예약 등록*/
-  public BookingDto createBooking(
-      Long storeId, String bookingDate, int numberOfApplicants) {
+  public BookingDto createBooking(Long storeId, Long memberId, String bookingDate,
+      int numberOfApplicants) {
 
     // 가게 등록 확인
     Store store = getStore(storeId);
+
+    // 아이디 확인
+    Optional<Member> member = memberRepository.findByMemberId(memberId);
+    if (member.isEmpty()) {
+      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
+    }
 
     // 날짜 확인
     LocalDate bookingDateFormatted = extracted(bookingDate, formatter);
@@ -56,6 +66,7 @@ public class BookingService {
             .store(Store.builder()
                 .storeId(store.getStoreId())
                 .capacity(store.getCapacity()).build())
+            .member(Member.builder().memberId(memberId).build())
             .registeredAt(LocalDateTime.now())
             .bookingDate(LocalDate.parse(bookingDate))
             .bookingStatus(Status.EXISTENT)

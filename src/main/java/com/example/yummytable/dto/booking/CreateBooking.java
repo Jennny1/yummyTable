@@ -30,7 +30,6 @@ public class CreateBooking {
 
   }
 
-
   @Getter
   @Setter
   @NoArgsConstructor
@@ -40,6 +39,7 @@ public class CreateBooking {
 
     private Long bookingId;
     private Long storeId;
+    private Long memberId;
 
     private int capacity;
     private int numberOfApplicants;
@@ -58,6 +58,7 @@ public class CreateBooking {
       return Response.builder()
           .bookingId(bookingDto.getBookingId())
           .storeId(bookingDto.getStoreId())
+          .memberId(bookingDto.getMemberId())
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(bookingDto.getBookingDate())

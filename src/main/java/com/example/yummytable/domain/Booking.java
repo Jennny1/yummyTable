@@ -50,5 +50,10 @@ public class Booking {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
+  // 예약 - 회원
+  @ManyToOne
+  @JoinColumn(name = "memberId")
+  private Member member;
+
 
 }

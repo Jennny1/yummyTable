@@ -28,11 +28,12 @@ public class BookingController {
   @PostMapping("/booking")
   public CreateBooking.Response createBooking(
       @RequestParam Long storeId,
+      @RequestParam Long memberId,
       @RequestBody @Valid CreateBooking.Request request) {
 
     return CreateBooking.Response.from(
         bookingService.createBooking(
-            storeId,
+            storeId, memberId,
             request.getBookingDate(),
             request.getNumberOfApplicants())
     );
