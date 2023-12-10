@@ -33,7 +33,7 @@ public class Booking {
 
   @Id
   @GeneratedValue
-  private long bookingId;
+  private Long bookingId;
   private LocalDate bookingDate;
   private int numberOfApplicants;
 
@@ -49,6 +49,11 @@ public class Booking {
   @LastModifiedDate
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
+
+  // 예약 - 회원
+  @ManyToOne
+  @JoinColumn(name = "memberId")
+  private Member member;
 
 
 }

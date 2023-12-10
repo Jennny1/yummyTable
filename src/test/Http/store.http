@@ -4,13 +4,14 @@ POST http://localhost:8080/store
 Content-Type: application/json
 
 {
+  "memberId" : 1,
   "storeName": "맛있다돈까스",
   "keyword": "맛집",
   "locationX": 123.12,
   "locationY": 238.44,
   "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20,
-  "memberId" : 1
+  "capacity": 20
+
 }
 
 

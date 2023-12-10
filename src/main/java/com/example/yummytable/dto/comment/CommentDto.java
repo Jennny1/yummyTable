@@ -37,7 +37,7 @@ public class CommentDto {
     return CommentDto.builder()
         .commentId(comment.getCommentId())
         .boardId(comment.getBoard().getBoardId())
-        .memberId(comment.getMemberID())
+        .memberId(comment.getMember().getMemberId())
         .content(comment.getContent())
         .password(comment.getPassword())
         .registeredAt(comment.getRegisteredAt())

@@ -24,9 +24,9 @@ public class BoardController {
   private final BoardService boardService;
 
   /*게시글 입력*/
-  @PostMapping("/board/{memberId}")
+  @PostMapping("/boards")
   public CreateBoard.Response creatBoard(
-      @PathVariable Long memberId,
+      @RequestParam Long memberId,
       @RequestBody @Valid CreateBoard.Request request) {
 
     return CreateBoard.Response.from(boardService.createBoard(memberId, request));
@@ -34,7 +34,7 @@ public class BoardController {
 
 
   /*게시글 삭제*/
-  @DeleteMapping("/board")
+  @DeleteMapping("/boards")
   public DeleteBoard.Response deleteBoard(
       @RequestParam Long boardId,
       @RequestParam Long memberId,
@@ -47,7 +47,7 @@ public class BoardController {
 
 
   /*게시글 수정*/
-  @PatchMapping("/board")
+  @PatchMapping("/boards")
   public Response updateBoard(
       @RequestParam Long boardId,
       @RequestParam Long memberId,
@@ -58,7 +58,7 @@ public class BoardController {
 
 
   /*게시글 읽기*/
-  @GetMapping("/board")
+  @GetMapping("/boards")
   public GetBoard.Response getBoard(@RequestParam Long boardId) {
 
     return GetBoard.Response.from(boardService.getBoard(boardId));

@@ -53,26 +53,24 @@ public class MemberService {
   /*회원 탈퇴*/
   public MemberDto deleteMember(DeleteMember.Request request) {
     // 이메일 확인
-    Optional<Member> member = memberRepository.findByEmail(request.getEmail());
-    if (member.isEmpty()) {
-      throw new yummyException(FAIL_TO_FIND_EMAIL);
-    }
+    Member member = memberRepository.findByEmail(request.getEmail())
+        .orElseThrow(() -> new yummyException(FAIL_TO_FIND_EMAIL));
 
     // 비밀번호 확인
-    if (!member.get().getPassword().equals(request.getPassword())) {
+    if (!member.getPassword().equals(request.getPassword())) {
       throw new yummyException(PASSWORD_NOT_MATCH);
     }
 
     // 삭제 여부 확인
-    if (member.get().getMemberStatus().equals(Status.DELETE)) {
+    if (member.getMemberStatus().equals(Status.DELETE)) {
       throw new yummyException(MEMBER_ALREADY_DELETE);
     }
 
-    member.get().setMemberStatus(Status.DELETE);
-    member.get().setUnregisteredAt(LocalDateTime.now());
-    memberRepository.save(member.get());
+    member.setMemberStatus(Status.DELETE);
+    member.setUnregisteredAt(LocalDateTime.now());
+    memberRepository.save(member);
 
-    return MemberDto.fromEntity(member.get());
+    return MemberDto.fromEntity(member);
 
   }
 

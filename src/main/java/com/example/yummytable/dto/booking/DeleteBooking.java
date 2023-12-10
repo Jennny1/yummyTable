@@ -39,6 +39,7 @@ public class DeleteBooking {
 
     private Long bookingId;
     private Long storeId;
+    private Long memberId;
 
     private int capacity;
     private int numberOfApplicants;
@@ -57,6 +58,7 @@ public class DeleteBooking {
       return Response.builder()
           .bookingId(bookingDto.getBookingId())
           .storeId(bookingDto.getStoreId())
+          .memberId(bookingDto.getMemberId())
           .capacity(bookingDto.getCapacity())
           .numberOfApplicants(bookingDto.getNumberOfApplicants())
           .bookingDate(String.valueOf(bookingDto.getBookingDate()))

@@ -2,8 +2,8 @@ package com.example.yummytable.controller;
 
 import com.example.yummytable.dto.booking.CreateBooking;
 import com.example.yummytable.dto.booking.DeleteBooking;
-import com.example.yummytable.dto.booking.ReadBooking;
-import com.example.yummytable.dto.booking.ReadBooking.Response;
+import com.example.yummytable.dto.booking.GetBooking;
+import com.example.yummytable.dto.booking.GetBooking.Response;
 import com.example.yummytable.dto.booking.UpdateBooking;
 import com.example.yummytable.service.BookingService;
 import jakarta.validation.Valid;
@@ -28,11 +28,12 @@ public class BookingController {
   @PostMapping("/booking")
   public CreateBooking.Response createBooking(
       @RequestParam Long storeId,
+      @RequestParam Long memberId,
       @RequestBody @Valid CreateBooking.Request request) {
 
     return CreateBooking.Response.from(
         bookingService.createBooking(
-            storeId,
+            storeId, memberId,
             request.getBookingDate(),
             request.getNumberOfApplicants())
     );
@@ -42,11 +43,11 @@ public class BookingController {
   /*예약 보기*/
   @GetMapping("/booking")
   public List<Response> getBooking(
-      @RequestParam Long storeId,
-      @RequestBody @Valid ReadBooking.Request request) {
+      @RequestParam Long storeId, @RequestParam Long bookingId,
+      @RequestBody @Valid GetBooking.Request request) {
 
     return bookingService.readBooking(storeId, request.getBookingDate()).stream()
-        .map(bookingDto -> ReadBooking.Response.builder()
+        .map(bookingDto -> GetBooking.Response.builder()
             .storeId(bookingDto.getStoreId())
             .bookingId(bookingDto.getBookingId())
             .capacity(bookingDto.getCapacity())

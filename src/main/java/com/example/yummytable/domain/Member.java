@@ -53,6 +53,14 @@ public class Member {
   @OneToMany(mappedBy = "member")
   private List<Store> stores;
 
+  // 회원 - 댓글
+  @OneToMany(mappedBy = "member")
+  private List<Comment> comments;
+
+  // 회원 - 예약
+  @OneToMany(mappedBy = "member")
+  private List<Booking> bookings;
+
   // 회원 - 찜
   @OneToMany(mappedBy = "member")
   private List<Favorit> favorits;

@@ -23,6 +23,7 @@ public class UpdateStore {
     private long storeId;
     @NotNull
     private long memberId;
+
     @NotNull
     private String storeName;
     @NotNull

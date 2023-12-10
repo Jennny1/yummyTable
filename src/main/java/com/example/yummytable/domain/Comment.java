@@ -44,8 +44,14 @@ public class Comment {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
+  // 댓글 - 게시글
   @ManyToOne
   @JoinColumn(name = "boardId")
   private Board board;
-  private Long memberID;
+
+  @ManyToOne
+  @JoinColumn(name = "memberId")
+  private Member member;
+
+
 }
