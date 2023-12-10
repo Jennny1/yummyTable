@@ -32,8 +32,14 @@ public class MemberService {
   /*회원 등록*/
   public MemberDto createMember(Request request) {
     // 이메일 확인
-    Member member = memberRepository.findByEmail(request.getEmail())
-        .orElseThrow(() -> new yummyException(EMAIL_ALREADY_EXIST));
+    Optional<Member> member = memberRepository.findByEmail(request.getEmail());
+    if (!member.isEmpty()) {
+      throw new yummyException(EMAIL_ALREADY_EXIST);
+    }
+
+/*
+    String pass = passwordEncoder.encode(request.getPassword());
+*/
 
     return MemberDto.fromEntity(
         memberRepository.save(
