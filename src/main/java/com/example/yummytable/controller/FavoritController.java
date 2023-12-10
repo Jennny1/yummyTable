@@ -2,7 +2,6 @@ package com.example.yummytable.controller;
 
 import com.example.yummytable.dto.favorit.CreateFavorit;
 import com.example.yummytable.dto.favorit.DeleteFavorit;
-import com.example.yummytable.dto.favorit.GetFavorit;
 import com.example.yummytable.dto.favorit.GetFavorit.Response;
 import com.example.yummytable.service.FavoritService;
 import java.util.List;
@@ -10,8 +9,8 @@ import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,25 +20,27 @@ public class FavoritController {
   private final FavoritService favoritService;
 
   /*좋아요 등록*/
-  @PostMapping("favorit/{storeId}/{memberId}")
-  public CreateFavorit.Response createFavorit(@PathVariable Long storeId,
-      @PathVariable Long memberId) {
+  @PostMapping("/favorits")
+  public CreateFavorit.Response createFavorit(
+      @RequestParam Long storeId,
+      @RequestParam Long memberId) {
 
     return CreateFavorit.Response.from(favoritService.createFavorit(storeId, memberId));
   }
 
 
   /*좋아요 취소*/
-  @DeleteMapping("favorit/{storeId}/{memberId}")
-  public DeleteFavorit.Response deleteFavorit(@PathVariable Long storeId,
-      @PathVariable Long memberId) {
+  @DeleteMapping("/favorits")
+  public DeleteFavorit.Response deleteFavorit(
+      @RequestParam Long storeId,
+      @RequestParam Long memberId) {
 
     return DeleteFavorit.Response.from(favoritService.deleteFavorit(storeId, memberId));
   }
 
   /*좋아요 리스트 보기*/
-  @GetMapping("favorit/{storeId}")
-  public List<Response> deleteFavorit(@PathVariable Long storeId) {
+  @GetMapping("/favorits")
+  public List<Response> getFavorit(@RequestParam Long storeId) {
 
     return favoritService.getFavofit(storeId).stream()
         .map(FavoritDto -> Response.builder()

@@ -1,16 +1,16 @@
 
 ### create favorit
-POST http://localhost:8080/favorit/1/2
+POST http://localhost:8080/favorits?storeId=1&memberId=2
 Content-Type: application/json
 
 
 ### delete favorit
-DELETE http://localhost:8080/favorit/1/1
+DELETE http://localhost:8080/favorits?storeId=1&memberId=1
 Content-Type: application/json
 
 
 
 ### get favorit
-GET http://localhost:8080/favorit/1
+GET http://localhost:8080/favorits?storeId=1
 Content-Type: application/json
 
