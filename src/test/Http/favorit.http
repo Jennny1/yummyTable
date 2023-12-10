@@ -1,6 +1,6 @@
 
 ### create favorit
-POST http://localhost:8080/favorits?storeId=1&memberId=2
+POST http://localhost:8080/favorits?storeId=1&memberId=1
 Content-Type: application/json
 
 

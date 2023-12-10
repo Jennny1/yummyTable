@@ -12,4 +12,5 @@ public interface FavoritRepository extends JpaRepository<Favorit, Long> {
   Optional<Favorit> findByStoreStoreIdAndMemberMemberId(Long storeId, Long memberId);
 
   List<Favorit> findAllByStoreStoreIdAndFavoritStatus(Long storeId, Status status);
+
 }
