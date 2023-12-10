@@ -38,14 +38,12 @@ public class BoardService {
   */
   public BoardDto createBoard(Long memberId, @Valid Request request) {
     // 멤버 확인
-    Optional<Member> member = memberRepository.findByMemberId(memberId);
-    if (member.isEmpty()) {
-      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
-    }
+    Member member = memberRepository.findByMemberId(memberId)
+        .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
 
     // 상점 존재 확인
-    Store store = storeRepository.findByStoreIdAndStoreStatus(request.getStoreId(),
-            Status.EXISTENT)
+    Store store = storeRepository.
+        findByStoreIdAndStoreStatus(request.getStoreId(), Status.EXISTENT)
         .orElseThrow(() -> new yummyException(ErrorCode.STORE_IS_NOT_EXIST));
 
     return BoardDto.formEntity(
