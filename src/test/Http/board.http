@@ -1,5 +1,5 @@
 ### create board
-POST http://localhost:8080/board/1
+POST http://localhost:8080/boards?memberId=1
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 
 
 ### delete board
-DELETE http://localhost:8080/board?boardId=1&memberId=1
+DELETE http://localhost:8080/boards?boardId=1&memberId=1
 Content-Type: application/json
 
 {
@@ -21,12 +21,12 @@ Content-Type: application/json
 
 
 ### get board
-GET http://localhost:8080/board/1
+GET http://localhost:8080/boards?boardId=2
 Content-Type: application/json
 
 
 ### update board
-PATCH http://localhost:8080/board?boardId=1&memberId=1
+PATCH http://localhost:8080/boards?boardId=2&memberId=1
 Content-Type: application/json
 
 {
