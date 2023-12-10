@@ -89,7 +89,8 @@ public class FavoritService {
     Store store = storeRepository.findByStoreIdAndStoreStatus(storeId, Status.EXISTENT)
         .orElseThrow(() -> new yummyException(STORE_IS_NOT_EXIST));
 
-    List<Favorit> favorits = favoritRepository.findAllByStoreStoreId(storeId);
+    List<Favorit> favorits = favoritRepository.findAllByStoreStoreIdAndFavoritStatus(
+        storeId, Status.EXISTENT);
 
     if (favorits.isEmpty()) {
       throw new yummyException(ErrorCode.FAVORITS_NOT_EXIST);
