@@ -33,8 +33,6 @@ public class BoardDto {
   private String password;
   private Status boardStatus;
 
-  private Store storeName;
-
   @CreatedDate
   private LocalDateTime registeredAt;
   @LastModifiedDate
@@ -47,14 +45,11 @@ public class BoardDto {
         .boardId(board.getBoardId())
         .storeId(board.getStore().getStoreId())
         .memberId(board.getMember().getMemberId())
-
         .title(board.getTitle())
         .content(board.getContent())
         .keyword(board.getKeyword())
         .password(board.getPassword())
         .boardStatus(board.getBoardStatus())
-        .storeName(Store.builder().storeName(board.getStore().getStoreName()).build())
-
         .registeredAt(board.getRegisteredAt())
         .unregisteredAt(board.getUnregisteredAt())
         .build();

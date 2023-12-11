@@ -42,7 +42,6 @@ public class CreateBoard {
     private Long boardId;
     private Long storeId;
     private Long memberId;
-
     private String title;
     private String content;
     private String keyword;

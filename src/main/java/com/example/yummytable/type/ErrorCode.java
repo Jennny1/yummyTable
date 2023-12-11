@@ -10,6 +10,7 @@ public enum ErrorCode {
   MEMBER_ALREADY_DELETE("이미 탈퇴한 아이디입니다."),
   MEMBER_NOT_MATCH("작성자만 수정하거나 삭제할 수 있습니다."),
   CONTENT_IS_NULL("수정할 내용을 입력해주세요"),
+  SEARCH_IS_NULL("검색할 항목을 입력하세요"),
   EMAIL_ALREADY_EXIST("이미 존재하는 이메일입니다."),
   FAVORITS_NOT_EXIST("찜하기를 누른 회원이 없습니다."),
   MEMBER_IS_NOT_EXIST("아이디가 존재하지 않습니다."),
