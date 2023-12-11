@@ -6,6 +6,7 @@ Content-Type: application/json
   "storeId": 1,
   "title": "맛집소개",
   "content": "사당 돈까스 맛집이에요",
+  "keyword": "데이트하기 좋은",
   "password" : "pass1234"
 }
 
@@ -21,7 +22,7 @@ Content-Type: application/json
 
 
 ### get board
-GET http://localhost:8080/boards?boardId=2
+GET http://localhost:8080/boards?boardId=1
 Content-Type: application/json
 
 
@@ -32,5 +33,6 @@ Content-Type: application/json
 {
   "title": "돈까스 맛집 가여!!!!!",
   "content": "쫀맛탱 돈까스",
+  "keyword": "맛집",
   "password": "pass1234"
 }

@@ -34,10 +34,7 @@ public class DeleteStore {
 
     private long storeId;
     private String storeName;
-    private String keyword;
-
-    private Double locationX;
-    private Double locationY;
+    private String station;
 
     private String menu;
     private Status storeStatus;
@@ -53,10 +50,8 @@ public class DeleteStore {
       return Response.builder()
           .storeId(storeDto.getStoreId())
           .storeName(storeDto.getStoreName())
-          .keyword(storeDto.getKeyword())
           .storeStatus(storeDto.getStoreStatus())
-          .locationX(storeDto.getLocationX())
-          .locationY(storeDto.getLocationY())
+          .station(storeDto.getStation())
           .menu(storeDto.getMenu())
           .capacity(storeDto.getCapacity())
           .registeredAt(storeDto.getRegisteredAt())

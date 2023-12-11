@@ -23,12 +23,7 @@ public class StoreDto {
   @NotNull
   private String storeName;
   @NotNull
-  private String keyword;
-
-  @NotNull
-  private Double locationX;
-  @NotNull
-  private Double locationY;
+  private String station;
 
   private String menu;
   private Status storeStatus;
@@ -44,15 +39,11 @@ public class StoreDto {
     return StoreDto.builder()
         .storeId(store.getStoreId())
         .memberId(store.getMember().getMemberId())
-
         .storeName(store.getStoreName())
-        .keyword(store.getKeyword())
         .storeStatus(store.getStoreStatus())
-        .locationX(store.getLocationX())
-        .locationY(store.getLocationY())
+        .station(store.getStation())
         .menu(store.getMenu())
         .capacity(store.getCapacity())
-
         .registeredAt(store.getRegisteredAt())
         .updatedAt(store.getUpdatedAt())
         .unregisteredAt(store.getUnregisteredAt())

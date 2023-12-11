@@ -37,6 +37,7 @@ public class Board {
   private Long boardId;
   private String title;
   private String content;
+  private String keyword;
   private String password;
   @Enumerated(EnumType.STRING)
   private Status boardStatus;

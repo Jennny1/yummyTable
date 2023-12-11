@@ -53,6 +53,7 @@ public class BoardService {
                 .member(Member.builder().memberId(memberId).build())
                 .title(request.getTitle())
                 .content(request.getContent())
+                .keyword(request.getKeyword())
                 .boardStatus(Status.EXISTENT)
                 .password(request.getPassword())
                 .registeredAt(LocalDateTime.now())
@@ -102,6 +103,10 @@ public class BoardService {
 
     if (!request.getContent().equals("") && !board.getContent().equals(request.getContent())) {
       board.setContent(request.getContent());
+    }
+
+    if (!request.getKeyword().equals("") && !board.getKeyword().equals(request.getKeyword())) {
+      board.setKeyword(request.getKeyword());
     }
 
     if (!request.getPassword().equals("") && !board.getPassword().equals(request.getPassword())) {

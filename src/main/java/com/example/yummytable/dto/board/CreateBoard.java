@@ -26,6 +26,8 @@ public class CreateBoard {
     @NotNull
     private String content;
     @NotNull
+    private String keyword;
+    @NotNull
     private String password;
 
   }
@@ -43,6 +45,7 @@ public class CreateBoard {
 
     private String title;
     private String content;
+    private String keyword;
     private Status boardStatus;
 
     private LocalDateTime registeredAt;
@@ -54,6 +57,7 @@ public class CreateBoard {
           .memberId(boardDto.getMemberId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
+          .keyword(boardDto.getKeyword())
           .boardStatus(Status.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
           .build();

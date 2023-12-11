@@ -18,12 +18,13 @@ public class GetBoard {
   @Builder
   public static class Response {
 
-    // 게시글 관련 정보
     private Long boardId;
     private Long memberId;
 
     private String title;
     private String content;
+    private String keyword;
+
     private Status boardStatus;
     private LocalDateTime registeredAt;
 
@@ -33,6 +34,7 @@ public class GetBoard {
           .memberId(boardDto.getMemberId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
+          .keyword(boardDto.getKeyword())
           .boardStatus(Status.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
           .build();
