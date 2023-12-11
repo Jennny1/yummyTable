@@ -6,9 +6,7 @@ Content-Type: application/json
 {
   "memberId" : 1,
   "storeName": "맛있다돈까스",
-  "keyword": "맛집",
-  "locationX": 123.12,
-  "locationY": 238.44,
+  "station" : "사당역",
   "menu": "C:\\dev\\yummyTable\\erd.png",
   "capacity": 20
 
@@ -33,7 +31,7 @@ Content-Type: application/json
 {
   "storeId" : 1,
   "storeName": "맛있다 돈까스 사당점",
-  "keyword": "맛집",
+  "station" : "이수역",
   "locationX": 111.11,
   "locationY": 222.22,
   "menu": "C:\\dev\\yummyTable\\erd.png",

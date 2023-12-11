@@ -10,6 +10,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 @Getter
 @Setter
@@ -26,10 +28,13 @@ public class BoardDto {
 
   private String title;
   private String content;
+  private String keyword;
   private String password;
   private Status boardStatus;
 
+  @CreatedDate
   private LocalDateTime registeredAt;
+  @LastModifiedDate
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
@@ -42,6 +47,7 @@ public class BoardDto {
 
         .title(board.getTitle())
         .content(board.getContent())
+        .keyword(board.getKeyword())
         .password(board.getPassword())
         .boardStatus(board.getBoardStatus())
 

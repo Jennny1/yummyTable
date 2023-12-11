@@ -49,9 +49,7 @@ public class StoreService {
             Store.builder()
                 .member(Member.builder().memberId(request.getMemberId()).build())
                 .storeName(request.getStoreName())
-                .keyword(request.getKeyword())
-                .locationX(request.getLocationX())
-                .locationY(request.getLocationY())
+                .station(request.getStation())
                 .menu(request.getMenu())
                 .storeStatus(Status.EXISTENT)
                 .capacity(request.getCapacity())
@@ -94,7 +92,7 @@ public class StoreService {
         storeId, Status.EXISTENT, LocalDate.now());
 
     if (!bookings.isEmpty()) {
-      throw new yummyException(ErrorCode.FAIL_TO_DELETE_STORE);
+      throw new yummyException(ErrorCode.FAIL_TO_DELETE_STORE_BOOKING);
     }
 
     // 상점 삭제
@@ -132,7 +130,7 @@ public class StoreService {
         request.getStoreId(), Status.EXISTENT, LocalDate.now());
 
     if (!bookings.isEmpty()) {
-      throw new yummyException(ErrorCode.FAIL_TO_DELETE_STORE);
+      throw new yummyException(ErrorCode.FAIL_TO_DELETE_STORE_BOOKING);
     }
 
     // 수정
@@ -140,16 +138,8 @@ public class StoreService {
       store.get().setStoreName(request.getStoreName());
     }
 
-    if (!store.get().getKeyword().equals(request.getKeyword())) {
-      store.get().setKeyword(request.getKeyword());
-    }
-
-    if (!store.get().getLocationX().equals(request.getLocationX())) {
-      store.get().setLocationX(request.getLocationX());
-    }
-
-    if (!store.get().getLocationY().equals(request.getLocationY())) {
-      store.get().setLocationY(request.getLocationY());
+    if (!store.get().getStation().equals(request.getStation())) {
+      store.get().setStation(request.getStation());
     }
 
     if (!store.get().getMenu().equals(request.getMenu())) {

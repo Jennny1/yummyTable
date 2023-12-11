@@ -36,6 +36,7 @@ public class DeleteBoard {
     private Long boardId;
     private String title;
     private String content;
+    private String keyword;
     private Status boardStatus;
     private LocalDateTime registeredAt;
     private LocalDateTime updatedAt;
@@ -47,6 +48,7 @@ public class DeleteBoard {
           .boardId(boardDto.getBoardId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
+          .keyword(boardDto.getKeyword())
           .boardStatus(Status.DELETE)
           .registeredAt(boardDto.getRegisteredAt())
           .updatedAt(boardDto.getUpdatedAt())

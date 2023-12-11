@@ -37,10 +37,7 @@ public class Store {
   @GeneratedValue
   private long storeId;
   private String storeName;
-  private String keyword;
-
-  private Double locationX;
-  private Double locationY;
+  private String station;
 
   private String menu;
   @Enumerated(EnumType.STRING)

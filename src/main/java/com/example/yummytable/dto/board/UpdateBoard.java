@@ -22,6 +22,7 @@ public class UpdateBoard {
     private Long storeId;
     private String title;
     private String content;
+    private String keyword;
 
     @NotNull(message = "게시글 비밀번호를 입력하세요")
     private String password;
@@ -42,6 +43,8 @@ public class UpdateBoard {
 
     private String title;
     private String content;
+    private String keyword;
+
     private Status boardStatus;
     private LocalDateTime registeredAt;
 
@@ -52,6 +55,7 @@ public class UpdateBoard {
           .memberId(boardDto.getMemberId())
           .title(boardDto.getTitle())
           .content(boardDto.getContent())
+          .keyword(boardDto.getKeyword())
           .boardStatus(Status.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
           .build();
