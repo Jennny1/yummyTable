@@ -22,7 +22,7 @@ Content-Type: application/json
 
 
 ### get board
-GET http://localhost:8080/boards?boardId=2
+GET http://localhost:8080/boards?boardId=1
 Content-Type: application/json
 
 
