@@ -1,5 +1,6 @@
 package com.example.yummytable.domain;
 
+import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -48,6 +49,7 @@ public class Board {
   private LocalDateTime updatedAt;
   private LocalDateTime unregisteredAt;
 
+
   // 게시글 - 회원
   @ManyToOne
   @JoinColumn(name = "memberId")
@@ -61,5 +63,6 @@ public class Board {
   // 게시글 - 댓글
   @OneToMany(mappedBy = "board")
   private List<Comment> comments;
+
 
 }

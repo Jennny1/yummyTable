@@ -9,7 +9,6 @@ Content-Type: application/json
   "station" : "사당역",
   "menu": "C:\\dev\\yummyTable\\erd.png",
   "capacity": 20
-
 }
 
 
