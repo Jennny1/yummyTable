@@ -21,6 +21,8 @@ import jakarta.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +33,8 @@ public class BoardService {
   private final BoardRepository boardRepository;
   private final StoreRepository storeRepository;
   private final MemberRepository memberRepository;
+  @Autowired
+  BCryptPasswordEncoder encoder;
 
   /*
   게시글 생성
@@ -60,7 +64,7 @@ public class BoardService {
                 .content(request.getContent())
                 .keyword(request.getKeyword())
                 .boardStatus(Status.EXISTENT)
-                .password(request.getPassword())
+                .password(encoder.encode(request.getPassword()))
                 .registeredAt(LocalDateTime.now())
                 .build())
     );
@@ -154,7 +158,7 @@ public class BoardService {
         .orElseThrow(() -> new yummyException(BOARD_NOT_FOUND));
 
     // password 확인
-    if (!board.getPassword().equals(password)) {
+    if (!encoder.matches(password, board.getPassword())) {
       throw new yummyException(PASSWORD_NOT_MATCH);
     }
 

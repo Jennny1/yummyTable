@@ -3,11 +3,11 @@ POST http://localhost:8080/boards?memberId=1
 Content-Type: application/json
 
 {
-  "storeId": 2,
+  "storeId": 1,
   "title": "같이가요",
   "content": "맛집이에요",
   "keyword": "맛집",
-  "password" : "pass1234"
+  "password" : "1234"
 }
 
 
@@ -16,7 +16,7 @@ DELETE http://localhost:8080/boards?boardId=1&memberId=1
 Content-Type: application/json
 
 {
-  "password": "pass1234"
+  "password": "1234"
 }
 
 
@@ -27,12 +27,12 @@ Content-Type: application/json
 
 
 ### update board
-PATCH http://localhost:8080/boards?boardId=1&memberId=1
+PATCH http://localhost:8080/boards?boardId=2&memberId=1
 Content-Type: application/json
 
 {
   "title": "돈까스 맛집 가여!!!!!",
   "content": "쫀맛탱 돈까스",
   "keyword": "맛집",
-  "password": "pass1234"
+  "password": "1234"
 }
