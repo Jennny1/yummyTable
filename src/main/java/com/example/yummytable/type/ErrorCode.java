@@ -22,6 +22,8 @@ public enum ErrorCode {
   FAVORIT_NOT_EXIST("찜한 이력이 없습니다."),
   BOOKING_ALREADY_DELETE("이미 취소된 예약입니다."),
   FAIL_TO_DELETE_STORE_BOOKING("등록된 예약이 있어 상점을 삭제할 수 없습니다."),
+  FAIL_TO_FIND_STORE("상점 정보 검색에 실패했습니다."),
+  FAIL_TO_FIND_MEMBERID("작성자 아이디를 가져오는데 실패했습니다."),
   FAIL_TO_DELETE_STORE_FAVORIT("등록된 찜하기가 있어 상점을 삭제할 수 없습니다."),
   APPLICANTS_IS_DIFFERENT("예약 취소 인원이 동일하지 않습니다."),
   FAIL_TO_FIND_EMAIL("요청한 이메일을 찾을 수 없습니다."),

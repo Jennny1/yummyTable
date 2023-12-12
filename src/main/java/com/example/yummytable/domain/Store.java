@@ -71,4 +71,9 @@ public class Store {
   @OneToMany(mappedBy = "store")
   private List<Favorit> favorit;
 
+  public Long getMemberId(Member member) {
+    return member.getMemberId();
+
+  }
+
 }
