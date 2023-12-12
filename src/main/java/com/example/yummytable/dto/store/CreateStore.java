@@ -1,6 +1,7 @@
 package com.example.yummytable.dto.store;
 
 import com.example.yummytable.type.Status;
+import jakarta.validation.constraints.Pattern;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,7 @@ public class CreateStore {
     @NotNull
     private String keyword;
     @NotNull
+    @Pattern(regexp = "[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*역", message = "xx역 형태로 입력해주세요")
     private String station;
 
     private String menu;

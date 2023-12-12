@@ -49,17 +49,17 @@ public class SearchService {
 
   }
 
-  /*상점 이름 검색*/
-  public List<BoardDto> searchByStoreName(String storeName) {
-    if (!storeName.equals("")) {
-      storeName = "%"+storeName+"%";
+  /*지하철명 검색*/
+  public List<BoardDto> searchBystation(String station) {
+    if (!station.equals("")) {
+      station = "%"+station+"%";
     } else {
-      throw new yummyException(ErrorCode.SEARCH_INFO_IS_NULL_STORENAME);
+      throw new yummyException(ErrorCode.SEARCH_INFO_IS_NULL_STATION);
     }
 
-    List<Board> searchByStoreNames = boardRepository.findAllByStoreStoreNameLike(storeName);
+    List<Board> searchByStations = boardRepository.findAllByStoreStationLike(station);
 
-    return searchByStoreNames.stream().map(SearchDto::formEntity).collect(Collectors.toList());
+    return searchByStations.stream().map(SearchDto::formEntity).collect(Collectors.toList());
 
   }
 

@@ -35,6 +35,7 @@ public class BoardDto {
 
   private String storeName;
   private int capacity;
+  private String station;
 
 
   @CreatedDate
@@ -58,6 +59,7 @@ public class BoardDto {
         .unregisteredAt(board.getUnregisteredAt())
         .storeName(board.getStoreName(board.getStore()))
         .capacity(board.getCapacity(board.getStore()))
+        .station(board.getStation(board.getStore()))
         .build();
   }
 }

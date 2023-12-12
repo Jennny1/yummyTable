@@ -79,4 +79,8 @@ public class Board {
   public int getCapacity(Store store) {
     return store.getCapacity();
   }
+
+  public String getStation(Store store) {
+    return store.getStation();
+  }
 }

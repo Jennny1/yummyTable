@@ -49,6 +49,7 @@ public class CreateBoard {
     private LocalDateTime registeredAt;
     private String storeName;
     private int capacity;
+    private String station;
 
     public static Response from(BoardDto boardDto) {
       return Response.builder()
@@ -62,6 +63,7 @@ public class CreateBoard {
           .registeredAt(boardDto.getRegisteredAt())
           .storeName(boardDto.getStoreName())
           .capacity(boardDto.getCapacity())
+          .station(boardDto.getStation())
           .build();
     }
   }

@@ -15,6 +15,7 @@ public enum ErrorCode {
   FAVORITS_NOT_EXIST("찜하기를 누른 회원이 없습니다."),
   SEARCH_INFO_IS_NULL_KEYWORD("검색할 키워드를 입력하세요"),
   SEARCH_INFO_IS_NULL_STORENAME("검색할 상점이름을 입력하세요"),
+  SEARCH_INFO_IS_NULL_STATION("검색할 지하철이름을 입력하세요"),
   MEMBER_IS_NOT_EXIST("아이디가 존재하지 않습니다."),
   BOARDS_NOT_FOUND("게시글이 존재하지 않습니다."),
   PLEASE_INPUT_ANOTHER_PASSWORD("이전과 다른 비밀번호를 입력해주세요"),

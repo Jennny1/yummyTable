@@ -13,4 +13,6 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
   List<Board> findAllByKeywordLike(String keyword);
 
   List<Board> findAllByStoreStoreNameLike(String storeName);
+
+  List<Board> findAllByStoreStationLike(String station);
 }

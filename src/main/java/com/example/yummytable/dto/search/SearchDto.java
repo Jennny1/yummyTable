@@ -47,13 +47,15 @@ public class SearchDto {
   private String keyword;
   @NotNull
   private int capacity;
-
+  @NotNull
+  private String station;
   public static BoardDto formEntity(Board board) {
     return BoardDto.builder()
         .boardId(board.getBoardId())
         .storeId(board.getStoreId(board.getStore()))
         .storeName(board.getStoreName(board.getStore()))
         .capacity(board.getCapacity(board.getStore()))
+        .station(board.getStation(board.getStore()))
         .memberId(board.getMemberId(board.getMember()))
         .title(board.getTitle())
         .content(board.getContent())

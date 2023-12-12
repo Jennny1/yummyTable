@@ -39,8 +39,6 @@ public class GetSearch {
   public static class Response {
 
     // board
-    @Id
-    @GeneratedValue
     private Long boardId;
     private Long storeId;
     private Long memberId;
@@ -48,19 +46,15 @@ public class GetSearch {
     private String title;
     private Status boardStatus;
 
-    @CreatedDate
     private LocalDateTime registeredAt;
-    @LastModifiedDate
     private LocalDateTime updatedAt;
     private LocalDateTime unregisteredAt;
 
     // store
-    @NotNull
     private String storeName;
-    @NotNull
     private String keyword;
-    @NotNull
     private int capacity;
+    private String station;
 
   }
 
@@ -77,6 +71,7 @@ public class GetSearch {
         .storeName(searchDto.getStoreName())
         .keyword(searchDto.getKeyword())
         .capacity(searchDto.getCapacity())
+        .station(searchDto.getStation())
         .build();
 
   }

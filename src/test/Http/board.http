@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
   "storeId": 2,
-  "title": "초밥 같이 먹으러가요",
-  "content": "사당 초밥 맛집이에요",
-  "keyword": "초밥",
+  "title": "같이가요",
+  "content": "맛집이에요",
+  "keyword": "맛집",
   "password" : "pass1234"
 }
 

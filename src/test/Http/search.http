@@ -6,3 +6,7 @@ Content-Type: application/json
 ### get searchByStorename
 GET http://localhost:8080/searches/storeName?storeName=초밥
 Content-Type: application/json
+
+### get searchByStation
+GET http://localhost:8080/searches/station?station=선릉역
+Content-Type: application/json
