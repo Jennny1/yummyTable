@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
   "memberId" : 1,
-  "storeName": "맛있다돈까스",
+  "storeName": "미스터초밥왕",
   "station" : "사당역",
   "menu": "C:\\dev\\yummyTable\\erd.png",
   "capacity": 20

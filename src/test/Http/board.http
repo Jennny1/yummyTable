@@ -3,10 +3,10 @@ POST http://localhost:8080/boards?memberId=1
 Content-Type: application/json
 
 {
-  "storeId": 1,
-  "title": "맛집소개",
-  "content": "사당 돈까스 맛집이에요",
-  "keyword": "맛집맛집",
+  "storeId": 2,
+  "title": "초밥 같이 먹으러가요",
+  "content": "사당 초밥 맛집이에요",
+  "keyword": "초밥",
   "password" : "pass1234"
 }
 
