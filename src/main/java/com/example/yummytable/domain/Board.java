@@ -65,4 +65,9 @@ public class Board {
   private List<Comment> comments;
 
 
+  public Long getMemberId(Member member) {
+    return member.getMemberId();
+  }
+
+
 }

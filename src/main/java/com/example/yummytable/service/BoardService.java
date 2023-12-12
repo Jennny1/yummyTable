@@ -67,7 +67,7 @@ public class BoardService {
     Board board = validBoardInfo(boardId, request.getPassword());
 
     // 작성자 확인
-    if (memberId != board.getMember().getMemberId()) {
+    if (memberId != board.getMemberId(board.getMember())) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
     }
 
@@ -88,7 +88,7 @@ public class BoardService {
     Board board = validBoardInfo(boardId, request.getPassword());
 
     // 작성자 확인
-    if (memberId != board.getMember().getMemberId()) {
+    if (memberId != board.getMemberId(board.getMember())) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
     }
 
