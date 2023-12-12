@@ -35,7 +35,7 @@ public class Store {
   // 식당 관련 정보
   @Id
   @GeneratedValue
-  private long storeId;
+  private Long storeId;
   private String storeName;
   private String station;
 

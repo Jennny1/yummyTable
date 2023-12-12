@@ -46,8 +46,9 @@ public class CreateBoard {
     private String content;
     private String keyword;
     private Status boardStatus;
-
     private LocalDateTime registeredAt;
+    private String storeName;
+    private int capacity;
 
     public static Response from(BoardDto boardDto) {
       return Response.builder()
@@ -59,6 +60,8 @@ public class CreateBoard {
           .keyword(boardDto.getKeyword())
           .boardStatus(Status.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
+          .storeName(boardDto.getStoreName())
+          .capacity(boardDto.getCapacity())
           .build();
     }
   }

@@ -49,7 +49,11 @@ public class BoardService {
     return BoardDto.formEntity(
         boardRepository.save(
             Board.builder()
-                .store(Store.builder().storeId(store.getStoreId()).build())
+                .store(Store.builder()
+                    .storeId(store.getStoreId())
+                    .storeName(store.getStoreName())
+                    .capacity((store.getCapacity()))
+                    .build())
                 .member(Member.builder().memberId(memberId).build())
                 .title(request.getTitle())
                 .content(request.getContent())

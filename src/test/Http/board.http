@@ -6,7 +6,7 @@ Content-Type: application/json
   "storeId": 1,
   "title": "맛집소개",
   "content": "사당 돈까스 맛집이에요",
-  "keyword": "데이트",
+  "keyword": "맛집맛집",
   "password" : "pass1234"
 }
 

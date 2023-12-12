@@ -29,8 +29,8 @@ public class SearchController {
             .boardId(searchDto.getBoardId())
             .storeId(searchDto.getStoreId())
             .memberId(searchDto.getMemberId())
-/*            .storeName(searchDto.getStoreName())
-            .capacity(searchDto.getCapacity())*/
+            .storeName(searchDto.getStoreName())
+            .capacity(searchDto.getCapacity())
             .title(searchDto.getTitle())
             .boardStatus(searchDto.getBoardStatus())
             .keyword(searchDto.getKeyword())

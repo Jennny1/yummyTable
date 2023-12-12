@@ -80,7 +80,7 @@ public class StoreService {
     }
 
     Store store = storeRepository.findByStoreId(storeId)
-        .orElseThrow(() -> new yummyException(ErrorCode.FAIL_TO_FIND_STORE))
+        .orElseThrow(() -> new yummyException(ErrorCode.FAIL_TO_FIND_STORE));
 
     // 상점 id 등록 여부, 삭제 여부 검색
     if (store.getStoreStatus().equals(Status.DELETE)) {

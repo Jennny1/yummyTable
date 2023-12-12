@@ -19,6 +19,7 @@ public class SearchService {
   private final BoardRepository boardRepository;
   private final StoreRepository storeRepository;
 
+  /*키워드 검색*/
   public List<BoardDto> searchByKeyword(String keyword) {
     if (!keyword.equals("")) {
       keyword = "%"+keyword+"%";

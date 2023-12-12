@@ -66,16 +66,17 @@ public class GetSearch {
 
   public static Response from(SearchDto searchDto) {
     return Response.builder()
-        .boardId(searchDto.getBoard().getBoardId())
-        .storeId(searchDto.getStore().getStoreId())
-        .memberId(searchDto.getBoard().getMember().getMemberId())
-        .title(searchDto.getBoard().getTitle())
-        .boardStatus(searchDto.getBoard().getBoardStatus())
-        .registeredAt(searchDto.getBoard().getRegisteredAt())
-        .updatedAt(searchDto.getBoard().getUpdatedAt())
-        .unregisteredAt(searchDto.getBoard().getUnregisteredAt())
-        .storeName(searchDto.getStore().getStoreName())
-        .capacity(searchDto.getStore().getCapacity())
+        .boardId(searchDto.getBoardId())
+        .storeId(searchDto.getStoreId())
+        .memberId(searchDto.getMemberId())
+        .title(searchDto.getTitle())
+        .boardStatus(searchDto.getBoardStatus())
+        .registeredAt(searchDto.getRegisteredAt())
+        .updatedAt(searchDto.getUpdatedAt())
+        .unregisteredAt(searchDto.getUnregisteredAt())
+        .storeName(searchDto.getStoreName())
+        .keyword(searchDto.getKeyword())
+        .capacity(searchDto.getCapacity())
         .build();
 
   }
