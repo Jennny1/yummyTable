@@ -35,7 +35,6 @@ public class CreateMember {
   public static class Response {
 
     private Long memberId;
-    private String password;
     private String email;
     private Status memberStatus;
 
@@ -46,7 +45,6 @@ public class CreateMember {
     public static Response from(MemberDto memberDto) {
       return Response.builder()
           .memberId(memberDto.getMemberId())
-          .password(memberDto.getPassword())
           .email(memberDto.getEmail())
           .memberStatus(Status.EXISTENT)
           .registeredAt(memberDto.getRegisteredAt())

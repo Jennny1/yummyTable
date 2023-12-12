@@ -28,6 +28,10 @@ public class GetBoard {
     private Status boardStatus;
     private LocalDateTime registeredAt;
 
+    private String storeName;
+    private int capacity;
+    private String station;
+
     public static Response from(BoardDto boardDto) {
       return Response.builder()
           .boardId(boardDto.getBoardId())
@@ -37,6 +41,9 @@ public class GetBoard {
           .keyword(boardDto.getKeyword())
           .boardStatus(Status.EXISTENT)
           .registeredAt(boardDto.getRegisteredAt())
+          .storeName(boardDto.getStoreName())
+          .capacity(boardDto.getCapacity())
+          .station(boardDto.getStation())
           .build();
     }
   }

@@ -39,8 +39,6 @@ public class GetSearch {
   public static class Response {
 
     // board
-    @Id
-    @GeneratedValue
     private Long boardId;
     private Long storeId;
     private Long memberId;
@@ -48,34 +46,32 @@ public class GetSearch {
     private String title;
     private Status boardStatus;
 
-    @CreatedDate
     private LocalDateTime registeredAt;
-    @LastModifiedDate
     private LocalDateTime updatedAt;
     private LocalDateTime unregisteredAt;
 
     // store
-    @NotNull
     private String storeName;
-    @NotNull
     private String keyword;
-    @NotNull
     private int capacity;
+    private String station;
 
   }
 
   public static Response from(SearchDto searchDto) {
     return Response.builder()
-        .boardId(searchDto.getBoard().getBoardId())
-        .storeId(searchDto.getStore().getStoreId())
-        .memberId(searchDto.getBoard().getMember().getMemberId())
-        .title(searchDto.getBoard().getTitle())
-        .boardStatus(searchDto.getBoard().getBoardStatus())
-        .registeredAt(searchDto.getBoard().getRegisteredAt())
-        .updatedAt(searchDto.getBoard().getUpdatedAt())
-        .unregisteredAt(searchDto.getBoard().getUnregisteredAt())
-        .storeName(searchDto.getStore().getStoreName())
-        .capacity(searchDto.getStore().getCapacity())
+        .boardId(searchDto.getBoardId())
+        .storeId(searchDto.getStoreId())
+        .memberId(searchDto.getMemberId())
+        .title(searchDto.getTitle())
+        .boardStatus(searchDto.getBoardStatus())
+        .registeredAt(searchDto.getRegisteredAt())
+        .updatedAt(searchDto.getUpdatedAt())
+        .unregisteredAt(searchDto.getUnregisteredAt())
+        .storeName(searchDto.getStoreName())
+        .keyword(searchDto.getKeyword())
+        .capacity(searchDto.getCapacity())
+        .station(searchDto.getStation())
         .build();
 
   }

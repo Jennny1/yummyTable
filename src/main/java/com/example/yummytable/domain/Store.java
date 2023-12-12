@@ -35,7 +35,7 @@ public class Store {
   // 식당 관련 정보
   @Id
   @GeneratedValue
-  private long storeId;
+  private Long storeId;
   private String storeName;
   private String station;
 
@@ -70,5 +70,10 @@ public class Store {
   // 찜하기
   @OneToMany(mappedBy = "store")
   private List<Favorit> favorit;
+
+  public Long getMemberId(Member member) {
+    return member.getMemberId();
+
+  }
 
 }

@@ -67,23 +67,23 @@ public class StoreService {
   */
   public StoreDto deleteStore(Long storeId, Long memberId) {
     // 아이디 확인
-    Optional<Member> member = memberRepository.findByMemberId(memberId);
-    if (member.isEmpty()) {
-      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
-    }
+    Member member = memberRepository.findByMemberId(memberId)
+        .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
 
     // 작성자 아이디 가져오기
-    Optional<Store> byStoreId = storeRepository.findByStoreId(storeId);
+    Store byStoreId = storeRepository.findByStoreId(storeId)
+        .orElseThrow(() -> new yummyException(ErrorCode.FAIL_TO_FIND_MEMBERID));
 
     // 작성자와 일치여부 확인
-    if (byStoreId.get().getMember().getMemberId() != memberId) {
+    if (byStoreId.getMemberId(member) != memberId) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
     }
 
-    Optional<Store> store = storeRepository.findByStoreId(storeId);
+    Store store = storeRepository.findByStoreId(storeId)
+        .orElseThrow(() -> new yummyException(ErrorCode.FAIL_TO_FIND_STORE));
 
     // 상점 id 등록 여부, 삭제 여부 검색
-    if (store.isEmpty() || store.get().getStoreStatus().equals(Status.DELETE)) {
+    if (store.getStoreStatus().equals(Status.DELETE)) {
       throw new yummyException(ErrorCode.STORE_IS_NOT_EXIST);
     }
 
@@ -96,10 +96,10 @@ public class StoreService {
     }
 
     // 상점 삭제
-    store.get().setStoreStatus(Status.DELETE);
-    store.get().setUnregisteredAt(LocalDateTime.now());
+    store.setStoreStatus(Status.DELETE);
+    store.setUnregisteredAt(LocalDateTime.now());
 
-    return StoreDto.formEntity(storeRepository.save(store.get()));
+    return StoreDto.formEntity(storeRepository.save(store));
 
   }
 
@@ -110,18 +110,20 @@ public class StoreService {
   public StoreDto updateStore(@Valid Request request) {
 
     // 상점 기존 정보 가져오기
-    Optional<Store> store = storeRepository.findByStoreId(request.getStoreId());
+    Store store = storeRepository.findByStoreId(request.getStoreId())
+        .orElseThrow(() -> new yummyException(ErrorCode.FAIL_TO_FIND_STORE));
 
     // 상점 id 등록 여부, 삭제 여부 검색
-    if (store.isEmpty() || store.get().getStoreStatus().equals(Status.DELETE)) {
+    if (store.getStoreStatus().equals(Status.DELETE)) {
       throw new yummyException(ErrorCode.STORE_IS_NOT_EXIST);
     }
 
     // 작성자 아이디 가져오기
-    Optional<Store> byStoreId = storeRepository.findByStoreId(request.getStoreId());
+    Store byStoreId = storeRepository.findByStoreId(request.getStoreId())
+        .orElseThrow(() -> new yummyException(ErrorCode.FAIL_TO_FIND_MEMBERID));
 
     // 작성자와 일치여부 확인
-    if (byStoreId.get().getMember().getMemberId() != request.getMemberId()) {
+    if (byStoreId.getMember().getMemberId() != request.getMemberId()) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
     }
 
@@ -134,23 +136,23 @@ public class StoreService {
     }
 
     // 수정
-    if (!store.get().getStoreName().equals(request.getStoreName())) {
-      store.get().setStoreName(request.getStoreName());
+    if (!store.getStoreName().equals(request.getStoreName())) {
+      store.setStoreName(request.getStoreName());
     }
 
-    if (!store.get().getStation().equals(request.getStation())) {
-      store.get().setStation(request.getStation());
+    if (!store.getStation().equals(request.getStation())) {
+      store.setStation(request.getStation());
     }
 
-    if (!store.get().getMenu().equals(request.getMenu())) {
-      store.get().setMenu(request.getMenu());
+    if (!store.getMenu().equals(request.getMenu())) {
+      store.setMenu(request.getMenu());
     }
 
-    if (store.get().getCapacity() != request.getCapacity()) {
-      store.get().setCapacity(request.getCapacity());
+    if (store.getCapacity() != request.getCapacity()) {
+      store.setCapacity(request.getCapacity());
     }
 
-    return StoreDto.formEntity(storeRepository.save(store.get()));
+    return StoreDto.formEntity(storeRepository.save(store));
   }
 
 }

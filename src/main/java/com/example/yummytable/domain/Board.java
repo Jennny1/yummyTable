@@ -1,6 +1,5 @@
 package com.example.yummytable.domain;
 
-import com.example.yummytable.repository.BoardRepository;
 import com.example.yummytable.type.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -65,4 +64,23 @@ public class Board {
   private List<Comment> comments;
 
 
+  public Long getMemberId(Member member) {
+    return member.getMemberId();
+  }
+
+  public Long getStoreId(Store store) {
+    return store.getStoreId();
+  }
+
+  public String getStoreName(Store store) {
+    return store.getStoreName();
+  }
+
+  public int getCapacity(Store store) {
+    return store.getCapacity();
+  }
+
+  public String getStation(Store store) {
+    return store.getStation();
+  }
 }

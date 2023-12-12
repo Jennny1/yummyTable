@@ -19,6 +19,8 @@ import jakarta.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,7 +29,8 @@ import org.springframework.stereotype.Service;
 public class MemberService {
 
   private final MemberRepository memberRepository;
-  /*  private PasswordEncoder passwordEncoder;*/
+  @Autowired
+  BCryptPasswordEncoder encoder;
 
   /*회원 등록*/
   public MemberDto createMember(Request request) {
@@ -37,15 +40,13 @@ public class MemberService {
       throw new yummyException(EMAIL_ALREADY_EXIST);
     }
 
-/*
-    String pass = passwordEncoder.encode(request.getPassword());
-*/
+    String passEncode = encoder.encode(request.getPassword());
 
     return MemberDto.fromEntity(
         memberRepository.save(
             Member.builder()
                 .email(request.getEmail())
-                .password(request.getPassword())
+                .password(passEncode)
                 .memberStatus(Status.EXISTENT)
                 .registeredAt(LocalDateTime.now()).build()));
   }
@@ -57,7 +58,7 @@ public class MemberService {
         .orElseThrow(() -> new yummyException(FAIL_TO_FIND_EMAIL));
 
     // 비밀번호 확인
-    if (!member.getPassword().equals(request.getPassword())) {
+    if (!encoder.matches(request.getPassword(), member.getPassword())) {
       throw new yummyException(PASSWORD_NOT_MATCH);
     }
 
@@ -80,21 +81,20 @@ public class MemberService {
   - 비밀번호 수정 가능
   */
   public MemberDto updateMember(UpdateMember.@Valid Request request) {
-    // 이메일 확인
-    Optional<Member> member = memberRepository.findByEmail(request.getEmail());
-    if (member.isEmpty()) {
-      throw new yummyException(ErrorCode.EMAIL_NOT_MATCH);
-    }
 
-    // 변경할 이메일 확인
-    if (member.get().getPassword().equals(request.getNewPassword())) {
+    // 이메일 확인
+    Member member = memberRepository.findByEmail(request.getEmail())
+        .orElseThrow(() -> new yummyException(ErrorCode.EMAIL_NOT_MATCH));
+
+    // 변경할 비밀번호 확인
+    if (encoder.matches(request.getNewPassword(), member.getPassword())) {
       throw new yummyException(ErrorCode.PLEASE_INPUT_ANOTHER_PASSWORD);
     }
 
-    member.get().setPassword(request.getNewPassword());
-    member.get().setUpdatedAt(LocalDateTime.now());
-    memberRepository.save(member.get());
-    return MemberDto.fromEntity(member.get());
+    member.setPassword(encoder.encode(request.getNewPassword()));
+    member.setUpdatedAt(LocalDateTime.now());
+    memberRepository.save(member);
+    return MemberDto.fromEntity(member);
 
   }
 

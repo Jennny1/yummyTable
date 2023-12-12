@@ -21,6 +21,8 @@ import jakarta.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +33,8 @@ public class BoardService {
   private final BoardRepository boardRepository;
   private final StoreRepository storeRepository;
   private final MemberRepository memberRepository;
+  @Autowired
+  BCryptPasswordEncoder encoder;
 
   /*
   게시글 생성
@@ -49,13 +53,18 @@ public class BoardService {
     return BoardDto.formEntity(
         boardRepository.save(
             Board.builder()
-                .store(Store.builder().storeId(store.getStoreId()).build())
+                .store(Store.builder()
+                    .storeId(store.getStoreId())
+                    .storeName(store.getStoreName())
+                    .capacity(store.getCapacity())
+                    .station(store.getStation())
+                    .build())
                 .member(Member.builder().memberId(memberId).build())
                 .title(request.getTitle())
                 .content(request.getContent())
                 .keyword(request.getKeyword())
                 .boardStatus(Status.EXISTENT)
-                .password(request.getPassword())
+                .password(encoder.encode(request.getPassword()))
                 .registeredAt(LocalDateTime.now())
                 .build())
     );
@@ -67,7 +76,7 @@ public class BoardService {
     Board board = validBoardInfo(boardId, request.getPassword());
 
     // 작성자 확인
-    if (memberId != board.getMember().getMemberId()) {
+    if (memberId != board.getMemberId(board.getMember())) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
     }
 
@@ -88,7 +97,7 @@ public class BoardService {
     Board board = validBoardInfo(boardId, request.getPassword());
 
     // 작성자 확인
-    if (memberId != board.getMember().getMemberId()) {
+    if (memberId != board.getMemberId(board.getMember())) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
     }
 
@@ -149,7 +158,7 @@ public class BoardService {
         .orElseThrow(() -> new yummyException(BOARD_NOT_FOUND));
 
     // password 확인
-    if (!board.getPassword().equals(password)) {
+    if (!encoder.matches(password, board.getPassword())) {
       throw new yummyException(PASSWORD_NOT_MATCH);
     }
 

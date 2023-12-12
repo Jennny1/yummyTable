@@ -16,21 +16,56 @@ public class SearchController {
 
   private final SearchService searchService;
 
-  // 최신순
-  @GetMapping("/searches")
+  /*키워드*/
+  @GetMapping("/searches/keyword")
   public List<Response> searchByKeyword(
       @RequestParam(value = "keyword", required = false) String keyword,
-      @RequestParam @Positive int page,
-      @RequestParam @Positive int size) {
-
+      @RequestParam @Positive int page, @RequestParam @Positive int size) {
 
     return searchService.searchByKeyword(keyword).stream()
         .map(searchDto -> Response.builder()
             .boardId(searchDto.getBoardId())
             .storeId(searchDto.getStoreId())
             .memberId(searchDto.getMemberId())
-/*            .storeName(searchDto.getStoreName())
-            .capacity(searchDto.getCapacity())*/
+            .storeName(searchDto.getStoreName())
+            .capacity(searchDto.getCapacity())
+            .title(searchDto.getTitle())
+            .boardStatus(searchDto.getBoardStatus())
+            .keyword(searchDto.getKeyword())
+            .registeredAt(searchDto.getRegisteredAt())
+            .build()).collect(Collectors.toList());
+  }
+
+  /*상점이름*/
+  @GetMapping("/searches/storeName")
+  public List<Response> searchByStorName(@RequestParam String storeName) {
+
+    return searchService.searchByStoreName(storeName).stream()
+        .map(searchDto -> Response.builder()
+            .boardId(searchDto.getBoardId())
+            .storeId(searchDto.getStoreId())
+            .memberId(searchDto.getMemberId())
+            .storeName(searchDto.getStoreName())
+            .capacity(searchDto.getCapacity())
+            .title(searchDto.getTitle())
+            .boardStatus(searchDto.getBoardStatus())
+            .keyword(searchDto.getKeyword())
+            .registeredAt(searchDto.getRegisteredAt())
+            .build()).collect(Collectors.toList());
+  }
+
+  /*지하철명*/
+  @GetMapping("/searches/station")
+  public List<Response> searchBystation(@RequestParam String station) {
+
+    return searchService.searchBystation(station).stream()
+        .map(searchDto -> Response.builder()
+            .boardId(searchDto.getBoardId())
+            .storeId(searchDto.getStoreId())
+            .memberId(searchDto.getMemberId())
+            .storeName(searchDto.getStoreName())
+            .capacity(searchDto.getCapacity())
+            .station(searchDto.getStation())
             .title(searchDto.getTitle())
             .boardStatus(searchDto.getBoardStatus())
             .keyword(searchDto.getKeyword())
