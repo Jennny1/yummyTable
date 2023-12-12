@@ -6,6 +6,7 @@ import static com.example.yummytable.type.ErrorCode.MEMBER_ALREADY_DELETE;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Member;
+import com.example.yummytable.dto.member.Auth;
 import com.example.yummytable.dto.member.CreateMember.Request;
 import com.example.yummytable.dto.member.DeleteMember;
 import com.example.yummytable.dto.member.MemberDto;
@@ -19,17 +20,24 @@ import jakarta.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class MemberService {
+public class MemberService implements UserDetailsService {
 
   private final MemberRepository memberRepository;
-  @Autowired
+  private final PasswordEncoder passwordEncoder;
+
   BCryptPasswordEncoder encoder;
 
   /*회원 등록*/
@@ -112,5 +120,27 @@ public class MemberService {
     }
 
     return MemberDto.fromEntity(member.get());
+  }
+
+  @Override
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    return this.memberRepository.findbyusername(username)
+        .orElseThrow(() -> new UsernameNotFoundException("유저 이름을 찾지 못했습니다 : " + username));
+  }
+
+  // 회원가입
+  public Member register(Auth.SignUp member) {
+    boolean exists = this.memberRepository.existbyusername(member.getUsername());
+    if (exists) {
+      throw new RuntimeException("이미 사용중인 아이디입니다.");
+    }
+    member.setPassword(this.passwordEncoder.encode(member.getPassword()));
+
+    return this.memberRepository.save(member.toEntity());
+  }
+
+  // 로그인 검증
+  public Member authenticate(Auth.SignIn member) {
+    return null;
   }
 }

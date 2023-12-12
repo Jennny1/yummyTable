@@ -41,6 +41,7 @@ public class Member implements UserDetails {
   private Long memberId;
   private String password;
   private String email;
+  private String username;
 
   @Enumerated(EnumType.STRING)
   private Status memberStatus;
