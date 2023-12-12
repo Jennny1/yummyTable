@@ -37,6 +37,7 @@ public class DeleteMember {
 
     private Long memberId;
     private String email;
+    private String userName;
     private Status memberStatus;
 
     private LocalDateTime registeredAt;
@@ -47,6 +48,7 @@ public class DeleteMember {
       return Response.builder()
           .memberId(memberDto.getMemberId())
           .email(memberDto.getEmail())
+          .userName(memberDto.getUserName())
           .memberStatus(Status.EXISTENT)
           .registeredAt(memberDto.getRegisteredAt())
           .build();

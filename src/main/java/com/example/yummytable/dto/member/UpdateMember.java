@@ -39,6 +39,7 @@ public class UpdateMember {
 
     private Long memberId;
     private String email;
+    private String userName;
     private Status memberStatus;
 
     private LocalDateTime registeredAt;
