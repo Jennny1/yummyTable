@@ -3,6 +3,7 @@ package com.example.yummytable.service;
 import static com.example.yummytable.type.ErrorCode.EMAIL_ALREADY_EXIST;
 import static com.example.yummytable.type.ErrorCode.FAIL_TO_FIND_EMAIL;
 import static com.example.yummytable.type.ErrorCode.MEMBER_ALREADY_DELETE;
+import static com.example.yummytable.type.ErrorCode.MEMBER_IS_NOT_EXIST;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Member;
@@ -21,7 +22,6 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -141,6 +141,14 @@ public class MemberService implements UserDetailsService {
 
   // 로그인 검증
   public Member authenticate(Auth.SignIn member) {
-    return null;
+    Member user = this.memberRepository.findbyusername(member.getUsername())
+        .orElseThrow(() -> new yummyException(MEMBER_IS_NOT_EXIST));
+
+    if (this.passwordEncoder.matches(member.getPassword(), user.getPassword())) {
+      throw new RuntimeException("비밀번호가 일치하지 않습니다.");
+    }
+
+    return user;
   }
+
 }

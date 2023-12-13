@@ -1,4 +1,4 @@
-package com.example.yummytable.constants;
+package com.example.yummytable.type;
 
 public enum Authority {
   ROLE_READ,

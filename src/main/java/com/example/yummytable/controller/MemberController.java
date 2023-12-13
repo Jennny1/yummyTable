@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,14 +24,14 @@ public class MemberController {
 
   /*회원 등록*/
   @PostMapping("/member")
-  public CreateMember.Response createMember(@RequestBody CreateMember.Request request) {
+  public CreateMember.Response createMember(@Valid @RequestBody CreateMember.Request request) {
 
     return CreateMember.Response.from(memberService.createMember(request));
   }
 
   /*회원 탈퇴*/
   @DeleteMapping("/member")
-  public CreateMember.Response deleteMember(@RequestBody DeleteMember.Request request) {
+  public CreateMember.Response deleteMember(@Valid @RequestBody DeleteMember.Request request) {
 
     return CreateMember.Response.from(memberService.deleteMember(request));
   }
@@ -44,8 +45,8 @@ public class MemberController {
   }
 
   /*회원 정보 보기*/
-  @GetMapping("/member/{memberId}")
-  public GetMember.Response getMember(@PathVariable Long memberId) {
+  @GetMapping("/member")
+  public GetMember.Response getMember(@RequestParam Long memberId) {
 
     return GetMember.Response.from(memberService.getMember(memberId));
   }

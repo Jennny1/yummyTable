@@ -1,4 +1,4 @@
-package com.example.yummytable.configuration;
+package com.example.yummytable.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

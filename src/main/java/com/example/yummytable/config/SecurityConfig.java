@@ -1,4 +1,4 @@
-package com.example.yummytable.configuration;
+package com.example.yummytable.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
