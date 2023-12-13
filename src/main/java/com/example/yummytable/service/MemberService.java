@@ -33,10 +33,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class MemberService implements UserDetailsService {
+public class MemberService {
 
   private final MemberRepository memberRepository;
-  private final PasswordEncoder passwordEncoder;
 
   BCryptPasswordEncoder encoder;
 
@@ -120,35 +119,6 @@ public class MemberService implements UserDetailsService {
     }
 
     return MemberDto.fromEntity(member.get());
-  }
-
-  @Override
-  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    return this.memberRepository.findbyusername(username)
-        .orElseThrow(() -> new UsernameNotFoundException("유저 이름을 찾지 못했습니다 : " + username));
-  }
-
-  // 회원가입
-  public Member register(Auth.SignUp member) {
-    boolean exists = this.memberRepository.existbyusername(member.getUsername());
-    if (exists) {
-      throw new RuntimeException("이미 사용중인 아이디입니다.");
-    }
-    member.setPassword(this.passwordEncoder.encode(member.getPassword()));
-
-    return this.memberRepository.save(member.toEntity());
-  }
-
-  // 로그인 검증
-  public Member authenticate(Auth.SignIn member) {
-    Member user = this.memberRepository.findbyusername(member.getUsername())
-        .orElseThrow(() -> new yummyException(MEMBER_IS_NOT_EXIST));
-
-    if (this.passwordEncoder.matches(member.getPassword(), user.getPassword())) {
-      throw new RuntimeException("비밀번호가 일치하지 않습니다.");
-    }
-
-    return user;
   }
 
 }
