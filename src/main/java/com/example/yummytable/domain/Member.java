@@ -34,18 +34,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "member")
-public class Member implements UserDetails {
+public class Member {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long memberId;
   private String password;
   private String email;
-  private String username;
+  private String userName;
 
   @Enumerated(EnumType.STRING)
   private Status memberStatus;
-  private List<String> roles;
+  private String token;
 
   @CreatedDate
   private LocalDateTime registeredAt;
@@ -74,35 +74,4 @@ public class Member implements UserDetails {
   private List<Favorit> favorits;
 
 
-  @Override
-  public Collection<? extends GrantedAuthority> getAuthorities() {
-    return this.roles.stream()
-        .map(SimpleGrantedAuthority::new)
-        .collect(Collectors.toList());
-  }
-
-  @Override
-  public String getUsername() {
-    return null;
-  }
-
-  @Override
-  public boolean isAccountNonExpired() {
-    return false;
-  }
-
-  @Override
-  public boolean isAccountNonLocked() {
-    return false;
-  }
-
-  @Override
-  public boolean isCredentialsNonExpired() {
-    return false;
-  }
-
-  @Override
-  public boolean isEnabled() {
-    return false;
-  }
 }

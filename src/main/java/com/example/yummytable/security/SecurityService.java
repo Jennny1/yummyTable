@@ -24,13 +24,11 @@ public class SecurityService {
    * 토큰 생성
    *
    * @param subject
-   * @param expTime
    * @return
    */
-  public String createToken(String subject, long expTime) {
-    if (expTime <= 0) {
-      throw new RuntimeException("만료시간이 0보다 커야합니다.");
-    }
+  public String createToken(String subject) {
+
+    final Long EXPTIME = (long) (2 * 1000 * 60);
 
     SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
     byte[] secretkeyBytes = DatatypeConverter.parseBase64Binary(secretKey);
@@ -39,7 +37,7 @@ public class SecurityService {
     return Jwts.builder()
         .setSubject(subject)
         .signWith(signingkey, signatureAlgorithm)
-        .setExpiration(new Date(System.currentTimeMillis() + expTime))
+        .setExpiration(new Date(System.currentTimeMillis() + EXPTIME))
         .compact();
 
   }

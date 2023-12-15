@@ -17,7 +17,7 @@ public class SecurityController {
 
   @GetMapping("/create/token")
   public Map<String, Object> createToken(@RequestParam String subject) {
-    String token = securityService.createToken(subject, (2 * 1000 * 60));
+    String token = securityService.createToken(subject);
     Map<String, Object> map = new LinkedHashMap<>();
     map.put("result", token);
     return map;

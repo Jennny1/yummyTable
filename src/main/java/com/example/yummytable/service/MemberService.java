@@ -3,17 +3,17 @@ package com.example.yummytable.service;
 import static com.example.yummytable.type.ErrorCode.EMAIL_ALREADY_EXIST;
 import static com.example.yummytable.type.ErrorCode.FAIL_TO_FIND_EMAIL;
 import static com.example.yummytable.type.ErrorCode.MEMBER_ALREADY_DELETE;
-import static com.example.yummytable.type.ErrorCode.MEMBER_IS_NOT_EXIST;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Member;
-import com.example.yummytable.dto.member.Auth;
-import com.example.yummytable.dto.member.CreateMember.Request;
+import com.example.yummytable.dto.member.CreateMember;
 import com.example.yummytable.dto.member.DeleteMember;
 import com.example.yummytable.dto.member.MemberDto;
 import com.example.yummytable.dto.member.UpdateMember;
+import com.example.yummytable.dto.signin.CreateSignIn;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.MemberRepository;
+import com.example.yummytable.security.SecurityService;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
@@ -22,11 +22,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -36,33 +32,60 @@ import org.springframework.stereotype.Service;
 public class MemberService {
 
   private final MemberRepository memberRepository;
+  private final SecurityService securityService;
 
-  BCryptPasswordEncoder encoder;
+  BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   /*회원 등록*/
-  public MemberDto createMember(Request request) {
+  public MemberDto createMember(CreateMember.Request request) {
     // 이메일 확인
     Optional<Member> member = memberRepository.findByEmail(request.getEmail());
     if (!member.isEmpty()) {
       throw new yummyException(EMAIL_ALREADY_EXIST);
     }
 
+
     String passEncode = encoder.encode(request.getPassword());
 
-    return MemberDto.fromEntity(
-        memberRepository.save(
-            Member.builder()
-                .email(request.getEmail())
-                .password(passEncode)
-                .memberStatus(Status.EXISTENT)
-                .registeredAt(LocalDateTime.now()).build()));
+    return MemberDto.fromEntity(memberRepository.save(
+        Member.builder()
+            .email(request.getEmail())
+            .password(passEncode)
+            .userName(request.getUserName())
+            .memberStatus(Status.EXISTENT)
+            .registeredAt(LocalDateTime.now())
+            .build()));
   }
+
+  /*로그인*/
+  public MemberDto signin(CreateSignIn.Request request) {
+    // 이메일 확인
+    Optional<Member> member = memberRepository.findByEmail(request.getEmail());
+    if (member.isEmpty()) {
+      throw new yummyException(FAIL_TO_FIND_EMAIL);
+    }
+
+    String passEncode = encoder.encode(request.getPassword());
+
+    // 비밀번호 확인
+    if (!encoder.matches(request.getPassword(), member.get().getPassword())) {
+      throw new yummyException(PASSWORD_NOT_MATCH);
+    }
+
+    String token = securityService.createToken(passEncode);
+
+    member.get().setToken(token);
+
+    return MemberDto.fromEntity(member.get());
+
+  }
+
 
   /*회원 탈퇴*/
   public MemberDto deleteMember(DeleteMember.Request request) {
     // 이메일 확인
     Member member = memberRepository.findByEmail(request.getEmail())
-        .orElseThrow(() -> new yummyException(FAIL_TO_FIND_EMAIL));
+        .orElseThrow(() -> new yummyException(EMAIL_ALREADY_EXIST));
 
     // 비밀번호 확인
     if (!encoder.matches(request.getPassword(), member.getPassword())) {
@@ -91,7 +114,7 @@ public class MemberService {
 
     // 이메일 확인
     Member member = memberRepository.findByEmail(request.getEmail())
-        .orElseThrow(() -> new yummyException(ErrorCode.EMAIL_NOT_MATCH));
+        .orElseThrow(() -> new yummyException(EMAIL_ALREADY_EXIST));
 
     // 변경할 비밀번호 확인
     if (encoder.matches(request.getNewPassword(), member.getPassword())) {
@@ -120,5 +143,6 @@ public class MemberService {
 
     return MemberDto.fromEntity(member.get());
   }
+
 
 }

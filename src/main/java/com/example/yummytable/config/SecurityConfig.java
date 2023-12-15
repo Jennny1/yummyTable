@@ -29,15 +29,15 @@ public class SecurityConfig {
         .requestMatchers(PathRequest.toStaticResources().atCommonLocations());
   }
 
-  @Bean
-  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    HeadersConfigurer<HttpSecurity> disable =
-        http.cors().disable()      //cors 방지
-            .csrf().disable()      //csrf 방지
-            .formLogin().disable()    //기본 로그인페이지 없애기
-            .headers().frameOptions().disable();
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+      HeadersConfigurer<HttpSecurity> disable =
+          http.cors().disable()      //cors 방지
+              .csrf().disable()      //csrf 방지
+              .formLogin().disable()    //기본 로그인페이지 없애기
+              .headers().frameOptions().disable();
 
-    return http.build();
-  }
+      return http.build();
+    }
 
 }

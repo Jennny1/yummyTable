@@ -24,6 +24,7 @@ public class MemberDto {
   private String email;
   private String userName;
   private String password;
+  private String token;
   private Status memberStatus;
 
   private LocalDateTime registeredAt;
@@ -34,7 +35,9 @@ public class MemberDto {
     return MemberDto.builder()
         .memberId(member.getMemberId())
         .email(member.getEmail())
+        .userName(member.getUserName())
         .password(member.getPassword())
+        .token(member.getToken())
         .memberStatus(member.getMemberStatus())
         .registeredAt(member.getRegisteredAt())
         .updatedAt(member.getUpdatedAt())
