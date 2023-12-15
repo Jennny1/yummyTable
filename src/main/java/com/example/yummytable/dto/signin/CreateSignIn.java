@@ -1,8 +1,7 @@
-package com.example.yummytable.dto.member;
+package com.example.yummytable.dto.signin;
 
-import com.example.yummytable.type.Status;
+import com.example.yummytable.dto.member.MemberDto;
 import jakarta.validation.constraints.Pattern;
-import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,8 +10,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class UpdateMember {
-
+public class CreateSignIn {
   @Getter
   @Setter
   @NoArgsConstructor
@@ -24,11 +22,8 @@ public class UpdateMember {
     private String email;
     @NotNull
     private String password;
-    @NotNull
-    private String newPassword;
 
   }
-
 
   @Getter
   @Setter
@@ -37,23 +32,18 @@ public class UpdateMember {
   @Builder
   public static class Response {
 
-    private Long memberId;
     private String email;
-    private String userName;
-    private Status memberStatus;
+    private String password;
+    private String token;
 
-    private LocalDateTime registeredAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime unregisteredAt;
 
     public static Response from(MemberDto memberDto) {
       return Response.builder()
-          .memberId(memberDto.getMemberId())
           .email(memberDto.getEmail())
-          .userName(memberDto.getUserName())
-          .memberStatus(Status.EXISTENT)
-          .registeredAt(memberDto.getRegisteredAt())
+          .password(memberDto.getPassword())
+          .token(memberDto.getToken())
           .build();
+
     }
   }
 }

@@ -3,8 +3,19 @@ POST http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+
+### signin
+PATCH http://localhost:8080/signin
+Content-Type: application/json
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com"
 }
 
 
