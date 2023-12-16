@@ -1,3 +1,489 @@
+GET http://localhost:8080/member/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/member/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+PATCH http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 85
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "bbbbb@gmail.com",
+  "newPassword": "99999"
+}
+
+<> 2023-12-17T020659.200.json
+
+###
+
+PATCH http://localhost:8080/signin
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com"
+}
+
+<> 2023-12-17T020655.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T020652.200.json
+
+###
+
+GET http://localhost:8080/member/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+PATCH http://localhost:8080/signin
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com"
+}
+
+<> 2023-12-17T020540.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T020536.200.json
+
+###
+
+GET http://localhost:8080/member/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+PATCH http://localhost:8080/signin
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com"
+}
+
+<> 2023-12-17T020302.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T020256.200.json
+
+###
+
+PATCH http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 85
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "bbbbb@gmail.com",
+  "newPassword": "99999"
+}
+
+###
+
+PATCH http://localhost:8080/signin
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com"
+}
+
+<> 2023-12-17T020043.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T020017.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T015817.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T015657.200.json
+
+###
+
+PATCH http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 85
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "pass1234",
+  "email": "bbbbb@gmail.com",
+  "newPassword": "99999"
+}
+
+###
+
+PATCH http://localhost:8080/signin
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com"
+}
+
+<> 2023-12-17T014325.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=59C8912EFD6CA7379A3A51D692A18037
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T014322.200.json
+
+###
+
+GET http://localhost:8080/member/1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=703DB2D9194370065DE9E9D6517C52E8
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+PATCH http://localhost:8080/signin
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=703DB2D9194370065DE9E9D6517C52E8
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com"
+}
+
+<> 2023-12-17T014020.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=703DB2D9194370065DE9E9D6517C52E8
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-17T013959.200.json
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=703DB2D9194370065DE9E9D6517C52E8
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=703DB2D9194370065DE9E9D6517C52E8
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=703DB2D9194370065DE9E9D6517C52E8
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=703DB2D9194370065DE9E9D6517C52E8
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=8F73E5F5C30723215DAB763F48F3B600
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=8F73E5F5C30723215DAB763F48F3B600
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=F2B9AC608EA5B7B000D8985C88999117
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Cookie: JSESSIONID=88DD4933ACEF8CF121B4783AED876311
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+<> 2023-12-16T161256.403.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "password" : "234545",
+  "email": "sssss@gmail.com",
+  "userName": "사당친구"
+}
+
+###
+
 PATCH http://localhost:8080/signin
 Content-Type: application/json
 Content-Length: 57
@@ -316,548 +802,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-12-15T130331.500.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 89
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com",
-  "userName": "사당친구"
-}
-
-<> 2023-12-15T130323.500.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 89
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com",
-  "userName": "사당친구"
-}
-
-<> 2023-12-15T130230.500.json
-
-###
-
-PATCH http://localhost:8080/boards?boardId=2&memberId=1
-Content-Type: application/json
-Content-Length: 126
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "keyword": "맛집",
-  "password": "1234"
-}
-
-<> 2023-12-12T161727.200.json
-
-###
-
-POST http://localhost:8080/boards?memberId=1
-Content-Type: application/json
-Content-Length: 123
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "같이가요",
-  "content": "맛집이에요",
-  "keyword": "맛집",
-  "password" : "1234"
-}
-
-<> 2023-12-12T161717.200.json
-
-###
-
-PATCH http://localhost:8080/boards?boardId=1&memberId=1
-Content-Type: application/json
-Content-Length: 126
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "title": "돈까스 맛집 가여!!!!!",
-  "content": "쫀맛탱 돈까스",
-  "keyword": "맛집",
-  "password": "1234"
-}
-
-<> 2023-12-12T161710.200.json
-
-###
-
-DELETE http://localhost:8080/boards?boardId=1&memberId=1
-Content-Type: application/json
-Content-Length: 24
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password": "1234"
-}
-
-<> 2023-12-12T161655.200.json
-
-###
-
-POST http://localhost:8080/boards?memberId=1
-Content-Type: application/json
-Content-Length: 123
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "같이가요",
-  "content": "맛집이에요",
-  "keyword": "맛집",
-  "password" : "1234"
-}
-
-<> 2023-12-12T161646.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 138
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "memberId" : 1,
-  "storeName": "인도커리",
-  "station" : "선릉역",
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-12T161642.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T161640.200.json
-
-###
-
-POST http://localhost:8080/boards?memberId=1
-Content-Type: application/json
-Content-Length: 123
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "storeId": 1,
-  "title": "같이가요",
-  "content": "맛집이에요",
-  "keyword": "맛집",
-  "password" : "1234"
-}
-
-<> 2023-12-12T160420.200.json
-
-###
-
-POST http://localhost:8080/store
-Content-Type: application/json
-Content-Length: 138
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "memberId" : 1,
-  "storeName": "인도커리",
-  "station" : "선릉역",
-  "menu": "C:\\dev\\yummyTable\\erd.png",
-  "capacity": 20
-}
-
-<> 2023-12-12T160405.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T160359.200.json
-
-###
-
-PATCH http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 85
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com",
-  "newPassword": "99999"
-}
-
-<> 2023-12-12T155544.200.json
-
-###
-
-PATCH http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 88
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com",
-  "newPassword": "pass1234"
-}
-
-<> 2023-12-12T155540.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T155530.200.json
-
-###
-
-DELETE http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T155026.200.json
-
-###
-
-PATCH http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 85
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com",
-  "newPassword": "9999"
-}
-
-<> 2023-12-12T155020.200.json
-
-###
-
-GET http://localhost:8080/member/1
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-12T155012.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T155007.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T154911.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T153922.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
-}
-
-<> 2023-12-12T153143.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 59
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "aaaaa@gmail.com"
-}
-
-<> 2023-12-12T153140.200.json
-
-###
-
-DELETE http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T153107.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T153011.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T152511.200.json
-
-###
-
-DELETE http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T152454.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T152225.200.json
-
-###
-
-DELETE http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T152112.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T152108.200.json
-
-###
-
-DELETE http://localhost:8080/member
-Content-Type: application/json
-Content-Length: 60
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Cookie: JSESSIONID=F5D40DF922E47461CF36076351C0F224
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "password" : "pass1234",
-  "email": "dcdcdc@gmail.com"
-}
-
-<> 2023-12-12T151919.200.json
 
 ###
 

@@ -1,5 +1,5 @@
 ### create member
-POST http://localhost:8080/member
+POST http://localhost:8080/signup
 Content-Type: application/json
 
 {

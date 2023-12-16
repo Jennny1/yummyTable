@@ -39,6 +39,7 @@ public class CreateMember {
     private Long memberId;
     private String email;
     private String userName;
+    private String role;
     private Status memberStatus;
 
     private LocalDateTime registeredAt;
@@ -49,7 +50,8 @@ public class CreateMember {
       return Response.builder()
           .memberId(memberDto.getMemberId())
           .email(memberDto.getEmail())
-          .userName(memberDto.getUserName())
+          .userName(memberDto.getUsername())
+          .role(memberDto.getRole())
           .memberStatus(Status.EXISTENT)
           .registeredAt(memberDto.getRegisteredAt())
           .build();

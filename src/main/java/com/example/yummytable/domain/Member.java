@@ -41,11 +41,12 @@ public class Member {
   private Long memberId;
   private String password;
   private String email;
-  private String userName;
+  private String username;
 
   @Enumerated(EnumType.STRING)
   private Status memberStatus;
   private String token;
+  private String role;
 
   @CreatedDate
   private LocalDateTime registeredAt;
