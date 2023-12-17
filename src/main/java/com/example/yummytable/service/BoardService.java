@@ -36,14 +36,23 @@ public class BoardService {
   @Autowired
   BCryptPasswordEncoder encoder;
 
-  /*
-  게시글 생성
-  - 상점 등록 선행 필수
-  */
+
+  /**
+   * 게시글 생성 상점 등록 선행 필수
+   *
+   * @param memberId
+   * @param request
+   * @return
+   */
   public BoardDto createBoard(Long memberId, @Valid Request request) {
     // 멤버 확인
     Member member = memberRepository.findByMemberId(memberId)
         .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+
+    // 로그인 확인
+    if (member.getToken() == null || member.getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
+    }
 
     // 상점 존재 확인
     Store store = storeRepository.
@@ -71,13 +80,29 @@ public class BoardService {
   }
 
 
-  /*게시글 삭제*/
+  /**
+   * 게시글 삭제
+   *
+   * @param boardId
+   * @param memberId
+   * @param request
+   * @return
+   */
   public BoardDto deleteBoard(Long boardId, Long memberId, DeleteBoard.Request request) {
     Board board = validBoardInfo(boardId, request.getPassword());
+
 
     // 작성자 확인
     if (memberId != board.getMemberId(board.getMember())) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
+    }
+
+    Member byMemberId = memberRepository.findByMemberIdAndMemberStatus(
+        memberId, Status.EXISTENT).orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+
+    // 로그인 확인
+    if (byMemberId.getToken() == null || byMemberId.getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
     }
 
     // BoardStatus 변경
@@ -90,7 +115,14 @@ public class BoardService {
   }
 
 
-  /*게시글 수정*/
+  /**
+   * 게시글 수정
+   *
+   * @param boardId
+   * @param memberId
+   * @param request
+   * @return
+   */
   public BoardDto updateBoard(Long boardId, Long memberId, @Valid UpdateBoard.Request request) {
     Optional<Store> store = storeRepository.findByStoreId(request.getStoreId());
 
@@ -99,6 +131,14 @@ public class BoardService {
     // 작성자 확인
     if (memberId != board.getMemberId(board.getMember())) {
       throw new yummyException(ErrorCode.MEMBER_NOT_MATCH);
+    }
+
+    Member byMemberId = memberRepository.findByMemberIdAndMemberStatus(
+        memberId, Status.EXISTENT).orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+
+    // 로그인 확인
+    if (byMemberId.getToken() == null || byMemberId.getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
     }
 
     // 수정 반영
@@ -130,9 +170,16 @@ public class BoardService {
   }
 
 
-  /*게시글 읽기*/
+  /**
+   * 게시글 읽기
+   *
+   * @param boardId
+   * @return
+   */
+  /**/
   public BoardDto getBoard(Long boardId) {
     Board board = validBoardId(boardId);
+
 
     // board 넘기기
     return BoardDto.formEntity(board);
