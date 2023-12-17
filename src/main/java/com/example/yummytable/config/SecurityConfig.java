@@ -1,5 +1,6 @@
 package com.example.yummytable.config;
 
+import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -43,14 +44,16 @@ public class SecurityConfig {
         .headers().frameOptions().disable()
         .and()
         .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-            .requestMatchers(
-                new AntPathRequestMatcher("/member/**"),
-                new AntPathRequestMatcher("/signin"),
+            .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
+/*                new AntPathRequestMatcher("/signin"),
                 new AntPathRequestMatcher("/signup"),
-                new AntPathRequestMatcher("/h2-console/**"))
-            .permitAll()
+                new AntPathRequestMatcher("/h2-console/**"),
+                new AntPathRequestMatcher("/error/**")*/
+
             .anyRequest()
-            .authenticated());
+            .authenticated())
+        .formLogin().permitAll()
+        .loginPage("/signin");
 
     return http.build();
   }

@@ -5,9 +5,10 @@ import static com.example.yummytable.type.ErrorCode.FAIL_TO_FIND_EMAIL;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Member;
-import com.example.yummytable.dto.member.CreateMember;
+import com.example.yummytable.dto.sign.CreateSignUp;
 import com.example.yummytable.dto.member.MemberDto;
-import com.example.yummytable.dto.signin.CreateSignIn;
+import com.example.yummytable.dto.sign.CreateSignIn;
+import com.example.yummytable.dto.sign.SignInDto;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.MemberRepository;
 import com.example.yummytable.security.SecurityService;
@@ -32,7 +33,7 @@ public class SignService {
   BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   /*회원 등록*/
-  public MemberDto signup(CreateMember.Request request) {
+  public MemberDto signup(CreateSignUp.Request request) {
     // 이메일 확인
     Optional<Member> member = memberRepository.findByEmail(request.getEmail());
     if (!member.isEmpty()) {
@@ -45,7 +46,7 @@ public class SignService {
         Member.builder()
             .email(request.getEmail())
             .password(passEncode)
-            .username(request.getUserName())
+            .username(request.getUsername())
             .role("ROLE_LOGOUT")
             .memberStatus(Status.EXISTENT)
             .registeredAt(LocalDateTime.now())
@@ -53,7 +54,7 @@ public class SignService {
   }
 
   /*로그인*/
-  public MemberDto signin(CreateSignIn.Request request) {
+  public SignInDto signin(CreateSignIn.Request request) {
     // 이메일 확인
     Optional<Member> member = memberRepository.findByEmail(request.getEmail());
     if (member.isEmpty()) {
@@ -72,7 +73,7 @@ public class SignService {
     member.get().setToken(token);
     member.get().setRole("ROLE_LOGIN");
 
-    return MemberDto.fromEntity(member.get());
+    return SignInDto.fromEntity(member.get());
 
   }
 
