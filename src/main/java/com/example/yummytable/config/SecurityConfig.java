@@ -1,5 +1,9 @@
 package com.example.yummytable.config;
 
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.Paths;
+import io.swagger.v3.oas.models.info.Info;
 import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -57,5 +61,22 @@ public class SecurityConfig {
 
     return http.build();
   }
+
+
+
+  @Bean
+  public OpenAPI openAPI() {
+    return new OpenAPI()
+        .components(new Components())
+        .info(apiInfo());
+  }
+
+  private Info apiInfo() {
+    return new Info()
+        .title("Yummy table 맛집 추천 커뮤니티")
+        .description("회원가입/ 로그인/ 상점 등록/ 게시글 등록/ 댓글/ 찜하기/ 각 기능 CRUD를 할 수 있는 API")
+        .version("1.0.0");
+  }
+
 
 }
