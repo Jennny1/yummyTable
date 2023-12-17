@@ -50,7 +50,7 @@ public class UpdateMember {
       return Response.builder()
           .memberId(memberDto.getMemberId())
           .email(memberDto.getEmail())
-          .userName(memberDto.getUserName())
+          .userName(memberDto.getUsername())
           .memberStatus(Status.EXISTENT)
           .registeredAt(memberDto.getRegisteredAt())
           .build();

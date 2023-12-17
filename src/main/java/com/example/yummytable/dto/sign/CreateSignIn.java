@@ -34,14 +34,14 @@ public class CreateSignIn {
     private String email;
     private String password;
     private String token;
+    private String role;
 
-
-    public static Response from(SignInDto sign) {
+    public static Response from(SignInDto signInDto) {
       return Response.builder()
-          .email(sign.getEmail())
-          .password(sign.getPassword())
-          .token(sign.getToken())
-
+          .email(signInDto.getEmail())
+          .password(signInDto.getPassword())
+          .token(signInDto.getToken())
+          .role(signInDto.getRole())
           .build();
 
     }

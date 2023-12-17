@@ -7,9 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.example.yummytable.dto.member.CreateMember;
+import com.example.yummytable.dto.sign.CreateSignUp;
 import com.example.yummytable.dto.member.MemberDto;
-import com.example.yummytable.service.MemberService;
 import com.example.yummytable.service.SignService;
 import com.example.yummytable.type.Status;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +36,7 @@ class MemberControllerTest {
   void successCreateMember() throws Exception {
     // given
     // Mock Member 객체 생성
-    CreateMember.Request request = new CreateMember.Request("test@example.com", "password", "Test User");
+    CreateSignUp.Request request = new CreateSignUp.Request("test@example.com", "password", "Test User");
     MemberDto mockMember = MemberDto.builder()
         .memberId(1L)
         .memberStatus(Status.EXISTENT)
@@ -45,7 +44,7 @@ class MemberControllerTest {
         .build();
 
     // MemberService의 createMember 메서드가 호출될 때 모의 객체로 생성된 데이터 반환 설정
-    given(signService.signup(any(CreateMember.Request.class))).willReturn(mockMember);
+    given(signService.signup(any(CreateSignUp.Request.class))).willReturn(mockMember);
 
     // POST 요청 페이로드를 JSON 형식으로 변환
     String requestBody = objectMapper.writeValueAsString(request);

@@ -39,6 +39,9 @@ public class MemberService {
     Member member = memberRepository.findByEmail(request.getEmail())
         .orElseThrow(() -> new yummyException(EMAIL_ALREADY_EXIST));
 
+    // 로그인여부 확인
+    loginStatus(member);
+
     // 비밀번호 확인
     if (!encoder.matches(request.getPassword(), member.getPassword())) {
       throw new yummyException(PASSWORD_NOT_MATCH);
@@ -68,6 +71,9 @@ public class MemberService {
     Member member = memberRepository.findByEmail(request.getEmail())
         .orElseThrow(() -> new yummyException(EMAIL_ALREADY_EXIST));
 
+    // 로그인여부 확인
+    loginStatus(member);
+
     // 변경할 비밀번호 확인
     if (encoder.matches(request.getNewPassword(), member.getPassword())) {
       throw new yummyException(ErrorCode.PLEASE_INPUT_ANOTHER_PASSWORD);
@@ -88,6 +94,9 @@ public class MemberService {
   public MemberDto getMember(Long memberId) {
     Optional<Member> member = memberRepository.findByMemberId(memberId);
 
+    // 로그인여부 확인
+    loginStatus(member.get());
+
     // 탈퇴한 아이디 확인
     if (member.get().getMemberStatus().equals(Status.DELETE)) {
       throw new yummyException(MEMBER_ALREADY_DELETE);
@@ -97,4 +106,10 @@ public class MemberService {
   }
 
 
+  // 로그인 여부
+  private static void loginStatus(Member member) {
+    if (member.getToken() == null || member.getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
+    }
+  }
 }

@@ -35,7 +35,7 @@ public class SignService {
   /*회원 등록*/
   public MemberDto signup(CreateSignUp.Request request) {
     // 이메일 확인
-    Optional<Member> member = memberRepository.findByEmail(request.getEmail());
+    Optional<Member> member = memberRepository.findByEmailAndMemberStatus(request.getEmail(), Status.EXISTENT);
     if (!member.isEmpty()) {
       throw new yummyException(EMAIL_ALREADY_EXIST);
     }
@@ -76,6 +76,4 @@ public class SignService {
     return SignInDto.fromEntity(member.get());
 
   }
-
-
 }
