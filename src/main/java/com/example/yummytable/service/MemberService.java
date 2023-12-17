@@ -2,6 +2,7 @@ package com.example.yummytable.service;
 
 import static com.example.yummytable.type.ErrorCode.EMAIL_ALREADY_EXIST;
 import static com.example.yummytable.type.ErrorCode.MEMBER_ALREADY_DELETE;
+import static com.example.yummytable.type.ErrorCode.NOT_LOGGED_IN;
 import static com.example.yummytable.type.ErrorCode.PASSWORD_NOT_MATCH;
 
 import com.example.yummytable.domain.Member;
@@ -10,7 +11,6 @@ import com.example.yummytable.dto.member.MemberDto;
 import com.example.yummytable.dto.member.UpdateMember;
 import com.example.yummytable.exception.yummyException;
 import com.example.yummytable.repository.MemberRepository;
-import com.example.yummytable.security.SecurityService;
 import com.example.yummytable.type.ErrorCode;
 import com.example.yummytable.type.Status;
 import jakarta.transaction.Transactional;
@@ -29,18 +29,20 @@ import org.springframework.stereotype.Service;
 public class MemberService {
 
   private final MemberRepository memberRepository;
-  private final SecurityService securityService;
 
   BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   /*회원 탈퇴*/
   public MemberDto deleteMember(DeleteMember.Request request) {
+
+    // 로그인 여부 확인
+    if (loginStatus(request.getEmail()) == false) {
+      throw new yummyException(NOT_LOGGED_IN);
+    }
+
     // 이메일 확인
     Member member = memberRepository.findByEmail(request.getEmail())
         .orElseThrow(() -> new yummyException(EMAIL_ALREADY_EXIST));
-
-    // 로그인여부 확인
-    loginStatus(member);
 
     // 비밀번호 확인
     if (!encoder.matches(request.getPassword(), member.getPassword())) {
@@ -67,12 +69,14 @@ public class MemberService {
   */
   public MemberDto updateMember(UpdateMember.@Valid Request request) {
 
+    // 로그인 여부 확인
+    if (loginStatus(request.getEmail()) == false) {
+      throw new yummyException(NOT_LOGGED_IN);
+    }
+
     // 이메일 확인
     Member member = memberRepository.findByEmail(request.getEmail())
         .orElseThrow(() -> new yummyException(EMAIL_ALREADY_EXIST));
-
-    // 로그인여부 확인
-    loginStatus(member);
 
     // 변경할 비밀번호 확인
     if (encoder.matches(request.getNewPassword(), member.getPassword())) {
@@ -94,8 +98,10 @@ public class MemberService {
   public MemberDto getMember(Long memberId) {
     Optional<Member> member = memberRepository.findByMemberId(memberId);
 
-    // 로그인여부 확인
-    loginStatus(member.get());
+    // 로그인 여부 확인
+    if (loginStatus(member.get().getEmail()) == false) {
+      throw new yummyException(NOT_LOGGED_IN);
+    }
 
     // 탈퇴한 아이디 확인
     if (member.get().getMemberStatus().equals(Status.DELETE)) {
@@ -106,10 +112,17 @@ public class MemberService {
   }
 
 
-  // 로그인 여부
-  private static void loginStatus(Member member) {
-    if (member.getToken() == null || member.getToken().isEmpty()) {
-      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
+  // 로그인 여부 확인
+  private boolean loginStatus(String email) {
+    // 이메일 확인
+    Member mem = memberRepository.findByEmailAndMemberStatus(email, Status.EXISTENT)
+        .orElseThrow(() -> new yummyException(ErrorCode.FAIL_TO_FIND_EMAIL));
+
+    // 확인
+    if (mem.getToken() == null || mem.getToken().isEmpty()) {
+      return false;
     }
+
+    return true;
   }
 }

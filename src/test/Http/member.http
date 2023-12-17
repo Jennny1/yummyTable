@@ -41,6 +41,6 @@ Content-Type: application/json
 
 {
   "password" : "234545",
-  "email": "fefee@gmail.com",
+  "email": "bbbb@gmail.com",
   "newPassword": "99999"
 }

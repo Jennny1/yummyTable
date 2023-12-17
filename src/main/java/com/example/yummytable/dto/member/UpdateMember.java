@@ -39,7 +39,7 @@ public class UpdateMember {
 
     private Long memberId;
     private String email;
-    private String userName;
+    private String username;
     private Status memberStatus;
 
     private LocalDateTime registeredAt;
@@ -50,7 +50,7 @@ public class UpdateMember {
       return Response.builder()
           .memberId(memberDto.getMemberId())
           .email(memberDto.getEmail())
-          .userName(memberDto.getUsername())
+          .username(memberDto.getUsername())
           .memberStatus(Status.EXISTENT)
           .registeredAt(memberDto.getRegisteredAt())
           .build();
