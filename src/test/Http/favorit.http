@@ -11,6 +11,6 @@ Content-Type: application/json
 
 
 ### get favorit
-GET http://localhost:8080/favorits?storeId=1
+GET http://localhost:8080/favorits?storeId=1&memberId=1
 Content-Type: application/json
 
