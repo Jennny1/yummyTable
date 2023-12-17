@@ -7,12 +7,12 @@ import com.example.yummytable.service.FavoritService;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 @RestController
 @RequiredArgsConstructor
 public class FavoritController {
@@ -40,9 +40,9 @@ public class FavoritController {
 
   /*좋아요 리스트 보기*/
   @GetMapping("/favorits")
-  public List<Response> getFavorit(@RequestParam Long storeId) {
+  public List<Response> getFavorit(@RequestParam Long storeId, @RequestParam Long memberId) {
 
-    return favoritService.getFavofit(storeId).stream()
+    return favoritService.getFavofit(storeId, memberId).stream()
         .map(FavoritDto -> Response.builder()
             .favoritId(FavoritDto.getFavoritId())
             .memberId(FavoritDto.getMemberId())

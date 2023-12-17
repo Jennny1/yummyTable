@@ -7,6 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorCode {
   PASSWORD_NOT_MATCH("패스워드가 일치하지 않습니다."),
+  NOT_LOGGED_IN("로그인 상태가 아닙니다."),
   MEMBER_ALREADY_DELETE("이미 탈퇴한 아이디입니다."),
   MEMBER_NOT_MATCH("작성자만 수정하거나 삭제할 수 있습니다."),
   CONTENT_IS_NULL("수정할 내용을 입력해주세요"),

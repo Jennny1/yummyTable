@@ -38,28 +38,33 @@ public class CommentController {
   /*댓글 삭제*/
   @DeleteMapping("/comment")
   public DeleteComment.Response deleteComment(
-      @RequestParam Long boardId, @RequestParam Long commentId,
+      @RequestParam Long boardId,
+      @RequestParam Long commentId,
+      @RequestParam Long memberId,
       @RequestBody @Valid Request request) {
 
-    return DeleteComment.Response.from(commentService.deleteComment(boardId, commentId, request));
+    return DeleteComment.Response.from(
+        commentService.deleteComment(boardId, commentId, memberId, request));
   }
 
 
   /*댓글 수정*/
   @PatchMapping("/comment")
   public UpdateComment.Response updateComment(
-      @RequestParam Long boardId, @RequestParam Long commentId,
+      @RequestParam Long boardId,
+      @RequestParam Long commentId,
+      @RequestParam Long memberId,
       @RequestBody @Valid UpdateComment.Request request) {
 
-    return UpdateComment.Response.from(commentService.updateComment(boardId, commentId, request));
+    return UpdateComment.Response.from(commentService.updateComment(boardId, commentId, memberId, request));
   }
 
 
   /*댓글 보기*/
   @GetMapping("/comment")
-  public List<Response> getCommentBylatest(@RequestParam Long boardId) {
+  public List<Response> getCommentBylatest(@RequestParam Long boardId, @RequestParam Long memberId) {
 
-    return commentService.getCommentBylatest(boardId).stream()
+    return commentService.getCommentBylatest(boardId, memberId).stream()
         .map(CommentDto -> GetComment.Response.builder()
             .commentId(CommentDto.getCommentId())
             .memberID(CommentDto.getMemberId())

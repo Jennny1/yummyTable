@@ -1,5 +1,5 @@
 ### create board
-POST http://localhost:8080/boards?memberId=1
+POST http://localhost:8080/boards?memberId=2
 Content-Type: application/json
 
 {
@@ -27,7 +27,7 @@ Content-Type: application/json
 
 
 ### update board
-PATCH http://localhost:8080/boards?boardId=2&memberId=1
+PATCH http://localhost:8080/boards?boardId=1&memberId=1
 Content-Type: application/json
 
 {

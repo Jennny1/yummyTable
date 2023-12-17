@@ -1,11 +1,11 @@
 ### create member
-POST http://localhost:8080/member
+POST http://localhost:8080/signup
 Content-Type: application/json
 
 {
   "password" : "234545",
-  "email": "sssss@gmail.com",
-  "userName": "사당친구"
+  "email": "bbbb@gmail.com",
+  "username": "사당친구"
 }
 
 
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
   "password" : "234545",
-  "email": "sssss@gmail.com"
+  "email": "bbbb@gmail.com"
 }
 
 
@@ -24,14 +24,14 @@ DELETE http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com"
+  "password" : "234545",
+  "email": "bbbb@gmail.com"
 }
 
 
 
 ### get member
-GET http://localhost:8080/member/1
+GET http://localhost:8080/member?memberId=1
 Content-Type: application/json
 
 
@@ -40,7 +40,7 @@ PATCH http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "password" : "pass1234",
-  "email": "bbbbb@gmail.com",
+  "password" : "234545",
+  "email": "bbbb@gmail.com",
   "newPassword": "99999"
 }

@@ -29,9 +29,18 @@ public class FavoritService {
   private final StoreRepository storeRepository;
   private final MemberRepository memberRepository;
 
-  /*찜하기 등록*/
+
+  /**
+   * 찜하기 등록
+   * @param storeId
+   * @param memberId
+   * @return
+   */
   public FavoritDto createFavorit(Long storeId, Long memberId) {
     validFavoritInfo(storeId, memberId);
+
+    // 로그인 여부 확인
+    validLogin(memberId);
 
     // 찜하기 여부 확인
     Optional<Favorit> favorit =
@@ -60,10 +69,20 @@ public class FavoritService {
   }
 
 
-  /*좋아요 취소*/
+
+
+  /**
+   * 좋아요 취소
+   * @param storeId
+   * @param memberId
+   * @return
+   */
   public FavoritDto deleteFavorit(Long storeId, Long memberId) {
 
     validFavoritInfo(storeId, memberId);
+
+    // 로그인 여부 확인
+    validLogin(memberId);
 
     // 찜하기 여부 확인
     Optional<Favorit> favorit =
@@ -80,11 +99,17 @@ public class FavoritService {
 
   }
 
-  /*
-  좋아요 리스트 보기
-  - storeId 기준
-  */
-  public List<FavoritDto> getFavofit(Long storeId) {
+
+  /**
+   * 좋아요 리스트 보기
+   * storeId 기준
+   * @param storeId
+   * @return
+   */
+  public List<FavoritDto> getFavofit(Long storeId, Long memberId) {
+    // 로그인 여부 확인
+    validLogin(memberId);
+
     // 상점 존재 확인
     Store store = storeRepository.findByStoreIdAndStoreStatus(storeId, Status.EXISTENT)
         .orElseThrow(() -> new yummyException(STORE_IS_NOT_EXIST));
@@ -108,5 +133,16 @@ public class FavoritService {
     // 아이디 존재 확인
     Member member = memberRepository.findByMemberIdAndMemberStatus(memberId, Status.EXISTENT)
         .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+  }
+
+
+  private void validLogin(Long memberId) {
+    // 로그인 여부 확인
+    Member byMemberId = memberRepository.findByMemberIdAndMemberStatus(memberId, Status.EXISTENT)
+        .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+
+    if (byMemberId.getToken() == null || byMemberId.getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
+    }
   }
 }

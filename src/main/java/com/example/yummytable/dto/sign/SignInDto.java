@@ -1,10 +1,6 @@
-package com.example.yummytable.dto.signin;
+package com.example.yummytable.dto.sign;
 
 import com.example.yummytable.domain.Member;
-import com.example.yummytable.type.Status;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,12 +17,14 @@ public class SignInDto {
   private String email;
   private String password;
   private String token;
+  private String role;
 
   public static SignInDto fromEntity(Member member) {
     return SignInDto.builder()
         .email(member.getEmail())
         .password(member.getPassword())
         .token(member.getToken())
+        .role(member.getRole())
         .build();
 
   }

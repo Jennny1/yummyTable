@@ -1,6 +1,5 @@
-package com.example.yummytable.dto.signin;
+package com.example.yummytable.dto.sign;
 
-import com.example.yummytable.dto.member.MemberDto;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,13 +34,14 @@ public class CreateSignIn {
     private String email;
     private String password;
     private String token;
+    private String role;
 
-
-    public static Response from(MemberDto memberDto) {
+    public static Response from(SignInDto signInDto) {
       return Response.builder()
-          .email(memberDto.getEmail())
-          .password(memberDto.getPassword())
-          .token(memberDto.getToken())
+          .email(signInDto.getEmail())
+          .password(signInDto.getPassword())
+          .token(signInDto.getToken())
+          .role(signInDto.getRole())
           .build();
 
     }

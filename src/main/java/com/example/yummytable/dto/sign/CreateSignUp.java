@@ -1,5 +1,6 @@
-package com.example.yummytable.dto.member;
+package com.example.yummytable.dto.sign;
 
+import com.example.yummytable.dto.member.MemberDto;
 import com.example.yummytable.type.Status;
 import jakarta.validation.constraints.Pattern;
 import java.time.LocalDateTime;
@@ -11,7 +12,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 
-public class CreateMember {
+public class CreateSignUp {
 
   @Getter
   @Setter
@@ -25,7 +26,7 @@ public class CreateMember {
     @NotNull
     private String password;
     @NotNull
-    private String userName;
+    private String username;
   }
 
 
@@ -38,7 +39,8 @@ public class CreateMember {
 
     private Long memberId;
     private String email;
-    private String userName;
+    private String username;
+    private String role;
     private Status memberStatus;
 
     private LocalDateTime registeredAt;
@@ -49,7 +51,8 @@ public class CreateMember {
       return Response.builder()
           .memberId(memberDto.getMemberId())
           .email(memberDto.getEmail())
-          .userName(memberDto.getUserName())
+          .username(memberDto.getUsername())
+          .role(memberDto.getRole())
           .memberStatus(Status.EXISTENT)
           .registeredAt(memberDto.getRegisteredAt())
           .build();

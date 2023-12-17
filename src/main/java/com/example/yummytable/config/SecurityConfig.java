@@ -1,17 +1,21 @@
 package com.example.yummytable.config;
 
+import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
-import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 @EnableWebSecurity
 @EnableMethodSecurity
 @Configuration
@@ -29,15 +33,29 @@ public class SecurityConfig {
         .requestMatchers(PathRequest.toStaticResources().atCommonLocations());
   }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-      HeadersConfigurer<HttpSecurity> disable =
-          http.cors().disable()      //cors 방지
-              .csrf().disable()      //csrf 방지
-              .formLogin().disable()    //기본 로그인페이지 없애기
-              .headers().frameOptions().disable();
 
-      return http.build();
-    }
+  @Bean
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+    http
+        .cors().disable()
+        .csrf().disable()
+        .formLogin().disable()
+        .headers().frameOptions().disable()
+        .and()
+        .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
+            .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
+/*                new AntPathRequestMatcher("/signin"),
+                new AntPathRequestMatcher("/signup"),
+                new AntPathRequestMatcher("/h2-console/**"),
+                new AntPathRequestMatcher("/error/**")*/
+
+            .anyRequest()
+            .authenticated())
+        .formLogin().permitAll()
+        .loginPage("/signin");
+
+    return http.build();
+  }
 
 }
