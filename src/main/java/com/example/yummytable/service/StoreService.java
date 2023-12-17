@@ -30,12 +30,23 @@ public class StoreService {
   private final BookingRepository bookingRepository;
   private final MemberRepository memberRepository;
 
-  /*상점 등록*/
+
+  /**
+   * 상점 등록
+   * @param request
+   * @return
+   */
   public StoreDto createStore(CreateStore.Request request) {
     // 아이디 확인
-    Optional<Member> member = memberRepository.findByMemberId(request.getMemberId());
-    if (member.isEmpty()) {
-      throw new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST);
+    Member member = memberRepository.findByMemberId(request.getMemberId())
+        .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+
+    // 로그인 여부 확인
+    Optional<Member> byMemberId = memberRepository.findByMemberIdAndMemberStatus(
+        member.getMemberId(), Status.EXISTENT);
+
+    if (byMemberId.get().getToken() == null || byMemberId.get().getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
     }
 
     // 상점 이름 검색
@@ -59,16 +70,25 @@ public class StoreService {
   }
 
 
-  /*
-  상점 삭제
-  - input : storeId
-  - output : StoreStatus.DELETE로 변경
-  - 예약된 이력이 있을때 삭제 불가
-  */
+  /**
+   * 상점 삭제
+   * 예약된 이력이 있을때 삭제 불가
+   * @param storeId
+   * @param memberId
+   * @return
+   */
   public StoreDto deleteStore(Long storeId, Long memberId) {
     // 아이디 확인
     Member member = memberRepository.findByMemberId(memberId)
         .orElseThrow(() -> new yummyException(ErrorCode.MEMBER_IS_NOT_EXIST));
+
+    // 로그인 여부 확인
+    Optional<Member> byMemberId = memberRepository.findByMemberIdAndMemberStatus(
+        member.getMemberId(), Status.EXISTENT);
+
+    if (byMemberId.get().getToken() == null || byMemberId.get().getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
+    }
 
     // 작성자 아이디 가져오기
     Store byStoreId = storeRepository.findByStoreId(storeId)
@@ -103,11 +123,21 @@ public class StoreService {
 
   }
 
-  /*
-  상점 수정
-  - 예약된 이력이 있을때 수정 불가
-  */
+  /**
+   * 상점 수정
+   * 예약된 이력이 있을때 수정 불가
+   * @param request
+   * @return
+   */
   public StoreDto updateStore(@Valid Request request) {
+
+    // 로그인 여부 확인
+    Optional<Member> byMemberId = memberRepository.findByMemberIdAndMemberStatus(
+        request.getMemberId(), Status.EXISTENT);
+
+    if (byMemberId.get().getToken() == null || byMemberId.get().getToken().isEmpty()) {
+      throw new yummyException(ErrorCode.NOT_LOGGED_IN);
+    }
 
     // 상점 기존 정보 가져오기
     Store store = storeRepository.findByStoreId(request.getStoreId())
