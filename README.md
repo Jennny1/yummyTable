@@ -79,7 +79,8 @@
 
 
 ## ERD
-![erd](https://github.com/Jennny1/yummy/assets/59690831/3eb7b3d1-ea9c-49e8-a057-71af8afb4b7e)
+![yummytable](https://github.com/Jennny1/yummyTable/assets/59690831/8baed05e-e8cf-4c0b-871b-95473ed76f40)
+
 
 ## 사용 기술 (Tech Stack)
 <div align=center> 
