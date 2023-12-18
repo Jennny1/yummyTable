@@ -6,6 +6,7 @@ import com.example.yummytable.dto.board.GetBoard;
 import com.example.yummytable.dto.board.UpdateBoard;
 import com.example.yummytable.dto.board.UpdateBoard.Response;
 import com.example.yummytable.service.BoardService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

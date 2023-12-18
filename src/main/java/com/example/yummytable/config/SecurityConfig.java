@@ -2,9 +2,7 @@ package com.example.yummytable.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.Paths;
 import io.swagger.v3.oas.models.info.Info;
-import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -48,7 +46,12 @@ public class SecurityConfig {
         .headers().frameOptions().disable()
         .and()
         .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-            .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
+            .requestMatchers(new AntPathRequestMatcher("/**"),
+                new AntPathRequestMatcher("/"),
+                new AntPathRequestMatcher("/swagger-ui/**"),
+                new AntPathRequestMatcher("/v3/api-docs/**"),
+                new AntPathRequestMatcher("/demo-ui/**")
+            ).permitAll()
 /*                new AntPathRequestMatcher("/signin"),
                 new AntPathRequestMatcher("/signup"),
                 new AntPathRequestMatcher("/h2-console/**"),
@@ -63,7 +66,6 @@ public class SecurityConfig {
   }
 
 
-
   @Bean
   public OpenAPI openAPI() {
     return new OpenAPI()
@@ -71,12 +73,11 @@ public class SecurityConfig {
         .info(apiInfo());
   }
 
+
   private Info apiInfo() {
     return new Info()
-        .title("Yummy table 맛집 추천 커뮤니티")
+        .title("Yummy table 맛집 공유 및 예약 커뮤니티")
         .description("회원가입/ 로그인/ 상점 등록/ 게시글 등록/ 댓글/ 찜하기/ 각 기능 CRUD를 할 수 있는 API")
         .version("1.0.0");
   }
-
-
 }

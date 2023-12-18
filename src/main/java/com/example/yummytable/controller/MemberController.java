@@ -4,6 +4,8 @@ import com.example.yummytable.dto.member.DeleteMember;
 import com.example.yummytable.dto.member.GetMember;
 import com.example.yummytable.dto.member.UpdateMember;
 import com.example.yummytable.service.MemberService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
